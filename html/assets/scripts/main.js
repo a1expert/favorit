@@ -7,17 +7,23 @@ $("document").ready(function()
     const mMenuCloseBtn = document.querySelector("#mobileMenuCloseBtn");
     const mainDiv = document.querySelector("#main");
     const header = document.querySelector("#header");
+    const mobileLeftMenuBtn = document.querySelector("#mobileLeftMenuBtn");
+    const mobileLeftMenu = document.querySelector("#mobileLeftMenu");
 
     mMenuOpenBtn.addEventListener("click", MobileMenuToggler);
     mMenuCloseBtn.addEventListener("click", MobileMenuToggler);
-
+    if(mobileLeftMenuBtn !== null && mobileLeftMenuBtn !== undefined)
+        mobileLeftMenuBtn.addEventListener("click", LeftMenuToggler);
     function MobileMenuToggler(e)
     {
         header.classList.toggle("visualHide");
         mobileMenu.classList.toggle("visualHide");
         mainDiv.classList.toggle("main_blur");
     };
-    
+    function LeftMenuToggler(e)
+    {
+        mobileLeftMenu.classList.toggle("mobileLeftMenu_open");
+    };
     $(".about__slider").owlCarousel(
         {
             items: 1,
