@@ -24,7 +24,7 @@
         </symbol>
     </svg>
     <header class="header header_mainPage" id="header">
-        <div class="container">
+        <div class="container hidden-lg hidden-md">
             <div class="row">
                 <div class="col-xs-4 header__mMenuOpenBtn" id="mMenuOpenBtn">
                     <svg xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#mBtn_svg"></use></svg>
@@ -36,7 +36,20 @@
                     <svg xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#phone_svg"></use></svg>
                 </div>
             </div>
-        </div>    
+        </div>
+        <div class="container hidden-sm hidden-xs">
+            <div class="row">
+                <div class="col-xs-4 header__mMenuOpenBtn" id="mMenuOpenBtn">
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#mBtn_svg"></use></svg>
+                </div>
+                <a href="index.html" class="col-xs-4 logoLink header__logoLink">
+                    <img src="assets/img/logo.png" alt="Логотип" title="Hа главную" class="header__logoImg">
+                </a>
+                <div class="col-xs-4 header__callback" id="headerCallbackBtn">
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#phone_svg"></use></svg>
+                </div>
+            </div>
+        </div>
     </header>
     <nav class="mobileMenu visualHide" id="mobileMenu">
         <div href="index.html" class="col-xs-12 logoLink mobileMenu__logoLink">
@@ -56,7 +69,7 @@
             <div class="firstBlock__content container">
                 <h1 class="firstBlock__mainPageHeader">Производство металлоконстуркций</h1>
                 <div class="firstBlock__text">ООО «Фаворит-С» более 10 лет успешно работает в области производства металлоконструкций различного назначения в ХМАО и ЯНАО.</div>
-                <a href="catalog.html" class="btn firstBlock__btn btn_blue">Перейти в каталог<span class="btn__arrow btn__arrow_white"></span></a>
+                <a href="catalog.html" class="btn firstBlock__btn btn_blue">Перейти в каталог<span class="btn__arrow btn__arrow_white btn__arrow_horizontal"></span></a>
             </div>
         </section>
         <section class="about">
@@ -71,7 +84,7 @@
                             <li class="textList__item">Разработка четежей КМД</li>
                             <li class="textList__item">Доставка металлоконструкций по ХМАО и ЯНАО</li>
                         </ul>
-                        <a href="about.html" class="btn aboutContent__btn btn_blue">Узнать больше<span class="btn__arrow btn__arrow_white"></span></a>
+                        <a href="about.html" class="btn aboutContent__btn btn_blue">Узнать больше<span class="btn__arrow btn__arrow_white btn__arrow_horizontal"></span></a>
                     </div>
                     <div class="col-xs-12 col-md-6 about__slider">
                         <img src="assets/img/photo_003.png" alt="" style="width: 100%;">
@@ -129,7 +142,7 @@
                         <div class="catalogList__item_name">Опоры ЛЭП</div>
                     </a>
                 </div>
-                <a href="catalog.html" class="btn catalog__btn btn_white">Перейти в каталог продукции<span class="btn__arrow btn__arrow_blue"></span></a>
+                <a href="catalog.html" class="btn catalog__btn btn_white">Перейти в каталог продукции<span class="btn__arrow btn__arrow_blue btn__arrow_horizontal"></span></a>
             </div>
         </section>
         <section class="servicesList">
@@ -149,7 +162,7 @@
                         <div class="servicesList__name">Разработка чертежей КМД</div>
                     </a>
                 </div>
-                <a href="about.html" class="btn servicesList__btn btn_white">Смотреть все услуги<span class="btn__arrow btn__arrow_blue"></span></a>
+                <a href="about.html" class="btn servicesList__btn btn_white">Смотреть все услуги<span class="btn__arrow btn__arrow_blue btn__arrow_horizontal"></span></a>
             </div>
         </section>
         <section class="ourWork">

@@ -12,23 +12,58 @@ $("document").ready(function()
 
     mMenuOpenBtn.addEventListener("click", MobileMenuToggler);
     mMenuCloseBtn.addEventListener("click", MobileMenuToggler);
-    if(mobileLeftMenuBtn !== null && mobileLeftMenuBtn !== undefined)
-        mobileLeftMenuBtn.addEventListener("click", LeftMenuToggler);
     function MobileMenuToggler(e)
     {
         header.classList.toggle("visualHide");
         mobileMenu.classList.toggle("visualHide");
         mainDiv.classList.toggle("main_blur");
-    };
-    function LeftMenuToggler(e)
+    }
+
+    if(mobileLeftMenuBtn !== null && mobileLeftMenuBtn !== undefined)
     {
-        mobileLeftMenu.classList.toggle("mobileLeftMenu_open");
-    };
-    $(".about__slider").owlCarousel(
+        mobileLeftMenuBtn.addEventListener("click", function (e)
         {
-            items: 1,
-            loop: true,
-            nav: false,
-            dots: true,
+            mobileLeftMenuBtn.classList.toggle("mobileLeftMenuBtn_open");
+            mobileLeftMenu.classList.toggle("mobileLeftMenu_open");
+            document.addEventListener("click", function(e)
+            {
+                if(e.path.indexOf(mobileLeftMenuBtn) == -1 && e.path.indexOf(mobileLeftMenu) == -1)
+                {
+                    if (mobileLeftMenu.classList.contains("mobileLeftMenu_open"))
+                    {
+                        mobileLeftMenu.classList.remove("mobileLeftMenu_open");
+                        mobileLeftMenuBtn.classList.remove("mobileLeftMenuBtn_open");
+                    }
+                    
+                }
+            });
         });
+    }
+    
+    $(".about__slider").owlCarousel(
+    {
+        items: 1,
+        loop: true,
+        nav: false,
+        dots: true,
+    });
+
+    $('.gallery__list').each(function() { // the containers for all your galleries
+        $(this).magnificPopup({
+            delegate: 'a', // the selector for gallery item
+            type: 'image',
+            gallery: {
+              enabled:true
+            }
+        });
+    });
+    $('.reviewsList').each(function() { // the containers for all your galleries
+        $(this).magnificPopup({
+            delegate: 'a', // the selector for gallery item
+            type: 'image',
+            gallery: {
+              enabled:true
+            }
+        });
+    });
 });

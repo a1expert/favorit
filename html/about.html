@@ -10,7 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
     <script src="assets/scripts/main.js"></script>
-    <title>Главна страница</title>
+    <title>О компании</title>
 </head>
 <body class="page__mainPage">
     <svg class="allSvgCont" xmlns="http://www.w3.org/2000/svg">
@@ -24,7 +24,7 @@
         </symbol>
     </svg>
     <header class="header" id="header">
-        <div class="container">
+        <div class="container hidden-lg hidden-md">
             <div class="row">
                 <div class="col-xs-4 header__mMenuOpenBtn" id="mMenuOpenBtn">
                     <svg xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#mBtn_svg"></use></svg>
@@ -36,7 +36,20 @@
                     <svg xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#phone_svg"></use></svg>
                 </div>
             </div>
-        </div>    
+        </div>
+        <div class="container hidden-sm hidden-xs">
+            <div class="row">
+                <div class="col-xs-4 header__mMenuOpenBtn" id="mMenuOpenBtn">
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#mBtn_svg"></use></svg>
+                </div>
+                <a href="index.html" class="col-xs-4 logoLink header__logoLink">
+                    <img src="assets/img/logo.png" alt="Логотип" title="Hа главную" class="header__logoImg">
+                </a>
+                <div class="col-xs-4 header__callback" id="headerCallbackBtn">
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#phone_svg"></use></svg>
+                </div>
+            </div>
+        </div>  
     </header>
     <nav class="mobileMenu visualHide" id="mobileMenu">
         <div href="index.html" class="col-xs-12 logoLink mobileMenu__logoLink">
@@ -52,8 +65,8 @@
         </ul>
     </nav>
     <div class="main" id="main">
-        <div class="breadcrumbs">
-            <div class="container">
+        <div class="hidden-xs breadcrumbs">
+            <div class="container container_bg">
                 <ul class="breadcrums__list">
                     <li class="breadcrumbs__item"><a href="/" class="breadcrumbs_link">Главная</a></li>
                     <li class="breadcrumbs__item"><a href="#" class="breadcrumbs_link">О компании</a></li>
@@ -70,9 +83,9 @@
                         <li class="leftMenu__item"><a href="documents.html" class="leftMenu__link">Документы</a></li>
                         <li class="leftMenu__item"><a href="vacancies.html" class="leftMenu__link">Вакансии</a></li>
                     </ul>
-                    <div class="btn btn_white mobileLeftMenuCurrent" id="mobileLeftMenuBtn">
+                    <div class="hidden-md hidden-lg btn btn_white mobileLeftMenuCurrent" id="mobileLeftMenuBtn">
                         <span class="mobileLeftMenuCurrent__name" id="mobileLeftMenuCurrentName">О компании</span>
-                        <span class="btn__arrow mobileLeftMenuCurrent__btnArrow"></span>
+                        <span class="btn__arrow btn__arrow_vertical"></span>
                     </div>
                     <ul class="mobileLeftMenu" id="mobileLeftMenu">
                         <li class="leftMenu__item"><a href="about.html" class="leftMenu__link leftMenu__link_current">О компании</a></li>
@@ -97,53 +110,54 @@
                 </div>
             </div>
         </div>
-        <section class="companyNumbers">
-            <div class="container">
-                <div class="row companyNumbers__inner center-xs middle-xs">
-                    <div class="col-xs-12 col-sm-6 col-md-3 companyNumbers__item">
-                        <div class="companyNumbers__number">1125</div>
-                        <div class="companyNumbers__text">тонн металлоконструкций производится в месяц</div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-3 companyNumbers__item">
-                        <div class="companyNumbers__number">6000</div>
-                        <div class="companyNumbers__text">м<sup>2</sup> производственных площадей на территории</div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-3 companyNumbers__item">
-                        <div class="companyNumbers__number">10</div>
-                        <div class="companyNumbers__text">летний опыт изготовления металлоконструкций</div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-3 companyNumbers__item">
-                        <div class="companyNumbers__number">3000</div>
-                        <div class="companyNumbers__text">рейсов выполнено за время нашей работы</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="gallery">
-            <div class="container">
-                <div class="row gallery__list">
-                    <a href="assets/img/photo_003.png" class="col-xs-12 col-sm-4 gallery__img">
-                        <img src="assets/img/photo_003.png" class="gallery__prewImg" alt="">
-                    </a>
-                    <a href="assets/img/photo_003.png" class="col-xs-12 col-sm-4 gallery__img">
-                        <img src="assets/img/photo_003.png" class="gallery__prewImg" alt="">
-                    </a>
-                    <a href="" class="col-xs-12 col-sm-4 gallery__img">
-                        <img src="assets/img/metmake.png" class="gallery__prewImg" alt="">
-                    </a>
-                    <a href="assets/img/photo_003.png" class="hidden-xs col-sm-4 gallery__img">
-                        <img src="assets/img/photo_003.png" class="gallery__prewImg" alt="">
-                    </a>
-                    <a href="assets/img/photo_003.png" class="hidden-xs col-sm-4 gallery__img">
-                        <img src="assets/img/photo_003.png" class="gallery__prewImg" alt="">
-                    </a>
-                    <a href="" class="hidden-xs col-sm-4 gallery__img">
-                        <img src="assets/img/metmake.png" class="gallery__prewImg" alt="">
-                    </a>
-                </div>
-            </div>
-        </section>
     </div> <!--end main-->
+    <section class="companyNumbers">
+        <div class="container">
+            <div class="row companyNumbers__inner center-xs middle-xs">
+                <div class="col-xs-12 col-sm-6 col-md-3 companyNumbers__item">
+                    <div class="companyNumbers__number">1125</div>
+                    <div class="companyNumbers__text">тонн металлоконструкций производится в месяц</div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3 companyNumbers__item">
+                    <div class="companyNumbers__number">6000</div>
+                    <div class="companyNumbers__text">м<sup>2</sup> производственных площадей на территории</div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3 companyNumbers__item">
+                    <div class="companyNumbers__number">10</div>
+                    <div class="companyNumbers__text">летний опыт изготовления металлоконструкций</div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3 companyNumbers__item">
+                    <div class="companyNumbers__number">3000</div>
+                    <div class="companyNumbers__text">рейсов выполнено за время нашей работы</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="gallery">
+        <div class="container">
+            <h2 class="h2 gallery__h2">Производство</h2>
+            <div class="row gallery__list">
+                <a href="assets/img/photo_003.png" class="col-xs-12 col-sm-4 gallery__img">
+                    <img src="assets/img/photo_003.png" class="gallery__prewImg" alt="">
+                </a>
+                <a href="assets/img/photo_003.png" class="col-xs-12 col-sm-4 gallery__img">
+                    <img src="assets/img/photo_003.png" class="gallery__prewImg" alt="">
+                </a>
+                <a href="assets/img/metmake.png" class="col-xs-12 col-sm-4 gallery__img">
+                    <img src="assets/img/metmake.png" class="gallery__prewImg" alt="">
+                </a>
+                <a href="assets/img/photo_003.png" class="hidden-xs col-sm-4 gallery__img">
+                    <img src="assets/img/photo_003.png" class="gallery__prewImg" alt="">
+                </a>
+                <a href="assets/img/photo_003.png" class="hidden-xs col-sm-4 gallery__img">
+                    <img src="assets/img/photo_003.png" class="gallery__prewImg" alt="">
+                </a>
+                <a href="assets/img/metmake.png" class="hidden-xs col-sm-4 gallery__img">
+                    <img src="assets/img/metmake.png" class="gallery__prewImg" alt="">
+                </a>
+            </div>
+        </div>
+    </section>
     <footer class="footer">
         <div class="container">
             <nav class="footerMenu">
