@@ -1027,8 +1027,14 @@ a{
 	background-color: #f4f4f4;
 	margin-bottom: 60px;
 }
+.h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center;
+}
 .h2{
-	font-size: 30px;
+	font-size: 24px;
     color: #333;
     font-weight: 700;
     text-align: center;
@@ -1189,8 +1195,11 @@ a{
     border-right: none;
     transform: rotateZ(315deg) translateY(3px);
 }
-.catalogList__img {
-    width: 100%;
+.productsList__img {
+	width: 100%;
+	height: auto;
+    object-fit: cover;
+    display: block;
 }
 .about{
 	padding: 50px 0;
@@ -1275,37 +1284,40 @@ a{
 	padding-top: 50px;
 }
 .companyNumbers__text {
-	font-size: 18px;
+	font-size: 16px;
 	line-height: 1.2;
     padding: 0 20px;
 }
 .companyNumbers__item {
     margin-bottom: 50px;
 }
-.catalog {
+.products {
 	padding-bottom: 50px;
 }
 
-.catalog__header {
+.products__header {
     padding: 10px 0 30px;
 }
-.catalogList__item {
+.productsList__item {
     margin: 0 auto 30px;
 }
-.catalogList__item_name {
+.productsList__name {
     color: #000;
     font-size: 18px;
     text-align: center;
     padding-top: 25px;
 }
-.catalog__btn {
+.products__btn {
     background-color: transparent;
     width: 250px;
 }
-.servicesList__header {
-    margin-bottom: 30px;
+.servicesList__header{
+	margin-bottom: 30px;
 }
-.servicesList__item {
+.h1.servicesList__header {
+	margin-top: 40px;
+}
+.darkenedTile__item {
     height: 226px;
     margin-bottom: 10px;
     position: relative;
@@ -1318,13 +1330,16 @@ a{
 	background-position: center;
     background-size: cover;
 }
-.servicesList__name {
+.darkenedTile__item:hover{
+    box-shadow: 0px 10px 51px 0px rgba(50, 53, 58, 0.57);
+}
+.darkenedTile__name {
     margin-bottom: 35px;
     padding: 0 35px;
     text-align: center;
     z-index: 1;
 }
-.servicesList__item::before {
+.darkenedTile__item::before {
 	content: "";
 	display: block;
 	width: 100%;
@@ -1333,7 +1348,7 @@ a{
 	position: absolute;
 	opacity: 0.4;
 }
-.servicesList__item:hover::before, .servicesList__item:focus::before{opacity: 0;}
+.darkenedTile__item:hover::before, .darkenedTile__item:focus::before{opacity: 0;}
 .servicesList__btn {
     margin-bottom: 20px;
 }
@@ -1476,12 +1491,6 @@ a{
 .btn.mobileLeftMenuBtn_open .btn__arrow {
     transform: rotateZ(315deg) translateX(0px) translateY(0px);
 }
-.h1 {
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 30px;
-    text-align: center;
-}
 .text {
     margin-bottom: 30px;
 }
@@ -1619,13 +1628,12 @@ a{
     text-decoration: underline;
 }
 .servicesList_innerPage{
-	padding-top: 40px;
 	margin-bottom: 30px;
 }
-.serviceDetailDesc .serviceDetailImage + p {
+.detailDesc .detailImage + p {
     font-size: 16px;
 }
-.serviceDetailImage {
+.detailImage {
     margin-left: 15px;
     margin-bottom: 30px;
     max-width: 265px;
@@ -1663,3 +1671,54 @@ a{
     padding-left: 0;
 }
 .priceBlock__phone{margin-bottom: 10px;}
+.catalogList__item {
+    width:100%;
+    height: 166px;
+    margin-bottom: 15px
+}
+.catalogList__name {
+    margin-bottom: 15px;
+}
+.catalog__header {
+    padding-top: 40px;
+}
+.catalogSectionH2 {
+    margin-bottom: 30px;
+}
+.catalogProductList {
+    margin-bottom: 10px;
+}
+.mobileLeftSubMenu,
+.leftSubMenu {
+    display: none;
+}
+.leftMenu__item_current .mobileLeftSubMenu,
+.leftMenu__item_current .leftSubMenu {
+    display: block;    
+}
+.mobileLeftSubMenu{
+	padding-left: 40px;
+}
+.leftSubMenu__link {
+    font-size: 15px;
+    color: #666666;
+    display: block;
+}
+
+.leftSubMenu__item::before {
+    content: "";
+    display: block;
+    width: 4px;
+    height: 4px;
+    background-color: #185cd7;
+    position: absolute;
+    left: -15px;
+    top: 5px;
+}
+.leftSubMenu__item {
+    position: relative;
+    margin-bottom: 15px;
+}
+.leftSubMenu__link_current {
+    color: #185dc7;
+}
