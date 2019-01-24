@@ -10,7 +10,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
     <script src="assets/scripts/main.js"></script>
-    <title>О компании</title>
+    <script src="https://api-maps.yandex.ru/1.1/index.xml" type="text/javascript"></script>
+    <title>География поставок</title>
 </head>
 <body>
     <svg class="allSvgCont" xmlns="http://www.w3.org/2000/svg">
@@ -69,7 +70,7 @@
             <div class="container container_bg">
                 <ul class="breadcrums__list">
                     <li class="breadcrumbs__item"><a href="index.html" class="breadcrumbs_link">Главная</a></li>
-                    <li class="breadcrumbs__item"><a href="#" class="breadcrumbs_link">О компании</a></li>
+                    <li class="breadcrumbs__item"><a href="#" class="breadcrumbs_link">География поставок</a></li>
                 </ul>
             </div>
         </div>
@@ -79,89 +80,83 @@
                     <ul class="hidden-xs hidden-sm leftMenu">
                         <li class="leftMenu__item"><a href="about.html" class="leftMenu__link">О компании</a></li>
                         <li class="leftMenu__item"><a href="reviews.html" class="leftMenu__link">Отзывы</a></li>
-                        <li class="leftMenu__item"><a href="delivery.html" class="leftMenu__link">География поставок</a></li>
+                        <li class="leftMenu__item"><a href="delivery.html" class="leftMenu__link leftMenu__link_current">География поставок</a></li>
                         <li class="leftMenu__item"><a href="clients.html" class="leftMenu__link">Заказчики</a></li>
                         <li class="leftMenu__item"><a href="documents.html" class="leftMenu__link">Документы</a></li>
                         <li class="leftMenu__item"><a href="vacancies.html" class="leftMenu__link">Вакансии</a></li>
                     </ul>
                     <div class="hidden-md hidden-lg btn btn_white mobileLeftMenuCurrent" id="mobileLeftMenuBtn">
-                        <span class="mobileLeftMenuCurrent__name" id="mobileLeftMenuCurrentName">О компании</span>
+                        <span class="mobileLeftMenuCurrent__name" id="mobileLeftMenuCurrentName">География поставок</span>
                         <span class="btn__arrow btn__arrow_vertical"></span>
                     </div>
                     <ul class="mobileLeftMenu" id="mobileLeftMenu">
-                        <li class="leftMenu__item"><a href="about.html" class="leftMenu__link leftMenu__link_current">О компании</a></li>
+                        <li class="leftMenu__item"><a href="about.html" class="leftMenu__link">О компании</a></li>
                         <li class="leftMenu__item"><a href="reviews.html" class="leftMenu__link">Отзывы</a></li>
-                        <li class="leftMenu__item"><a href="delivery.html" class="leftMenu__link">География поставок</a></li>
+                        <li class="leftMenu__item"><a href="delivery.html" class="leftMenu__link leftMenu__link_current">География поставок</a></li>
                         <li class="leftMenu__item"><a href="clients.html" class="leftMenu__link">Заказчики</a></li>
                         <li class="leftMenu__item"><a href="documents.html" class="leftMenu__link">Документы</a></li>
                         <li class="leftMenu__item"><a href="vacancies.html" class="leftMenu__link">Вакансии</a></li>
                     </ul>
                 </nav>
                 <div class="col-xs-12 col-md-9 content content_aside">
-                    <h1 class="h1">ООО «Фаворит-С»</h1>
+                    <h1 class="h1">География нашей деятельности</h1>
                     <div class="text">
-                        <p>Компания ООО «Фаворит-С» с 2008 года производит и реализует качественные металлоконструкции любого назначения. В настоящий момент компания входит в число лидеров своей отрасли в Ямало-Ненецком и Ханты-Мансийском автономных округах и имеет внушительное портфолио выполненных работ по оснащению объектов промышленного и гражданского строительства металлоконструкциями. Вся реализуемая нами продукция отвечает государственным стандартам.</p>
+                        <p>Деятельность нашей компании простирается в ХМАО, ЯНАО, Тюменской, Омской, Самарской областях, Иркутске, на севере Западной Сибири в заполярье: Ямал и Гыданский полуострова, Чукотском АО</p>
+                        <p>За последние 10 лет построено более 30 крупных объектов. Все работы выполнены в срок!</p>
                     </div>
-                    <p class="aboutContent__subHeader">Ключевые компетенции нашей компании:</p>
-                    <ul class="textList textList__about">
-                        <li class="textList__item">Изготовление металлоконструкций</li>
-                        <li class="textList__item">Обработка металлоконструкций <span class="textList__little">(газовая резка, плазменная резка, рубка, гибка металла)</span></li>
-                        <li class="textList__item">Разработка четежей КМД</li>
-                        <li class="textList__item">Доставка металлоконструкций по ХМАО и ЯНАО</li>
+                    <p class="aboveUListheader">Несколько фактов:</p>
+                    <ul class="textList textList__service">
+                        <li class="textList__item">Около 870 рейсов ежегодно</li>
+                        <li class="textList__item">Возводим 10 крупных объектов под ключ ежегодно</li>
+                        <li class="textList__item">Какой-то факт еще</li>
                     </ul>
+                    <div class="map">
+                        <script type="text/javascript">
+                            console.log("ymap script here");
+                            ymaps.ready(function () {
+                                var myMap = new ymaps.Map('map', {
+                                                center: [55.751574, 37.573856],
+                                                zoom: 9,
+                                                behaviors: ['drag', 'dblClickZoom', 'multiTouch']
+                                            }, {
+                                                searchControlProvider: 'yandex#search'
+                                            }),
+                                            clusterer = new ymaps.Clusterer({
+                                                preset: 'islands#redClusterIcons',
+                                                groupByCoordinates: false,
+                                                clusterDisableClickZoom: true,
+                                                clusterHideIconOnBalloonOpen: false,
+                                                geoObjectHideIconOnBalloonOpen: false,
+                                                gridSize: 80
+                                            }),
+                                            points = {0:[55.75, 37.57],1:[55.76, 37.58],2:[55.77, 37.59]},
+                                            geoObjects = [];
+                        
+                                for(var i = 0, len = points.length; i < len; i++) {
+                                    geoObjects[i] = new ymaps.Placemark(points[i].coords, {balloonContentBody: points[i].baloon, clusterCaption: points[i].clusterCaption}, {
+                                        iconLayout: 'default#image',
+                                        iconImageHref: 'assets/img/map-point.png',
+                                        iconImageSize: [22, 30]
+                                    });
+                                }
+                        
+                        
+                                clusterer.add(geoObjects);
+                                myMap.geoObjects.add(clusterer);
+                        
+                        
+                                myMap.setBounds(clusterer.getBounds(), {
+                                    checkZoomRange: true
+                                });
+                            });
+                        </script>
+                        
+                        <div id="map"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </div> <!--end main-->
-    <div class="intro">
-        <section class="companyNumbers">
-            <div class="container">
-                <div class="row companyNumbers__inner center-xs middle-xs">
-                    <div class="col-xs-12 col-sm-6 col-md-3 companyNumbers__item">
-                        <div class="companyNumbers__number">1125</div>
-                        <div class="companyNumbers__text">тонн металлоконструкций производится в месяц</div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-3 companyNumbers__item">
-                        <div class="companyNumbers__number">6000</div>
-                        <div class="companyNumbers__text">м<sup>2</sup> производственных площадей на территории</div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-3 companyNumbers__item">
-                        <div class="companyNumbers__number">10</div>
-                        <div class="companyNumbers__text">летний опыт изготовления металлоконструкций</div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-3 companyNumbers__item">
-                        <div class="companyNumbers__number">3000</div>
-                        <div class="companyNumbers__text">рейсов выполнено за время нашей работы</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="gallery">
-            <div class="container">
-                <h2 class="h2 gallery__h2">Производство</h2>
-                <div class="row gallery__list">
-                    <a href="assets/img/photo_003.png" class="col-xs-12 col-sm-4 gallery__img">
-                        <img src="assets/img/photo_003.png" class="gallery__prewImg" alt="">
-                    </a>
-                    <a href="assets/img/photo_003.png" class="col-xs-12 col-sm-4 gallery__img">
-                        <img src="assets/img/photo_003.png" class="gallery__prewImg" alt="">
-                    </a>
-                    <a href="assets/img/metmake.png" class="col-xs-12 col-sm-4 gallery__img">
-                        <img src="assets/img/metmake.png" class="gallery__prewImg" alt="">
-                    </a>
-                    <a href="assets/img/photo_003.png" class="hidden-xs col-sm-4 gallery__img">
-                        <img src="assets/img/photo_003.png" class="gallery__prewImg" alt="">
-                    </a>
-                    <a href="assets/img/photo_003.png" class="hidden-xs col-sm-4 gallery__img">
-                        <img src="assets/img/photo_003.png" class="gallery__prewImg" alt="">
-                    </a>
-                    <a href="assets/img/metmake.png" class="hidden-xs col-sm-4 gallery__img">
-                        <img src="assets/img/metmake.png" class="gallery__prewImg" alt="">
-                    </a>
-                </div>
-            </div>
-        </section>
-    </div>
     <footer class="footer">
         <div class="container">
             <nav class="footerMenu">
