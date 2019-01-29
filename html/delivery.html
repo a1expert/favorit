@@ -10,7 +10,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
     <script src="assets/scripts/main.js"></script>
-    <script src="https://api-maps.yandex.ru/1.1/index.xml" type="text/javascript"></script>
     <title>География поставок</title>
 </head>
 <body>
@@ -110,47 +109,7 @@
                         <li class="textList__item">Возводим 10 крупных объектов под ключ ежегодно</li>
                         <li class="textList__item">Какой-то факт еще</li>
                     </ul>
-                    <div class="map">
-                        <script type="text/javascript">
-                            console.log("ymap script here");
-                            ymaps.ready(function () {
-                                var myMap = new ymaps.Map('map', {
-                                                center: [55.751574, 37.573856],
-                                                zoom: 9,
-                                                behaviors: ['drag', 'dblClickZoom', 'multiTouch']
-                                            }, {
-                                                searchControlProvider: 'yandex#search'
-                                            }),
-                                            clusterer = new ymaps.Clusterer({
-                                                preset: 'islands#redClusterIcons',
-                                                groupByCoordinates: false,
-                                                clusterDisableClickZoom: true,
-                                                clusterHideIconOnBalloonOpen: false,
-                                                geoObjectHideIconOnBalloonOpen: false,
-                                                gridSize: 80
-                                            }),
-                                            points = {0:[55.75, 37.57],1:[55.76, 37.58],2:[55.77, 37.59]},
-                                            geoObjects = [];
-                        
-                                for(var i = 0, len = points.length; i < len; i++) {
-                                    geoObjects[i] = new ymaps.Placemark(points[i].coords, {balloonContentBody: points[i].baloon, clusterCaption: points[i].clusterCaption}, {
-                                        iconLayout: 'default#image',
-                                        iconImageHref: 'assets/img/map-point.png',
-                                        iconImageSize: [22, 30]
-                                    });
-                                }
-                        
-                        
-                                clusterer.add(geoObjects);
-                                myMap.geoObjects.add(clusterer);
-                        
-                        
-                                myMap.setBounds(clusterer.getBounds(), {
-                                    checkZoomRange: true
-                                });
-                            });
-                        </script>
-                        
+                    <div class="map">                        
                         <div id="map"></div>
                     </div>
                 </div>

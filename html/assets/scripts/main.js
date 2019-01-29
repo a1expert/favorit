@@ -2,6 +2,9 @@
 
 $("document").ready(function()
 {
+    // document.addEventListener("click", function(e){
+    //     console.log(e.target);
+    // });
     const mMenuOpenBtn = document.querySelector("#mMenuOpenBtn");
     const mobileMenu = document.querySelector("#mobileMenu");
     const mMenuCloseBtn = document.querySelector("#mobileMenuCloseBtn");
@@ -48,12 +51,30 @@ $("document").ready(function()
         dots: true,
     });
 
+    $.extend(true, $.magnificPopup.defaults, {
+        tClose: 'Закрыть (Esc)', // Alt text on close button
+        tLoading: 'Згрузка...', // Text that is displayed during loading. Can contain %curr% and %total% keys
+        gallery: {
+          tPrev: 'Предыдущее изображение (Стрелочка влево на клавиатуре)', // Alt text on left arrow
+          tNext: 'Следующее изображение (Стрелочка вправо на клавиатуре)', // Alt text on right arrow
+          tCounter: '%curr% of %total%' // Markup for "1 of 7" counter
+        },
+        image: {
+          tError: '<a href="%url%">Изображение</a> не найдено.' // Error message when image could not be loaded
+        },
+        ajax: {
+          tError: '<a href="%url%">Содержимое</a> не найдено.' // Error message when ajax request failed
+        }
+      });
     $('.gallery__list').each(function() { // the containers for all your galleries
         $(this).magnificPopup({
             delegate: 'a', // the selector for gallery item
             type: 'image',
-            gallery: {
-              enabled:true
+            gallery: { enabled:true},
+            callbacks: {
+                buildControls: function() {
+                  this.contentContainer.append(this.arrowLeft.add(this.arrowRight));
+                }
             }
         });
     });
@@ -61,8 +82,26 @@ $("document").ready(function()
         $(this).magnificPopup({
             delegate: 'a', // the selector for gallery item
             type: 'image',
+            gallery: { enabled:true},
+            callbacks: {
+                buildControls: function() {
+                  this.contentContainer.append(this.arrowLeft.add(this.arrowRight));
+                }
+            }
+        });
+    });
+    $('.ourWork__item_detail').each(function() { // the containers for all your galleries
+        $(this).magnificPopup({
+            delegate: 'a', // the selector for gallery item
+            type: 'image',
             gallery: {
-              enabled:true
+                enabled:true,
+                arrowMarkup: '<div title="%title%" class="mfpBtn mfpBtn_%dir% mfp-arrow-%dir%"><div class="mfpBtn__arrow mfpBtn__arrow_%dir%"><span class="mfpBtn__inner mfpBtn__inner_%dir%"></span></div></div>'
+            },
+            callbacks: {
+                buildControls: function() {
+                  this.contentContainer.append(this.arrowLeft.add(this.arrowRight));
+                }
             }
         });
     });
