@@ -1912,7 +1912,7 @@ a{
 	.companyNumbers__item{
 		margin-bottom: 80px;
 	}
-	.h2{
+	.aboutContent__header{
 		font-size: 36px;
 	}
 	.companyNumbers__number{
@@ -2094,5 +2094,17 @@ a{
 	.vacanciesInfo {
 		margin-bottom: 30px;
 		width: 100%;
+	}
+	.textList {
+		font-size: 18px;
+	}
+	.vacancy__subHeader {
+		font-size: 24px;
+	}
+	.vacancyBottom__email {
+		height: 120px;
+	}
+	.vacancyEmailWrapper {
+		margin-left: 40px;
 	}
 }
