@@ -12,6 +12,7 @@ $("document").ready(function()
     const header = document.querySelector("#header");
     const mobileLeftMenuBtn = document.querySelector("#mobileLeftMenuBtn");
     const mobileLeftMenu = document.querySelector("#mobileLeftMenu");
+    const magnificPopup = $.magnificPopup.instance;
 
     mMenuOpenBtn.addEventListener("click", MobileMenuToggler);
     mMenuCloseBtn.addEventListener("click", MobileMenuToggler);
@@ -90,17 +91,48 @@ $("document").ready(function()
             }
         });
     });
-    $('.ourWork__item_detail').each(function() { // the containers for all your galleries
-        $(this).magnificPopup({
-            delegate: 'a', // the selector for gallery item
+    function getInner(array, regExpString)
+    {
+        for (const key in array)
+        {
+            if (array.hasOwnProperty(key))
+            {
+                const element = array[key];
+                if(element.className)
+                {
+                    let flag = element.className.search(regExpString);
+                    if (flag == 0){
+                        return element.innerHTML;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+    $('.ourWork__item_detail').each(function()
+    {
+        $(this).magnificPopup(
+        {
+            delegate: 'a',
             type: 'image',
-            gallery: {
+            gallery: 
+            {
                 enabled:true,
                 arrowMarkup: '<div title="%title%" class="mfpBtn mfpBtn_%dir% mfp-arrow-%dir%"><div class="mfpBtn__arrow mfpBtn__arrow_%dir%"><span class="mfpBtn__inner mfpBtn__inner_%dir%"></span></div></div>'
             },
-            callbacks: {
+            callbacks:
+            {
                 buildControls: function() {
                   this.contentContainer.append(this.arrowLeft.add(this.arrowRight));
+                },
+                open: function ()
+                {
+                    const desc = magnificPopup.st.mainEl.children();
+                    const descText = getInner(desc, "ourWork__desc");
+                    let mfpDesc = document.createElement("div");
+                    mfpDesc.className = "mfp__desc";
+                    mfpDesc.innerHTML = descText;
+                    magnificPopup.content[0].parentElement.appendChild(mfpDesc);
                 }
             }
         });

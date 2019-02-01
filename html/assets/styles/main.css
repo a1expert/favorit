@@ -1363,7 +1363,8 @@ a{
     padding: 10px 0 30px;
 }
 .productsList__item {
-    margin: 0 auto 30px;
+	margin: 0 auto 30px;
+	max-width: 395px;
 }
 .productsList__name {
     color: #000;
@@ -1427,6 +1428,10 @@ a{
     color: #000;
     text-align: center;
     margin-bottom: 30px;
+}
+.ourWork__img_link {
+    display: block;
+    position: relative;
 }
 .ourWork__clientName {
     color: #9ca3af;
@@ -1813,7 +1818,8 @@ a{
     position: absolute;
     opacity: 0;
 }
-.productsList_link:hover .productList__hoverElement{
+.productsList_link:hover .productList__hoverElement,
+.ourWork__item:hover .productList__hoverElement{
     box-shadow: 0px 10px 51px 0px rgba(24, 92, 215, 0.57);
     opacity:0.8;
 }
@@ -2183,5 +2189,36 @@ a{
 	}
 	.reviewList__item {
 		padding: 0 10px;
+	}
+	.row.productsList {
+		margin: 0 -15px;
+	}
+	.productsList__item {
+		margin: 0 0 30px;
+		padding: 0 7.5px
+	}
+	.productsList__item:last-child {
+		margin-bottom: 60px;
+	}
+	.mfp__desc {
+		position: absolute;
+		background-color: #fff;
+		width: 100%;
+		padding: 30px;
+		height: 135px;
+		bottom: -95px;
+	}
+	.ourWork__item {
+		flex-basis: calc(50% - 15px);
+		max-width: calc(50% - 15px);
+	}
+	.ourWork__img_img {
+		width: 100%;
+		min-height: 260px;
+		max-height: 270px;
+		object-fit: cover;
+	}
+	.ourWork__item:last-child{
+		margin-bottom: 100px;
 	}
 }
