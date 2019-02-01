@@ -1007,7 +1007,7 @@ body {
 	font-size: 16px;
 }
 * {transition: all 0.3s ease;}
-html{transition: none;}
+html{transition: none; overflow-x: hidden;}
 a{
 	text-decoration: none;
 }
@@ -1944,7 +1944,7 @@ a{
 		margin-bottom: 80px;
 	}
 	.aboutContent__header{
-		font-size: 36px;
+		font-size: 30px;
 	}
 	.companyNumbers__number{
 		font-size: 60px
@@ -2232,5 +2232,87 @@ a{
 	.servicesTile__item {
 		flex-basis: calc(50% - 15px);
 		max-width: calc(50% - 15px);
+	}
+}
+@media (min-width: 1200px){
+	.header__logoLink {
+		min-width: 90px;
+		height: 90px;
+		margin-top: 0;
+		width: 100px;
+	}
+	.header__callback{
+		min-width: 165px;
+		width: 165px;
+	}
+	.header__row{
+		justify-content: space-between;
+		padding-top: 20px;
+		flex-wrap: nowrap;
+	}
+	.coltopMenu.header__item {
+		flex-basis: 100%;
+	}
+	.header__item {
+		display: flex;
+		align-items: center;
+	}
+	.topMenu__list {
+		width: 100%;
+		justify-content: space-between;
+		padding: 0 100px;
+	}
+	a, p, div{
+		font-size: 18px;
+	}
+	.topMenu__link {
+		color: #dee6ec;
+		text-align: center;
+	}
+	.topMenu__link:hover{
+		color: #185dc7;
+	}
+	.topMenu__item {
+		padding: 10px;
+	}
+	.header__logoImg {
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		object-fit: contain;
+	}
+	.header__callback {
+		color:#dee6ec;
+		font-size: 16px;
+		justify-content: flex-start;
+	}
+	.header__callbackIcon {
+		margin-right: 18px;
+	}
+	.firstBlock__content{
+		padding-top:280px;
+		width: 750px;
+	}
+	.about .container, .companyNumbers .container {
+		width: 100%;
+	}
+	.about__row {
+		margin-right: -100px;
+		flex-wrap: nowrap;
+	}
+	.aboutContent {
+		margin-right: 100px;
+		margin-bottom: 50px;
+	}
+	.products__btn {
+		width: 360px;
+	}
+	.main__mainPage .productsList__item, .main__mainPage .ourWork__item {
+		flex-basis: calc(33.33333333% - 15px);
+		max-width: calc(33.33333333% - 15px);
+	}
+	.products{padding-bottom: 90px;}
+	.h2 {
+		font-size: 36px;
 	}
 }
