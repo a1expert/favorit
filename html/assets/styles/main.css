@@ -1709,7 +1709,7 @@ a{
     text-decoration: underline;
 }
 .servicesList_innerPage{
-	margin-bottom: 30px;
+	padding-bottom: 30px;
 }
 .detailDesc .detailImage + p {
     font-size: 16px;
@@ -1818,8 +1818,16 @@ a{
     position: absolute;
     opacity: 0;
 }
+.gallery__img{
+	display: block;
+	position: relative;
+}
+.gallery__img .productList__hoverElement{
+	width: calc(100% - 15px);
+}
 .productsList_link:hover .productList__hoverElement,
-.ourWork__item:hover .productList__hoverElement{
+.ourWork__item:hover .productList__hoverElement,
+.gallery__img:hover .productList__hoverElement {
     box-shadow: 0px 10px 51px 0px rgba(24, 92, 215, 0.57);
     opacity:0.8;
 }
@@ -1970,7 +1978,7 @@ a{
 		margin-bottom: 30px;
 	}
 	.servicesList{
-		margin-bottom: 60px
+		padding-bottom: 30px
 	}
 	.ourWork__header{
 		margin-bottom: 50px;
@@ -2220,5 +2228,9 @@ a{
 	}
 	.ourWork__item:last-child{
 		margin-bottom: 100px;
+	}
+	.servicesTile__item {
+		flex-basis: calc(50% - 15px);
+		max-width: calc(50% - 15px);
 	}
 }
