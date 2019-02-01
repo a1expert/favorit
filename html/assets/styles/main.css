@@ -1850,6 +1850,11 @@ a{
 .contactsRequis__icon img{
     width: 50%;
 }
+.ymap {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
 @media (min-width: 768px)
 {
 	.container{
@@ -1929,16 +1934,16 @@ a{
 	.products__header{
 		padding-bottom: 50px;
 	}
-	.productsList{
+	.main__mainPage .productsList{
 		justify-content: space-between;
 		margin-bottom: 40px
 	}
-	.productsList__item,
-	.darkenedTile__item,
-	.ourWork__item{
+	.main__mainPage .productsList__item,
+	.main__mainPage .darkenedTile__item,
+	.main__mainPage .ourWork__item{
 		flex-basis: calc(50% - 15px);
 	}
-	.productsList__item{
+	.main__mainPage .productsList__item{
 		margin:0;
 	}
 	.products{padding-bottom:60px;}
@@ -2141,5 +2146,28 @@ a{
 	}
 	.priceBlock__phone {
 		margin:0;
+	}
+	.catalogProductList__item {
+		padding: 0 7.5px;
+		margin: 0 0 30px;
+	}
+	.catalogProductList {
+		margin: 0 -7.5px;
+	}
+	.gallery__list {
+		margin: 0 -15px;
+	}
+	.gallery__img {
+		padding: 0 7.5px;
+	}
+	.gallery {
+		margin-bottom: 45px;
+	}
+	.contacts__h3,
+	.contacts__content {
+		text-align: left;
+	}
+	.contactsRequis__link {
+		justify-content: flex-start;
 	}
 }
