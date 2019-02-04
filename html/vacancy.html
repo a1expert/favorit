@@ -24,29 +24,38 @@
         </symbol>
     </svg>
     <header class="header" id="header">
-        <div class="container hidden-lg hidden-md">
+        <div class="container hidden-lg">
             <div class="row">
                 <div class="col-xs-4 header__mMenuOpenBtn" id="mMenuOpenBtn">
                     <svg xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#mBtn_svg"></use></svg>
+                    <span class="hidden-xs hidden-md hidden-lg menuBtn_lable">Меню</span>
                 </div>
                 <a href="index.html" class="col-xs-4 logoLink header__logoLink">
                     <img src="assets/img/logo.png" alt="Логотип" title="Hа главную" class="header__logoImg">
                 </a>
                 <div class="col-xs-4 header__callback" id="headerCallbackBtn">
                     <svg xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#phone_svg"></use></svg>
+                    <span class="hidden-xs hidden-md hidden-lg header__callback__lable">Заказать звонок</span>
                 </div>
             </div>
         </div>
-        <div class="container hidden-sm hidden-xs">
-            <div class="row">
-                <div class="col-xs-4 header__mMenuOpenBtn" id="mMenuOpenBtn">
-                    <svg xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#mBtn_svg"></use></svg>
-                </div>
-                <a href="index.html" class="col-xs-4 logoLink header__logoLink">
+        <div class="container hidden-sm hidden-xs hidden-md">
+            <div class="row header__row">
+                <a href="index.html" class="logoLink header__logoLink header__item">
                     <img src="assets/img/logo.png" alt="Логотип" title="Hа главную" class="header__logoImg">
                 </a>
-                <div class="col-xs-4 header__callback" id="headerCallbackBtn">
-                    <svg xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#phone_svg"></use></svg>
+                <nav class="coltopMenu header__item">
+                    <ul class="topMenu__list row">
+                        <li class="topMenu__item"><a href="about.html" class="topMenu__link">О нас</a></li>
+                        <li class="topMenu__item"><a href="services.html" class="topMenu__link">Услуги</a></li>
+                        <li class="topMenu__item"><a href="catalog.html" class="topMenu__link">Каталог продукции</a></li>
+                        <li class="topMenu__item"><a href="our_work.html" class="topMenu__link">Наши работы</a></li>
+                        <li class="topMenu__item"><a href="contacts.html" class="topMenu__link">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div class="header__callback header__item" id="headerCallbackBtn">
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" class="header__callbackIcon"><use xlink:href="#phone_svg"></use></svg>
+                    Заказать звонок
                 </div>
             </div>
         </div>  
@@ -67,24 +76,26 @@
     <div class="main" id="main">
         <div class="hidden-xs breadcrumbs">
             <div class="container">
-                <ul class="breadcrums__list">
-                    <li class="breadcrumbs__item"><a href="index.html" class="breadcrumbs_link">Главная</a></li>
-                    <li class="breadcrumbs__item"><a href="#" class="breadcrumbs_link">Вакансии</a></li>
-                </ul>
+                <div class="row">
+                    <ul class="breadcrums__list col-sm-12 col-md-12  col-lg-9 col-lg-offset-3"> <!-- здесь надо будет ставить классы col-lg... только если есть боковое меню, компонент начинать с li-->
+                        <li class="breadcrumbs__item"><a href="index.html" class="breadcrumbs_link">Главная</a></li>
+                        <li class="breadcrumbs__item"><a href="#" class="breadcrumbs_link">Вакансии</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="container container_aside">
             <div class="row">
-                <nav class="col-xs-12 col-md-3 aside">
-                    <ul class="hidden-xs hidden-sm leftMenu">
+                <nav class="col-xs-12 col-lg-3 aside">
+                    <ul class="hidden-xs hidden-sm hidden-md leftMenu">
                         <li class="leftMenu__item"><a href="about.html" class="leftMenu__link">О компании</a></li>
                         <li class="leftMenu__item"><a href="reviews.html" class="leftMenu__link">Отзывы</a></li>
                         <li class="leftMenu__item"><a href="delivery.html" class="leftMenu__link">География поставок</a></li>
                         <li class="leftMenu__item"><a href="clients.html" class="leftMenu__link">Заказчики</a></li>
                         <li class="leftMenu__item"><a href="documents.html" class="leftMenu__link">Документы</a></li>
-                        <li class="leftMenu__item"><a href="vacancies.html" class="leftMenu__link">Вакансии</a></li>
+                        <li class="leftMenu__item"><a href="vacancies.html" class="leftMenu__link leftMenu__link_current">Вакансии</a></li>
                     </ul>
-                    <div class="hidden-md hidden-lg btn btn_white mobileLeftMenuCurrent" id="mobileLeftMenuBtn">
+                    <div class="hidden-lg btn btn_white mobileLeftMenuCurrent" id="mobileLeftMenuBtn">
                         <span class="mobileLeftMenuCurrent__name" id="mobileLeftMenuCurrentName">Вакансии</span>
                         <span class="btn__arrow btn__arrow_vertical"></span>
                     </div>
@@ -97,7 +108,7 @@
                         <li class="leftMenu__item"><a href="vacancies.html" class="leftMenu__link leftMenu__link_current">Вакансии</a></li>
                     </ul>
                 </nav>
-                <div class="col-xs-12 col-md-9 content content_aside">
+                <div class="col-xs-12 col-lg-9 content content_aside">
                     <h1 class="h1">Менеджер по продажам</h1>
                     <div class="text vacancy__text">
                         <p><b>Общие требования к соискателям:</b> для начала разговора необходимо выслать резюме, в котором вы расскажете о себе и своих достижениях. Правда, у нас нет возможности отвечать всем — мы свяжемся только с теми, чьи предложения нас действительно заинтересуют. Мы ценим в своих сотрудниках постоянство и ответственность. Нытики, неудачники, кулёмы, неумехи,  некомпетентные и гнойные типы — за дверь. Вопящие на каждую проблему «я не могу» или «у меня не получится» — туда же. Остальных ценим, любим, даем плюшки, учим, поим кофе и виски.</p>
@@ -120,21 +131,23 @@
                         <li class="textList__item">Умение работать по технологическим картам и весам</li>
                         <li class="textList__item">Знание и умение готовить суши‚ роллы.</li>
                     </ul>
+                    <h2 class="vacancy__subHeader vacancy__subHeader_lesspadding">Как к нам попасть?</h2>
                     <div class="row vacancyBottom">
-                        <div class="col-xs-12 vacancyBottom__text">
-                            <h2 class="vacancy__subHeader vacancy__subHeader_lesspadding">Как к нам попасть?</h2>
+                        <div class="col-xs-12 col-lg-8 vacancyBottom__text">
                             <div class="text vacancy__text">
                                 <p>Внимание: без резюме кандидаты не рассматриваются!</p>
                                 <p>Главное не бояться и не лениться. Написать о себе. Мы попросим пример кода. Своего. Затем пригласим пообщаться. Будет небольшой тест. И примерно полутора-часовые интервью с нашим тех диром, Иваном. Через 3-4 дня возможно потребуется повторное интервью, поговорить про "жизнь". Ну и типа все :)</p>
                             </div>
                         </div>
-                        <div class="row col-xs-12 vacancyBottom__email">
-                            <div class="vacancyEmailWrapper">
-                                <img src="assets/img/email.png" alt="email">
-                            </div>
-                            <div class="vacancyEmailWrapper">
-                                <div class="vacancyEmailText">Почтовый ящик для резюме:</div>
-                                <a href="mailto:email@a1-reklama.ru" class="vacancyEmailAddress">email@a1-reklama.ru</a>
+                        <div class="col-xs-12 col-lg-4">
+                            <div class="vacancyBottom__email">
+                                <div class="vacancyEmailWrapper vacancyBottom__emailIcon">
+                                    <img src="assets/img/email.png" alt="email" class="vacancyBottom__emailIconImg">
+                                </div>
+                                <div class="vacancyEmailWrapper">
+                                    <div class="vacancyEmailText">Почтовый ящик для резюме:</div>
+                                    <a href="mailto:email@a1-reklama.ru" class="vacancyEmailAddress">email@a1-reklama.ru</a>
+                                </div>
                             </div>
                         </div>
                     </div>

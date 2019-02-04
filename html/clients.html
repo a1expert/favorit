@@ -24,29 +24,38 @@
         </symbol>
     </svg>
     <header class="header" id="header">
-        <div class="container hidden-lg hidden-md">
+        <div class="container hidden-lg">
             <div class="row">
                 <div class="col-xs-4 header__mMenuOpenBtn" id="mMenuOpenBtn">
                     <svg xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#mBtn_svg"></use></svg>
+                    <span class="hidden-xs hidden-md hidden-lg menuBtn_lable">Меню</span>
                 </div>
                 <a href="index.html" class="col-xs-4 logoLink header__logoLink">
                     <img src="assets/img/logo.png" alt="Логотип" title="Hа главную" class="header__logoImg">
                 </a>
                 <div class="col-xs-4 header__callback" id="headerCallbackBtn">
                     <svg xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#phone_svg"></use></svg>
+                    <span class="hidden-xs hidden-md hidden-lg header__callback__lable">Заказать звонок</span>
                 </div>
             </div>
         </div>
-        <div class="container hidden-sm hidden-xs">
-            <div class="row">
-                <div class="col-xs-4 header__mMenuOpenBtn" id="mMenuOpenBtn">
-                    <svg xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#mBtn_svg"></use></svg>
-                </div>
-                <a href="index.html" class="col-xs-4 logoLink header__logoLink">
+        <div class="container hidden-sm hidden-xs hidden-md">
+            <div class="row header__row">
+                <a href="index.html" class="logoLink header__logoLink header__item">
                     <img src="assets/img/logo.png" alt="Логотип" title="Hа главную" class="header__logoImg">
                 </a>
-                <div class="col-xs-4 header__callback" id="headerCallbackBtn">
-                    <svg xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#phone_svg"></use></svg>
+                <nav class="coltopMenu header__item">
+                    <ul class="topMenu__list row">
+                        <li class="topMenu__item"><a href="about.html" class="topMenu__link">О нас</a></li>
+                        <li class="topMenu__item"><a href="services.html" class="topMenu__link">Услуги</a></li>
+                        <li class="topMenu__item"><a href="catalog.html" class="topMenu__link">Каталог продукции</a></li>
+                        <li class="topMenu__item"><a href="our_work.html" class="topMenu__link">Наши работы</a></li>
+                        <li class="topMenu__item"><a href="contacts.html" class="topMenu__link">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div class="header__callback header__item" id="headerCallbackBtn">
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" class="header__callbackIcon"><use xlink:href="#phone_svg"></use></svg>
+                    Заказать звонок
                 </div>
             </div>
         </div>  
@@ -67,25 +76,27 @@
     <div class="main" id="main">
         <div class="hidden-xs breadcrumbs">
             <div class="container">
-                <ul class="breadcrums__list">
-                    <li class="breadcrumbs__item"><a href="index.html" class="breadcrumbs_link">Главная</a></li>
-                    <li class="breadcrumbs__item"><a href="#" class="breadcrumbs_link">Заказчики</a></li>
-                </ul>
+                <div class="row">
+                    <ul class="breadcrums__list col-sm-12 col-md-12  col-lg-9 col-lg-offset-3"> <!-- здесь надо будет ставить классы col-lg... только если есть боковое меню, компонент начинать с li-->
+                        <li class="breadcrumbs__item"><a href="index.html" class="breadcrumbs_link">Главная</a></li>
+                        <li class="breadcrumbs__item"><a href="#" class="breadcrumbs_link">Вакансии</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="container container_aside">
             <div class="row">
-                <nav class="col-xs-12 col-md-3 aside">
-                    <ul class="hidden-xs hidden-sm leftMenu">
+                <nav class="col-xs-12 col-lg-3 aside">
+                    <ul class="hidden-xs hidden-sm hidden-md leftMenu">
                         <li class="leftMenu__item"><a href="about.html" class="leftMenu__link">О компании</a></li>
                         <li class="leftMenu__item"><a href="reviews.html" class="leftMenu__link">Отзывы</a></li>
                         <li class="leftMenu__item"><a href="delivery.html" class="leftMenu__link">География поставок</a></li>
-                        <li class="leftMenu__item"><a href="clients.html" class="leftMenu__link">Заказчики</a></li>
+                        <li class="leftMenu__item"><a href="clients.html" class="leftMenu__link leftMenu__link_current">Заказчики</a></li>
                         <li class="leftMenu__item"><a href="documents.html" class="leftMenu__link">Документы</a></li>
                         <li class="leftMenu__item"><a href="vacancies.html" class="leftMenu__link">Вакансии</a></li>
                     </ul>
-                    <div class="hidden-md hidden-lg btn btn_white mobileLeftMenuCurrent" id="mobileLeftMenuBtn">
-                        <span class="mobileLeftMenuCurrent__name" id="mobileLeftMenuCurrentName">Заказчики</span>
+                    <div class="hidden-lg btn btn_white mobileLeftMenuCurrent" id="mobileLeftMenuBtn">
+                        <span class="mobileLeftMenuCurrent__name" id="mobileLeftMenuCurrentName">Вакансии</span>
                         <span class="btn__arrow btn__arrow_vertical"></span>
                     </div>
                     <ul class="mobileLeftMenu" id="mobileLeftMenu">
@@ -97,66 +108,66 @@
                         <li class="leftMenu__item"><a href="vacancies.html" class="leftMenu__link">Вакансии</a></li>
                     </ul>
                 </nav>
-                <div class="col-xs-12 col-md-9 content content_aside">
-                    <h1 class="h1">Заказчики</h1>
+                <div class="col-xs-12 col-lg-9 content content_aside">
+                    <h1 class="h1">Заказчики</h1>                    
                     <div class="row clientsList">
-                        <div class="row col middle-xs col-xs-12 col-sm-4 clientsList__item">
+                        <div class="middle-xs col-xs-12 col-sm-4 clientsList__item">
                             <a href="//surgutneftegas.ru" class="clientsList__link">
                                 <img src="assets/img/client.png" class="clientsList__prewImg" alt="">
                             </a>
                             <div class="clientName">ОПО «Сургутнефтегаз»</div>
                             <a href="//surgutneftegas.ru" class="clientLink">surgutneftegas.ru</a>
                         </div>
-                        <div class="row col middle-xs col-xs-12 col-sm-4 clientsList__item">
+                        <div class="middle-xs col-xs-12 col-sm-4 clientsList__item">
                             <a href="//surgutneftegas.ru" class="clientsList__link">
                                 <img src="assets/img/client.png" class="clientsList__prewImg" alt="">
                             </a>
                             <div class="clientName">ОПО «Сургутнефтегаз»</div>
                             <a href="//surgutneftegas.ru" class="clientLink">surgutneftegas.ru</a>
                         </div>
-                        <div class="row col middle-xs col-xs-12 col-sm-4 clientsList__item">
+                        <div class="middle-xs col-xs-12 col-sm-4 clientsList__item">
                             <a href="//surgutneftegas.ru" class="clientsList__link">
                                 <img src="assets/img/client.png" class="clientsList__prewImg" alt="">
                             </a>
                             <div class="clientName">ОПО «Сургутнефтегаз»</div>
                             <a href="//surgutneftegas.ru" class="clientLink">surgutneftegas.ru</a>
                         </div>
-                        <div class="row col middle-xs col-xs-12 col-sm-4 clientsList__item">
+                        <div class="middle-xs col-xs-12 col-sm-4 clientsList__item">
                             <a href="//surgutneftegas.ru" class="clientsList__link">
                                 <img src="assets/img/client.png" class="clientsList__prewImg" alt="">
                             </a>
                             <div class="clientName">ОПО «Сургутнефтегаз»</div>
                             <a href="//surgutneftegas.ru" class="clientLink">surgutneftegas.ru</a>
                         </div>
-                        <div class="row col middle-xs col-xs-12 col-sm-4 clientsList__item">
+                        <div class="middle-xs col-xs-12 col-sm-4 clientsList__item">
                             <a href="//surgutneftegas.ru" class="clientsList__link">
                                 <img src="assets/img/client.png" class="clientsList__prewImg" alt="">
                             </a>
                             <div class="clientName">ОПО «Сургутнефтегаз»</div>
                             <a href="//surgutneftegas.ru" class="clientLink">surgutneftegas.ru</a>
                         </div>
-                        <div class="row col middle-xs hidden-xs col-sm-4 clientsList__item">
+                        <div class="middle-xs hidden-xs col-sm-4 clientsList__item">
                             <a href="//surgutneftegas.ru" class="clientsList__link">
                                 <img src="assets/img/client.png" class="clientsList__prewImg" alt="">
                             </a>
                             <div class="clientName">ОПО «Сургутнефтегаз»</div>
                             <a href="//surgutneftegas.ru" class="clientLink">surgutneftegas.ru</a>
                         </div>
-                        <div class="row col middle-xs hidden-xs col-sm-4 clientsList__item">
+                        <div class="middle-xs hidden-xs col-sm-4 clientsList__item">
                             <a href="//surgutneftegas.ru" class="clientsList__link">
                                 <img src="assets/img/client.png" class="clientsList__prewImg" alt="">
                             </a>
                             <div class="clientName">ОПО «Сургутнефтегаз»</div>
                             <a href="//surgutneftegas.ru" class="clientLink">surgutneftegas.ru</a>
                         </div>
-                        <div class="row col middle-xs hidden-xs col-sm-4 clientsList__item">
+                        <div class="middle-xs hidden-xs col-sm-4 clientsList__item">
                             <a href="//surgutneftegas.ru" class="clientsList__link">
                                 <img src="assets/img/client.png" class="clientsList__prewImg" alt="">
                             </a>
                             <div class="clientName">ОПО «Сургутнефтегаз»</div>
                             <a href="//surgutneftegas.ru" class="clientLink">surgutneftegas.ru</a>
                         </div>
-                        <div class="row col middle-xs hidden-xs col-sm-4 clientsList__item">
+                        <div class="middle-xs hidden-xs col-sm-4 clientsList__item">
                             <a href="//surgutneftegas.ru" class="clientsList__link">
                                 <img src="assets/img/client.png" class="clientsList__prewImg" alt="">
                             </a>
@@ -169,21 +180,23 @@
         </div>
     </div> <!--end main-->
     <footer class="footer">
-        <div class="container">
-            <nav class="footerMenu">
-                <ul class="row footerMenu__list_l1">
+        <nav class="footerMenu">
+            <ul class="row footerMenu__list_l1">
+                <div class="footerMenu__col footerMenu__col1 col-sm-3">
                     <li class="footerMenu__item_l1 footerMenu__item_parent">
                         <a href="about.html" class="footerMenu__link">О компании</a>
-                        <ul class="footerMenu__list_l2">
+                        <ul class="hidden-xs footerMenu__list_l2">
                             <li class="footerMenu__item_l2"><a href="reviews.html" class="footerMenu__link">Отзывы</a></li>
                             <li class="footerMenu__item_l2"><a href="clients.html" class="footerMenu__link">Заказчики</a></li>
                             <li class="footerMenu__item_l2"><a href="documents.html" class="footerMenu__link">Документы</a></li>
                             <li class="footerMenu__item_l2"><a href="vacancy.html" class="footerMenu__link">Вакансии</a></li>
                         </ul>
                     </li>
-                    <li class="footerMenu__item footerMenu__item_l1 footerMenu__item_parent">
+                </div>
+                <div class="footerMenu__col footerMenu__col2 col-sm-6">
+                    <li class="footerMenu__item_l1 footerMenu__item_parent">
                         <a href="services.html" class="footerMenu__link">Услуги</a>
-                        <ul class="footerMenu__list_l2">
+                        <ul class="hidden-xs footerMenu__list_l2">
                             <li class="footerMenu__item_l2"><a href="service_detail.html" class="footerMenu__link">Газовая резка металла</a></li>
                             <li class="footerMenu__item_l2"><a href="service_detail.html" class="footerMenu__link">Плазменная резка металла</a></li>
                             <li class="footerMenu__item_l2"><a href="service_detail.html" class="footerMenu__link">Рубка металла</a></li>
@@ -193,25 +206,41 @@
                             <li class="footerMenu__item_l2"><a href="service_detail.html" class="footerMenu__link">Токарные работы</a></li>
                         </ul>
                     </li>
+                </div>
+                <div class="footerMenu__col footerMenu__col3 col-sm-3">
                     <li class="footerMenu__item_l1"><a href="catalog.html" class="footerMenu__link">Каталог продукции</a></li>
                     <li class="footerMenu__item_l1"><a href="our_work.html" class="footerMenu__link">Наши работы</a></li>
                     <li class="footerMenu__item_l1"><a href="delivery.html" class="footerMenu__link">География поставок</a></li>
                     <li class="footerMenu__item_l1"><a href="contacts.html" class="footerMenu__link">Контакты</a></li>
-                </ul>
-            </nav>
-            <div class="footerContacts">
-                <div class="footerContacts__phone">+7 (3462) 45-92-01</div>
-                <div class="footerContacts__text">Сургут, ул.Глухова 2/1, офис 590</div>
-                <div class="footerContacts__text">Пн-пт 08:30 - 17:00</div>
+                </div>
+            </ul>
+        </nav>
+        <div class="addInfo">
+            <div class="addInfo__item addInfo__item1">
+                <div class="footerContacts">
+                    <div class="footerContacts__phone">+7 (3462) 45-92-01</div>
+                    <div class="footerContacts__text">Сургут, ул.Глухова 2/1, офис 590</div>
+                    <div class="footerContacts__text">Пн-пт 08:30 - 17:00</div>
+                </div>
+                <div class="footerDevSign hidden-sm hidden-md hidden-lg">
+                    <div class="footerDevSign__text">Разработка и продвижение:</div>
+                    <a href="//a1-reklama.ru" class="footerDevSign__logo">
+                        <img src="assets/img/dev_logo.png" alt="">
+                    </a>
+                </div>
+                <div class="copyNpolicy">
+                    <div class="copyright">© ООО «Фаворит-С», 2018</div>
+                    <a href="#" class="footerPrivatePolicy"><span>Политика в отношении обработки</span><span>персональных данных</span></a>
+                </div>
             </div>
-            <div class="footerDevSign">
-                <div class="footerDevSign__text">Разработка и продвижение</div>
-                <a href="//a1-reklama.ru" class="footerDevSign__logo">
-                    <img src="assets/img/dev_logo.png" alt="">
-                </a>
+            <div class="addInfo__item addInfo__item2 hidden-xs">
+                <div class="footerDevSign">
+                    <div class="footerDevSign__text">Разработка и продвижение:</div>
+                    <a href="//a1-reklama.ru" class="footerDevSign__logo">
+                        <img src="assets/img/dev_logo.png" alt="">
+                    </a>
+                </div>
             </div>
-            <a href="#" class="footerPrivatePolicy"><span>Политика в отношении обработки</span><span>персональных данных</span></a>
-            <div class="copyright">© ООО «Фаворит-С», 2018</div>
         </div>
     </footer>
 </body>
