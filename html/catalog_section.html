@@ -24,29 +24,38 @@
         </symbol>
     </svg>
     <header class="header" id="header">
-        <div class="container hidden-lg hidden-md">
+        <div class="container hidden-lg">
             <div class="row">
                 <div class="col-xs-4 header__mMenuOpenBtn" id="mMenuOpenBtn">
                     <svg xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#mBtn_svg"></use></svg>
+                    <span class="hidden-xs hidden-md hidden-lg menuBtn_lable">Меню</span>
                 </div>
                 <a href="index.html" class="col-xs-4 logoLink header__logoLink">
                     <img src="assets/img/logo.png" alt="Логотип" title="Hа главную" class="header__logoImg">
                 </a>
                 <div class="col-xs-4 header__callback" id="headerCallbackBtn">
                     <svg xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#phone_svg"></use></svg>
+                    <span class="hidden-xs hidden-md hidden-lg header__callback__lable">Заказать звонок</span>
                 </div>
             </div>
         </div>
-        <div class="container hidden-sm hidden-xs">
-            <div class="row">
-                <div class="col-xs-4 header__mMenuOpenBtn" id="mMenuOpenBtn">
-                    <svg xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#mBtn_svg"></use></svg>
-                </div>
-                <a href="index.html" class="col-xs-4 logoLink header__logoLink">
+        <div class="container hidden-sm hidden-xs hidden-md">
+            <div class="row header__row">
+                <a href="index.html" class="logoLink header__logoLink header__item">
                     <img src="assets/img/logo.png" alt="Логотип" title="Hа главную" class="header__logoImg">
                 </a>
-                <div class="col-xs-4 header__callback" id="headerCallbackBtn">
-                    <svg xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#phone_svg"></use></svg>
+                <nav class="coltopMenu header__item">
+                    <ul class="topMenu__list row">
+                        <li class="topMenu__item"><a href="about.html" class="topMenu__link">О нас</a></li>
+                        <li class="topMenu__item"><a href="services.html" class="topMenu__link">Услуги</a></li>
+                        <li class="topMenu__item"><a href="catalog.html" class="topMenu__link">Каталог продукции</a></li>
+                        <li class="topMenu__item"><a href="our_work.html" class="topMenu__link">Наши работы</a></li>
+                        <li class="topMenu__item"><a href="contacts.html" class="topMenu__link">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div class="header__callback header__item" id="headerCallbackBtn">
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" class="header__callbackIcon"><use xlink:href="#phone_svg"></use></svg>
+                    Заказать звонок
                 </div>
             </div>
         </div>  
@@ -66,18 +75,20 @@
     </nav>
     <div class="main detailPage catalogSection" id="main">
         <div class="hidden-xs breadcrumbs">
-            <div class="container container_bg">
-                <ul class="breadcrums__list">
-                    <li class="breadcrumbs__item"><a href="index.html" class="breadcrumbs_link">Главная</a></li>
-                    <li class="breadcrumbs__item"><a href="catalog.html" class="breadcrumbs_link">Каталог</a></li>
-                    <li class="breadcrumbs__item"><a href="#" class="breadcrumbs_link">Изделия для ЖКХ</a></li>
-                </ul>
+            <div class="container">
+                <div class="row">
+                    <ul class="breadcrums__list col-sm-12 col-md-12 col-lg-9 col-lg-offset-3"> <!-- здесь надо будет ставить классы (col-lg-9 col-lg-offset-3) только если есть боковое меню, компонент начинать с li-->
+                        <li class="breadcrumbs__item"><a href="index.html" class="breadcrumbs_link">Главная</a></li>
+                        <li class="breadcrumbs__item"><a href="catalog.html" class="breadcrumbs_link">Каталог</a></li>
+                        <li class="breadcrumbs__item"><a href="#" class="breadcrumbs_link">Изделия для ЖКХ</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="container container_aside">
             <div class="row">
-                <nav class="col-xs-12 col-md-3 aside">
-                    <ul class="hidden-xs hidden-sm leftMenu">
+                <nav class="col-xs-12 col-lg-3 aside">
+                    <ul class="hidden-xs hidden-sm hidden-md leftMenu">
                         <li class="leftMenu__item"><a href="catalog_section.html" class="leftMenu__link">Винтовые сваи</a></li>
                         <li class="leftMenu__item leftMenu__item_current"><a href="catalog_section.html" class="leftMenu__link leftMenu__link_current">Изделия для ЖКХ</a>
                             <ul class="leftSubMenu">
@@ -109,7 +120,7 @@
                         <li class="leftMenu__item"><a href="catalog_section.html" class="leftMenu__link">Сварные ворота</a></li>
                         <li class="leftMenu__item"><a href="catalog_section.html" class="leftMenu__link">Строительные конструкции</a></li>
                     </ul>
-                    <div class="hidden-md hidden-lg btn btn_white mobileLeftMenuCurrent" id="mobileLeftMenuBtn">
+                    <div class="hidden-lg btn btn_white mobileLeftMenuCurrent" id="mobileLeftMenuBtn">
                         <span class="mobileLeftMenuCurrent__name" id="mobileLeftMenuCurrentName">Изделия для ЖКХ</span>
                         <span class="btn__arrow btn__arrow_vertical"></span>
                     </div>
@@ -146,7 +157,7 @@
                         <li class="leftMenu__item"><a href="catalog_section.html" class="leftMenu__link">Строительные конструкции</a></li>
                     </ul>
                 </nav>
-                <div class="col-xs-12 col-md-9 content content_aside">
+                <div class="col-xs-12 col-lg-9 content content_aside">
                     <h1 class="h1">Изделия для ЖКХ</h1>
                     <div class="text detailDesc">
                         <img src="assets/img/stockimg.png" alt="" class="detailImage">
@@ -155,7 +166,7 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.</p>
                         <p>Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget.</p>
                     </div>
-                    <div class="row priceBlock">
+                    <div class="priceBlock">
                         <div class="col-xs-12 priceBlock__item priceBlock__phone">
                             <div class="priceBlock__text">По всем вопросам звоните:</div>
                             <div class="priceBlock__value">+7 (3462) 45-92-01</div>
@@ -168,32 +179,62 @@
                             <a href="catalog.html" class="btn priceBlock__btn btn_white">Узнать точную цену<span class="btn__arrow btn__arrow_blue btn__arrow_horizontal"></span></a>
                         </div>
                     </div>
-                    <h2 class="h2 catalogSectionH2">Виды изделий для ЖКХ</h2>
+                    <h2 class="h1 catalogSectionH2">Виды изделий для ЖКХ</h2>
                     <div class="row productsList catalogProductList">
-                        <a href="catalog_detail.html" class="col-xs-12 col-sm-4 productsList__item catalogProductList__item">
-                            <img src="assets/img/svai.png" alt="" class="productsList__img catalogProductList__img">
-                            <div class="productsList__name catalogProductList__name">Ёмкости ТБО</div>
-                        </a>
-                        <a href="catalog_detail.html" class="col-xs-12 col-sm-4 productsList__item catalogProductList__item">
-                            <img src="assets/img/metkark.png" alt="" class="productsList__img catalogProductList__img">
-                            <div class="productsList__name catalogProductList__name">Металлические дорожные ограждения</div>
-                        </a>
-                        <a href="catalog_detail.html" class="col-sm-4 hidden-xs productsList__item catalogProductList__item">
-                            <img src="assets/img/lep.png" alt="" class="productsList__img catalogProductList__img">
-                            <div class="productsList__name catalogProductList__name">Металлические ограждения детских спортивных площадок, школ</div>
-                        </a>
-                        <a href="catalog_detail.html" class="col-xs-12 col-sm-4 productsList__item catalogProductList__item">
-                            <img src="assets/img/svai.png" alt="" class="productsList__img catalogProductList__img">
-                            <div class="productsList__name catalogProductList__name">Металлические ограждения, в том числе переносные</div>
-                        </a>
-                        <a href="catalog_detail.html" class="col-xs-12 col-sm-4 productsList__item catalogProductList__item">
-                            <img src="assets/img/metkark.png" alt="" class="productsList__img catalogProductList__img">
-                            <div class="productsList__name catalogProductList__name">Урны, скамейки</div>
-                        </a>
-                        <a href="catalog_detail.html" class="col-xs-12 col-sm-4 productsList__item catalogProductList__item">
-                            <img src="assets/img/lep.png" alt="" class="productsList__img catalogProductList__img">
-                            <div class="productsList__name catalogProductList__name">Ограждения крыш</div>
-                        </a>
+                        <div class="col-xs-12 col-sm-4 productsList__item catalogProductList__item">
+                            <a href="catalog_detail.html" class="productsList__link">
+                                <div class="productList__hoverElement">
+                                    <img src="assets/img/roundarrow.png" alt="">
+                                </div>
+                                <img src="assets/img/svai.png" alt="" class="productsList__img">
+                            </a>
+                            <div class="productsList__name">Ёмкости ТБО</div>
+                        </div>
+                        <div class="col-xs-12 col-sm-4 productsList__item catalogProductList__item">
+                            <a href="catalog_detail.html" class="productsList__link">
+                                <div class="productList__hoverElement">
+                                    <img src="assets/img/roundarrow.png" alt="">
+                                </div>
+                                <img src="assets/img/metkark.png" alt="" class="productsList__img">
+                            </a>
+                            <div class="productsList__name">Металлические дорожные ограждения</div>
+                        </div>
+                        <div class="col-xs-12 col-sm-4 productsList__item catalogProductList__item">
+                            <a href="catalog_detail.html" class="productsList__link">
+                                <div class="productList__hoverElement">
+                                    <img src="assets/img/roundarrow.png" alt="">
+                                </div>
+                                <img src="assets/img/lep.png" alt="" class="productsList__img">
+                            </a>
+                            <div class="productsList__name">Металлические ограждения детских спортивных площадок, школ</div>
+                        </div>
+                        <div class="col-xs-12 col-sm-4 productsList__item catalogProductList__item">
+                            <a href="catalog_detail.html" class="productsList__link">
+                                <div class="productList__hoverElement">
+                                    <img src="assets/img/roundarrow.png" alt="">
+                                </div>
+                                <img src="assets/img/lep.png" alt="" class="productsList__img">
+                            </a>
+                            <div class="productsList__name">Металлические ограждения, в том числе переносные</div>
+                        </div>
+                        <div class="col-xs-12 col-sm-4 productsList__item catalogProductList__item">
+                            <a href="catalog_detail.html" class="productsList__link">
+                                <div class="productList__hoverElement">
+                                    <img src="assets/img/roundarrow.png" alt="">
+                                </div>
+                                <img src="assets/img/metkark.png" alt="" class="productsList__img">
+                            </a>
+                            <div class="productsList__name">Урны, скамейки</div>
+                        </div>
+                        <div class="col-xs-12 col-sm-4 productsList__item catalogProductList__item">
+                            <a href="catalog_detail.html" class="productsList__link">
+                                <div class="productList__hoverElement">
+                                    <img src="assets/img/roundarrow.png" alt="">
+                                </div>
+                                <img src="assets/img/lep.png" alt="" class="productsList__img">
+                            </a>
+                            <div class="productsList__name">Ограждения крыш</div>
+                        </div>
                     </div>
                     <h2 class="h2 catalogSectionH2">Заголовок второго уровня</h2>
                     <div class="text detailDesc">
@@ -237,24 +278,54 @@
             <div class="container">
                 <h2 class="h2 gallery__h2">Производство</h2>
                 <div class="row gallery__list">
-                    <a href="assets/img/photo_003.png" class="col-xs-12 col-sm-4 gallery__img">
-                        <img src="assets/img/photo_003.png" class="gallery__prewImg" alt="">
-                    </a>
-                    <a href="assets/img/photo_003.png" class="col-xs-12 col-sm-4 gallery__img">
-                        <img src="assets/img/photo_003.png" class="gallery__prewImg" alt="">
-                    </a>
-                    <a href="assets/img/metmake.png" class="col-xs-12 col-sm-4 gallery__img">
-                        <img src="assets/img/metmake.png" class="gallery__prewImg" alt="">
-                    </a>
-                    <a href="assets/img/photo_003.png" class="hidden-xs col-sm-4 gallery__img">
-                        <img src="assets/img/photo_003.png" class="gallery__prewImg" alt="">
-                    </a>
-                    <a href="assets/img/photo_003.png" class="hidden-xs col-sm-4 gallery__img">
-                        <img src="assets/img/photo_003.png" class="gallery__prewImg" alt="">
-                    </a>
-                    <a href="assets/img/metmake.png" class="hidden-xs col-sm-4 gallery__img">
-                        <img src="assets/img/metmake.png" class="gallery__prewImg" alt="">
-                    </a>
+                    <div class="col-xs-12 col-sm-4 gallery__item">
+                        <a href="assets/img/photo_003.png" class="gallery__link">
+                            <div class="productList__hoverElement">
+                                <img src="assets/img/roundplus.png" alt="">
+                            </div>
+                            <img src="assets/img/photo_003.png" class="gallery__prewImg" alt="">
+                        </a>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 gallery__item">
+                        <a href="assets/img/metmake.png" class="gallery__link">
+                            <div class="productList__hoverElement">
+                                <img src="assets/img/roundplus.png" alt="">
+                            </div>
+                            <img src="assets/img/metmake.png" class="gallery__prewImg" alt="">
+                        </a>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 gallery__item">
+                        <a href="assets/img/photo_003.png" class="gallery__link">
+                            <div class="productList__hoverElement">
+                                <img src="assets/img/roundplus.png" alt="">
+                            </div>
+                            <img src="assets/img/photo_003.png" class="gallery__prewImg" alt="">
+                        </a>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 gallery__item">
+                        <a href="assets/img/photo_003.png" class="gallery__link">
+                            <div class="productList__hoverElement">
+                                <img src="assets/img/roundplus.png" alt="">
+                            </div>
+                            <img src="assets/img/photo_003.png" class="gallery__prewImg" alt="">
+                        </a>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 gallery__item">
+                        <a href="assets/img/metmake.png" class="gallery__link">
+                            <div class="productList__hoverElement">
+                                <img src="assets/img/roundplus.png" alt="">
+                            </div>
+                            <img src="assets/img/metmake.png" class="gallery__prewImg" alt="">
+                        </a>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 gallery__item">
+                        <a href="assets/img/photo_003.png" class="gallery__link">
+                            <div class="productList__hoverElement">
+                                <img src="assets/img/roundplus.png" alt="">
+                            </div>
+                            <img src="assets/img/photo_003.png" class="gallery__prewImg" alt="">
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>

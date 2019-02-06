@@ -24,29 +24,38 @@
         </symbol>
     </svg>
     <header class="header" id="header">
-        <div class="container hidden-lg hidden-md">
+        <div class="container hidden-lg">
             <div class="row">
                 <div class="col-xs-4 header__mMenuOpenBtn" id="mMenuOpenBtn">
                     <svg xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#mBtn_svg"></use></svg>
+                    <span class="hidden-xs hidden-md hidden-lg menuBtn_lable">Меню</span>
                 </div>
                 <a href="index.html" class="col-xs-4 logoLink header__logoLink">
                     <img src="assets/img/logo.png" alt="Логотип" title="Hа главную" class="header__logoImg">
                 </a>
                 <div class="col-xs-4 header__callback" id="headerCallbackBtn">
                     <svg xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#phone_svg"></use></svg>
+                    <span class="hidden-xs hidden-md hidden-lg header__callback__lable">Заказать звонок</span>
                 </div>
             </div>
         </div>
-        <div class="container hidden-sm hidden-xs">
-            <div class="row">
-                <div class="col-xs-4 header__mMenuOpenBtn" id="mMenuOpenBtn">
-                    <svg xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#mBtn_svg"></use></svg>
-                </div>
-                <a href="index.html" class="col-xs-4 logoLink header__logoLink">
+        <div class="container hidden-sm hidden-xs hidden-md">
+            <div class="row header__row">
+                <a href="index.html" class="logoLink header__logoLink header__item">
                     <img src="assets/img/logo.png" alt="Логотип" title="Hа главную" class="header__logoImg">
                 </a>
-                <div class="col-xs-4 header__callback" id="headerCallbackBtn">
-                    <svg xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#phone_svg"></use></svg>
+                <nav class="coltopMenu header__item">
+                    <ul class="topMenu__list row">
+                        <li class="topMenu__item"><a href="about.html" class="topMenu__link">О нас</a></li>
+                        <li class="topMenu__item"><a href="services.html" class="topMenu__link">Услуги</a></li>
+                        <li class="topMenu__item"><a href="catalog.html" class="topMenu__link">Каталог продукции</a></li>
+                        <li class="topMenu__item"><a href="our_work.html" class="topMenu__link">Наши работы</a></li>
+                        <li class="topMenu__item"><a href="contacts.html" class="topMenu__link">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div class="header__callback header__item" id="headerCallbackBtn">
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" class="header__callbackIcon"><use xlink:href="#phone_svg"></use></svg>
+                    Заказать звонок
                 </div>
             </div>
         </div>  
@@ -67,38 +76,68 @@
     <div class="main" id="main">
         <div class="hidden-xs breadcrumbs">
             <div class="container">
-                <ul class="breadcrums__list">
-                    <li class="breadcrumbs__item"><a href="index.html" class="breadcrumbs_link">Главная</a></li>
-                    <li class="breadcrumbs__item"><a href="#" class="breadcrumbs_link">Услуги</a></li>
-                </ul>
+                <div class="row">
+                    <ul class="breadcrums__list col-sm-12 col-md-12"> <!-- здесь надо будет ставить классы (col-lg-9 col-lg-offset-3) только если есть боковое меню, компонент начинать с li-->
+                        <li class="breadcrumbs__item"><a href="index.html" class="breadcrumbs_link">Главная</a></li>
+                        <li class="breadcrumbs__item"><a href="#" class="breadcrumbs_link">Услуги</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="container">
             <h1 class="h1 servicesList__header">Услуги</h1>
         </div>
-        <section class="servicesList servicesList_innerPage">
+        <section class="servicesList">
             <div class="container">
                 <div class="row darkenedTile servicesTile">
-                    <a href="service.html" class="col-xs-12 col-sm-6 darkenedTile__item servicesTile__item" style="background-image:url(assets/img/metmake.png)">
-                        <div class="darkenedTile__name">Изготовление металлоконструкций</div>
+                    <a href="service.html" class="col-xs-12 col-sm-6 col-lg-6 darkenedTile__item servicesTile__item">
+                        <div class="darkenedTile__wraper servicesTile__wraper">
+                            <div class="darkenedTile__hoverElement"></div>
+                            <img src="assets/img/metmake.png" class="darkenedTile__img servicesTile__img" alt="">
+                            <div class="darkenedTile__name servicesTile__name">Изготовление металлоконструкций</div>
+                        </div>
                     </a>
-                    <a href="service.html" class="col-xs-12 col-sm-6 darkenedTile__item servicesTile__item" style="background-image:url(assets/img/plazmacut.png)">
-                        <div class="darkenedTile__name">Плазменная резка металла</div>
+                    <a href="service.html" class="col-xs-12 col-sm-6  col-lg-6 darkenedTile__item servicesTile__item">
+                        <div class="darkenedTile__wraper servicesTile__wraper">
+                            <div class="darkenedTile__hoverElement"></div>
+                            <img src="assets/img/plazmacut.png" class="darkenedTile__img servicesTile__img" alt="">
+                            <div class="darkenedTile__name servicesTile__name">Плазменная резка металла</div>
+                        </div>
                     </a>
-                    <a href="service.html" class="col-xs-12 col-sm-6 darkenedTile__item servicesTile__item" style="background-image:url(assets/img/gascut.png)">
-                        <div class="darkenedTile__name">Газовая резка металла</div>
+                    <a href="service.html" class="col-xs-12 col-sm-6  col-lg-6 darkenedTile__item servicesTile__item">
+                        <div class="darkenedTile__wraper servicesTile__wraper">
+                            <div class="darkenedTile__hoverElement"></div>
+                            <img src="assets/img/gascut.png" class="darkenedTile__img servicesTile__img" alt="">
+                            <div class="darkenedTile__name servicesTile__name">Газовая резка металла</div>
+                        </div>
                     </a>
-                    <a href="service.html" class="col-xs-12 col-sm-6 darkenedTile__item servicesTile__item" style="background-image:url(assets/img/metchop.png)">
-                        <div class="darkenedTile__name">Рубка металла</div>
+                    <a href="service.html" class="col-xs-12 col-sm-6  col-lg-6 darkenedTile__item servicesTile__item">
+                        <div class="darkenedTile__wraper servicesTile__wraper">
+                            <div class="darkenedTile__hoverElement"></div>
+                            <img src="assets/img/metchop.png" class="darkenedTile__img servicesTile__img" alt="">
+                            <div class="darkenedTile__name servicesTile__name">Рубка металла</div>
+                        </div>
                     </a>
-                    <a href="service.html" class="col-xs-12 col-sm-6 col-md-4 darkenedTile__item servicesTile__item" style="background-image:url(assets/img/bluprintdev.png)">
-                        <div class="darkenedTile__name">Разработка чертежей КМД</div>
+                    <a href="service.html" class="col-xs-12 col-sm-6 col-lg-4 darkenedTile__item servicesTile__item">
+                        <div class="darkenedTile__wraper servicesTile__wraper">
+                            <div class="darkenedTile__hoverElement"></div>
+                            <img src="assets/img/bluprintdev.png" class="darkenedTile__img servicesTile__img" alt="">
+                            <div class="darkenedTile__name servicesTile__name">Разработка чертежей КМД</div>
+                        </div>
                     </a>
-                    <a href="service.html" class="col-xs-12 col-sm-6 col-md-4 darkenedTile__item servicesTile__item" style="background-image:url(assets/img/metdelivery.png)">
-                        <div class="darkenedTile__name">Доставка металлоконструкций</div>
+                    <a href="service.html" class="col-xs-12 col-sm-6 col-lg-4 darkenedTile__item servicesTile__item">
+                        <div class="darkenedTile__wraper servicesTile__wraper">
+                            <div class="darkenedTile__hoverElement"></div>
+                            <img src="assets/img/metdelivery.png" class="darkenedTile__img servicesTile__img" alt="">
+                            <div class="darkenedTile__name servicesTile__name">Доставка металлоконструкций</div>
+                        </div>
                     </a>
-                    <a href="service.html" class="col-xs-12 col-sm-6 col-md-4 darkenedTile__item servicesTile__item" style="background-image:url(assets/img/metturn.png)">
-                        <div class="darkenedTile__name">Токарные работы</div>
+                    <a href="service.html" class="col-xs-12 col-sm-6 col-lg-4 darkenedTile__item servicesTile__item">
+                        <div class="darkenedTile__wraper servicesTile__wraper">
+                            <div class="darkenedTile__hoverElement"></div>
+                            <img src="assets/img/metturn.png" class="darkenedTile__img servicesTile__img" alt="">
+                            <div class="darkenedTile__name servicesTile__name">Токарные работы</div>
+                        </div>
                     </a>
                 </div>
             </div>

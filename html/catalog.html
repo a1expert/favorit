@@ -24,29 +24,38 @@
         </symbol>
     </svg>
     <header class="header" id="header">
-        <div class="container hidden-lg hidden-md">
+        <div class="container hidden-lg">
             <div class="row">
                 <div class="col-xs-4 header__mMenuOpenBtn" id="mMenuOpenBtn">
                     <svg xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#mBtn_svg"></use></svg>
+                    <span class="hidden-xs hidden-md hidden-lg menuBtn_lable">Меню</span>
                 </div>
                 <a href="index.html" class="col-xs-4 logoLink header__logoLink">
                     <img src="assets/img/logo.png" alt="Логотип" title="Hа главную" class="header__logoImg">
                 </a>
                 <div class="col-xs-4 header__callback" id="headerCallbackBtn">
                     <svg xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#phone_svg"></use></svg>
+                    <span class="hidden-xs hidden-md hidden-lg header__callback__lable">Заказать звонок</span>
                 </div>
             </div>
         </div>
-        <div class="container hidden-sm hidden-xs">
-            <div class="row">
-                <div class="col-xs-4 header__mMenuOpenBtn" id="mMenuOpenBtn">
-                    <svg xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#mBtn_svg"></use></svg>
-                </div>
-                <a href="index.html" class="col-xs-4 logoLink header__logoLink">
+        <div class="container hidden-sm hidden-xs hidden-md">
+            <div class="row header__row">
+                <a href="index.html" class="logoLink header__logoLink header__item">
                     <img src="assets/img/logo.png" alt="Логотип" title="Hа главную" class="header__logoImg">
                 </a>
-                <div class="col-xs-4 header__callback" id="headerCallbackBtn">
-                    <svg xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#phone_svg"></use></svg>
+                <nav class="coltopMenu header__item">
+                    <ul class="topMenu__list row">
+                        <li class="topMenu__item"><a href="about.html" class="topMenu__link">О нас</a></li>
+                        <li class="topMenu__item"><a href="services.html" class="topMenu__link">Услуги</a></li>
+                        <li class="topMenu__item"><a href="catalog.html" class="topMenu__link">Каталог продукции</a></li>
+                        <li class="topMenu__item"><a href="our_work.html" class="topMenu__link">Наши работы</a></li>
+                        <li class="topMenu__item"><a href="contacts.html" class="topMenu__link">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div class="header__callback header__item" id="headerCallbackBtn">
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" class="header__callbackIcon"><use xlink:href="#phone_svg"></use></svg>
+                    Заказать звонок
                 </div>
             </div>
         </div>  
@@ -67,10 +76,12 @@
     <div class="main" id="main">
         <div class="hidden-xs breadcrumbs">
             <div class="container">
-                <ul class="breadcrums__list">
-                    <li class="breadcrumbs__item"><a href="index.html" class="breadcrumbs_link">Главная</a></li>
-                    <li class="breadcrumbs__item"><a href="#" class="breadcrumbs_link">Металлоконструкции</a></li>
-                </ul>
+                <div class="row">
+                    <ul class="breadcrums__list col-sm-12 col-md-12"> <!-- здесь надо будет ставить классы col-lg... только если есть боковое меню, компонент начинать с li-->
+                        <li class="breadcrumbs__item"><a href="index.html" class="breadcrumbs_link">Главная</a></li>
+                        <li class="breadcrumbs__item"><a href="#" class="breadcrumbs_link">Металлоконструкции</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="container">
@@ -79,57 +90,110 @@
         <section class="catalog catalogInner">
             <div class="container">
                 <div class="row darkenedTile catalogList">
-                    <a href="catalog_section.html" class="darkenedTile__item catalogList__item" style="background-image:url(assets/img/vintsvai.png)">
-                        <div class="darkenedTile__name catalogList__name">Винтовые сваи</div>
+                    <a href="catalog_section.html" class="col-xs-12 col-sm-4 col-lg-3 darkenedTile__item catalog__item">
+                        <div class="darkenedTile__wraper">
+                            <div class="darkenedTile__hoverElement catalog__hoverElement"></div>
+                            <img src="assets/img/vintsvai.png" class="darkenedTile__img catalog__img" alt="">
+                            <div class="darkenedTile__name catalog__name">Винтовые сваи</div>
+                        </div>
                     </a>
-                    <a href="catalog_section.html" class="darkenedTile__item catalogList__item" style="background-image:url(assets/img/jkhwares.png)">
-                        <div class="darkenedTile__name catalogList__name">Изделия для ЖКХ</div>
+                    <a href="catalog_section.html" class="col-xs-12 col-sm-4 col-lg-3 darkenedTile__item catalog__item">
+                        <div class="darkenedTile__wraper">
+                            <div class="darkenedTile__hoverElement catalog__hoverElement"></div>
+                            <img src="assets/img/jkhwares.png" class="darkenedTile__img catalog__img" alt="">
+                            <div class="darkenedTile__name catalog__name">Изделия для ЖКХ</div>
+                        </div>
                     </a>
-                    <a href="catalog_section.html" class="darkenedTile__item catalogList__item" style="background-image:url(assets/img/tanks.png)">
-                        <div class="darkenedTile__name catalogList__name">Металлические ёмкости и резервуары</div>
+                    <a href="catalog_section.html" class="col-xs-12 col-sm-4 col-lg-3 darkenedTile__item catalog__item">
+                        <div class="darkenedTile__wraper">
+                            <div class="darkenedTile__hoverElement catalog__hoverElement"></div>
+                            <img src="assets/img/tanks.png" class="darkenedTile__img catalog__img" alt="">
+                            <div class="darkenedTile__name catalog__name">Металлические ёмкости и резервуары</div>
+                        </div>
                     </a>
-                    <a href="catalog_section.html" class="darkenedTile__item catalogList__item" style="background-image:url(assets/img/laysparts.png)">
-                        <div class="darkenedTile__name catalogList__name">Закладные детали</div>
+                    <a href="catalog_section.html" class="col-xs-12 col-sm-4 col-lg-3 darkenedTile__item catalog__item">
+                        <div class="darkenedTile__wraper">
+                            <div class="darkenedTile__hoverElement catalog__hoverElement"></div>
+                            <img src="assets/img/laysparts.png" class="darkenedTile__img catalog__img" alt="">
+                            <div class="darkenedTile__name catalog__name">Закладные детали</div>
+                        </div>
                     </a>
-                    <a href="catalog_section.html" class="darkenedTile__item catalogList__item" style="background-image:url(assets/img/pilepipe.png)">
-                        <div class="darkenedTile__name catalogList__name">Сваи из труб</div>
+                    <a href="catalog_section.html" class="col-xs-12 col-sm-4 col-lg-3 darkenedTile__item catalog__item">
+                        <div class="darkenedTile__wraper">
+                            <div class="darkenedTile__hoverElement catalog__hoverElement"></div>
+                            <img src="assets/img/pilepipe.png" class="darkenedTile__img catalog__img" alt="">
+                            <div class="darkenedTile__name catalog__name">Сваи из труб</div>
+                        </div>
                     </a>
-                    <a href="catalog_section.html" class="darkenedTile__item catalogList__item" style="background-image:url(assets/img/stairs.png)">
-                        <div class="darkenedTile__name catalogList__name">Лестницы, площадки, стремянки</div>
+                    <a href="catalog_section.html" class="col-xs-12 col-sm-4 col-lg-3 darkenedTile__item catalog__item">
+                        <div class="darkenedTile__wraper">
+                            <div class="darkenedTile__hoverElement catalog__hoverElement"></div>
+                            <img src="assets/img/stairs.png" class="darkenedTile__img catalog__img" alt="">
+                            <div class="darkenedTile__name catalog__name">Лестницы, площадки, стремянки</div>
+                        </div>
                     </a>
-                    <a href="catalog_section.html" class="darkenedTile__item catalogList__item" style="background-image:url(assets/img/masts.png)">
-                        <div class="darkenedTile__name catalogList__name">Мачты</div>
+                    <a href="catalog_section.html" class="col-xs-12 col-sm-4 col-lg-3 darkenedTile__item catalog__item">
+                        <div class="darkenedTile__wraper">
+                            <div class="darkenedTile__hoverElement catalog__hoverElement"></div>
+                            <img src="assets/img/masts.png" class="darkenedTile__img catalog__img" alt="">
+                            <div class="darkenedTile__name catalog__name">Мачты</div>
+                        </div>
                     </a>
-                    <a href="catalog_section.html" class="darkenedTile__item catalogList__item" style="background-image:url(assets/img/metalfence.png)">
-                        <div class="darkenedTile__name catalogList__name">Металлические заборы</div>
+                    <a href="catalog_section.html" class="col-xs-12 col-sm-4 col-lg-3 darkenedTile__item catalog__item">
+                        <div class="darkenedTile__wraper">
+                            <div class="darkenedTile__hoverElement catalog__hoverElement"></div>
+                            <img src="assets/img/metalfence.png" class="darkenedTile__img catalog__img" alt="">
+                            <div class="darkenedTile__name catalog__name">Металлические заборы</div>
+                        </div>
                     </a>
-                    <a href="catalog_section.html" class="darkenedTile__item catalogList__item" style="background-image:url(assets/img/metalframebuild.png)">
-                        <div class="darkenedTile__name catalogList__name">Металлокаркасы зданий</div>
+                    <a href="catalog_section.html" class="col-xs-12 col-sm-4 col-lg-3 darkenedTile__item catalog__item">
+                        <div class="darkenedTile__wraper">
+                            <div class="darkenedTile__hoverElement catalog__hoverElement"></div>
+                            <img src="assets/img/metalframebuild.png" class="darkenedTile__img catalog__img" alt="">
+                            <div class="darkenedTile__name catalog__name">Металлокаркасы зданий</div>
+                        </div>
                     </a>
-                    <a href="catalog_section.html" class="darkenedTile__item catalogList__item" style="background-image:url(assets/img/shed.png)">
-                        <div class="darkenedTile__name catalogList__name">Навесы</div>
+                    <a href="catalog_section.html" class="col-xs-12 col-sm-4 col-lg-3 darkenedTile__item catalog__item">
+                        <div class="darkenedTile__wraper">
+                            <div class="darkenedTile__hoverElement catalog__hoverElement"></div>
+                            <img src="assets/img/shed.png" class="darkenedTile__img catalog__img" alt="">
+                            <div class="darkenedTile__name catalog__name">Навесы</div>
+                        </div>
                     </a>
-                    <a href="catalog_section.html" class="darkenedTile__item catalogList__item" style="background-image:url(assets/img/nonstandardwares.png)">
-                        <div class="darkenedTile__name catalogList__name">Нестандартные изделия</div>
+                    <a href="catalog_section.html" class="col-xs-12 col-sm-4 col-lg-3 darkenedTile__item catalog__item">
+                        <div class="darkenedTile__wraper">
+                            <div class="darkenedTile__hoverElement catalog__hoverElement"></div>
+                            <img src="assets/img/nonstandardwares.png" class="darkenedTile__img catalog__img" alt="">
+                            <div class="darkenedTile__name catalog__name">Нестандартные изделия</div>
+                        </div>
                     </a>
-                    <a href="catalog_section.html" class="darkenedTile__item catalogList__item" style="background-image:url(assets/img/lep.png)">
-                        <div class="darkenedTile__name catalogList__name">Опоры ЛЭП</div>
+                    <a href="catalog_section.html" class="col-xs-12 col-sm-4 col-lg-3 darkenedTile__item catalog__item">
+                        <div class="darkenedTile__wraper">
+                            <div class="darkenedTile__hoverElement catalog__hoverElement"></div>
+                            <img src="assets/img/lep.png" class="darkenedTile__img catalog__img" alt="">
+                            <div class="darkenedTile__name catalog__name">Опоры ЛЭП</div>
+                        </div>
                     </a>
-                    <a href="catalog_section.html" class="darkenedTile__item catalogList__item" style="background-image:url(assets/img/weldsgates.png)">
-                        <div class="darkenedTile__name catalogList__name">Сварные ворота</div>
+                    <a href="catalog_section.html" class="col-xs-12 col-sm-4 col-lg-3 darkenedTile__item catalog__item">
+                        <div class="darkenedTile__wraper">
+                            <div class="darkenedTile__hoverElement catalog__hoverElement"></div>
+                            <img src="assets/img/weldsgates.png" class="darkenedTile__img catalog__img" alt="">
+                            <div class="darkenedTile__name catalog__name">Сварные ворота</div>
+                        </div>
                     </a>
-                    <a href="catalog_section.html" class="darkenedTile__item catalogList__item" style="background-image:url(assets/img/buildingconstruction.png)">
-                        <div class="darkenedTile__name catalogList__name">Строительные констукции</div>
+                    <a href="catalog_section.html" class="col-xs-12 col-sm-4 col-lg-3 darkenedTile__item catalog__item">
+                        <div class="darkenedTile__wraper">
+                            <div class="darkenedTile__hoverElement catalog__hoverElement"></div>
+                            <img src="assets/img/buildingconstruction.png" class="darkenedTile__img catalog__img" alt="">
+                            <div class="darkenedTile__name catalog__name">Строительные констукции</div>
+                        </div>
                     </a>
-                    <!-- Далее идут невидимые и скрытые элементы. Для их добавления нужно в похп определять какая итерация, методом деления без остатка, и добавлять нужные элементы. Все это потребовалось, потому-что дизайнер - гений (пидор) и стандартная плитка его не устраивает -->
-                    <a href="catalog_section.html" class="darkenedTile__item catalogList__item visualHide hidden-xs">
-                        <div class="darkenedTile__name catalogList__name">Невидимый, скрытый на мобильном</div>
-                    </a>
-                    <a href="catalog_section.html" class="darkenedTile__item catalogList__item visualHide hidden-xs hidden-sm">
-                        <div class="darkenedTile__name catalogList__name">Невидимый, скрытый на мобильном и таблетке</div>
-                    </a>
-                    <a href="catalog_section.html" class="darkenedTile__item catalogList__item visualHide hidden-xs hidden-sm">
-                        <div class="darkenedTile__name catalogList__name">Невидимый, скрытый на мобильном и таблетке</div>
+                    <a href="catalog_section.html" class="col-xs-12 col-sm-4 col-lg-3 darkenedTile__item catalog__item">
+                        <div class="darkenedTile__wraper">
+                            <div class="darkenedTile__hoverElement catalog__hoverElement"></div>
+                            <img src="assets/img/buildingconstruction.png" class="darkenedTile__img catalog__img" alt="">
+                            <div class="darkenedTile__name catalog__name">Строительные констукции</div>
+                        </div>
                     </a>
                 </div>
             </div>

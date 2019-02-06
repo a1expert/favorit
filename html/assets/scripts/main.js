@@ -109,7 +109,7 @@ $("document").ready(function()
         }
         return false;
     }
-    $('.ourWork__item_detail').each(function()
+    $('.ourWork__item').each(function()
     {
         $(this).magnificPopup(
         {

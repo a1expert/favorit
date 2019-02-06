@@ -24,32 +24,41 @@
         </symbol>
     </svg>
     <header class="header" id="header">
-        <div class="container hidden-lg hidden-md">
+        <div class="container hidden-lg">
             <div class="row">
                 <div class="col-xs-4 header__mMenuOpenBtn" id="mMenuOpenBtn">
                     <svg xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#mBtn_svg"></use></svg>
+                    <span class="hidden-xs hidden-md hidden-lg menuBtn_lable">Меню</span>
                 </div>
                 <a href="index.html" class="col-xs-4 logoLink header__logoLink">
                     <img src="assets/img/logo.png" alt="Логотип" title="Hа главную" class="header__logoImg">
                 </a>
                 <div class="col-xs-4 header__callback" id="headerCallbackBtn">
                     <svg xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#phone_svg"></use></svg>
+                    <span class="hidden-xs hidden-md hidden-lg header__callback__lable">Заказать звонок</span>
                 </div>
             </div>
         </div>
-        <div class="container hidden-sm hidden-xs">
-            <div class="row">
-                <div class="col-xs-4 header__mMenuOpenBtn" id="mMenuOpenBtn">
-                    <svg xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#mBtn_svg"></use></svg>
-                </div>
-                <a href="index.html" class="col-xs-4 logoLink header__logoLink">
+        <div class="container hidden-sm hidden-xs hidden-md">
+            <div class="row header__row">
+                <a href="index.html" class="logoLink header__logoLink header__item">
                     <img src="assets/img/logo.png" alt="Логотип" title="Hа главную" class="header__logoImg">
                 </a>
-                <div class="col-xs-4 header__callback" id="headerCallbackBtn">
-                    <svg xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#phone_svg"></use></svg>
+                <nav class="coltopMenu header__item">
+                    <ul class="topMenu__list row">
+                        <li class="topMenu__item"><a href="about.html" class="topMenu__link">О нас</a></li>
+                        <li class="topMenu__item"><a href="services.html" class="topMenu__link">Услуги</a></li>
+                        <li class="topMenu__item"><a href="catalog.html" class="topMenu__link">Каталог продукции</a></li>
+                        <li class="topMenu__item"><a href="our_work.html" class="topMenu__link">Наши работы</a></li>
+                        <li class="topMenu__item"><a href="contacts.html" class="topMenu__link">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div class="header__callback header__item" id="headerCallbackBtn">
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" class="header__callbackIcon"><use xlink:href="#phone_svg"></use></svg>
+                    Заказать звонок
                 </div>
             </div>
-        </div>
+        </div>  
     </header>
     <nav class="mobileMenu visualHide" id="mobileMenu">
         <div href="index.html" class="col-xs-12 logoLink mobileMenu__logoLink">
@@ -67,125 +76,127 @@
     <div class="main" id="main">
         <div class="hidden-xs breadcrumbs">
             <div class="container">
-                <ul class="breadcrums__list">
-                    <li class="breadcrumbs__item"><a href="index.html" class="breadcrumbs_link">Главная</a></li>
-                    <li class="breadcrumbs__item"><a href="#" class="breadcrumbs_link">Наши работы</a></li>
-                </ul>
+                <div class="row">
+                    <ul class="breadcrums__list col-sm-12 col-md-12"> <!-- здесь надо будет ставить классы (col-lg-9 col-lg-offset-3) только если есть боковое меню, компонент начинать с li-->
+                        <li class="breadcrumbs__item"><a href="index.html" class="breadcrumbs_link">Главная</a></li>
+                        <li class="breadcrumbs__item"><a href="#" class="breadcrumbs_link">Наши работы</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="container">
             <h1 class="h1 catalog__header">Наши работы</h1>
         </div>
-        <section class="ourWorkList">
+        <section class="works">
             <div class="container">
-                <div class="row productsList">
-                    <div class="col-xs-12 col-sm-4 col-md-3 productsList__item">
-                        <a href="our_work_detail.html" class="productsList_link">
+                <div class="row productsList works__list">
+                    <div class="col-xs-12 col-sm-4 col-md-3 productsList__item works__item">
+                        <a href="our_work_detail.html" class="productsList__link works__link">
                             <div class="productList__hoverElement">
-                                <img src="assets/img/roundplus.png" alt="">
+                                <img src="assets/img/roundarrow.png" alt="">
                             </div>
-                            <img src="assets/img/svai.png" alt="" class="productsList__img">
+                            <img src="assets/img/svai.png" alt="" class="productsList__img works__img">
                         </a>
-                        <div class="productsList__name">Винтовые сваи</div>
+                        <div class="productsList__name works__name">Винтовые сваи</div>
                     </div>
-                    <div class="col-xs-12 col-sm-4 col-md-3 productsList__item">
-                        <a href="catalog_section.html" class="productsList_link">
+                    <div class="col-xs-12 col-sm-4 col-md-3 productsList__item works__item">
+                        <a href="catalog_section.html" class="productsList__link works__link">
                             <div class="productList__hoverElement">
-                                <img src="assets/img/roundplus.png" alt="">
+                                <img src="assets/img/roundarrow.png" alt="">
                             </div>
-                            <img src="assets/img/svai.png" alt="" class="productsList__img">
+                            <img src="assets/img/svai.png" alt="" class="productsList__img works__img">
                         </a>
-                        <div class="productsList__name">Изделия из ЖКХ</div>
+                        <div class="productsList__name works__name">Изделия из ЖКХ</div>
                     </div>
-                    <div class="col-xs-12 col-sm-4 col-md-3 productsList__item">
-                        <a href="catalog_section.html" class="productsList_link">
+                    <div class="col-xs-12 col-sm-4 col-md-3 productsList__item works__item">
+                        <a href="catalog_section.html" class="productsList__link works__link">
                             <div class="productList__hoverElement">
-                                <img src="assets/img/roundplus.png" alt="">
+                                <img src="assets/img/roundarrow.png" alt="">
                             </div>
-                            <img src="assets/img/svai.png" alt="" class="productsList__img">
+                            <img src="assets/img/svai.png" alt="" class="productsList__img works__img">
                         </a>
-                        <div class="productsList__name">Закладные детали</div>
+                        <div class="productsList__name works__name">Закладные детали</div>
                     </div>
-                    <div class="col-xs-12 col-sm-4 col-md-3 productsList__item">
-                        <a href="our_work_detail.html" class="productsList_link">
+                    <div class="col-xs-12 col-sm-4 col-md-3 productsList__item works__item">
+                        <a href="our_work_detail.html" class="productsList__link works__link">
                             <div class="productList__hoverElement">
-                                <img src="assets/img/roundplus.png" alt="">
+                                <img src="assets/img/roundarrow.png" alt="">
                             </div>
-                            <img src="assets/img/svai.png" alt="" class="productsList__img">
+                            <img src="assets/img/svai.png" alt="" class="productsList__img works__img">
                         </a>
-                        <div class="productsList__name">Винтовые сваи</div>
+                        <div class="productsList__name works__name">Винтовые сваи</div>
                     </div>
-                    <div class="col-xs-12 col-sm-4 col-md-3 productsList__item">
-                        <a href="catalog_section.html" class="productsList_link">
+                    <div class="col-xs-12 col-sm-4 col-md-3 productsList__item works__item">
+                        <a href="catalog_section.html" class="productsList__link works__link">
                             <div class="productList__hoverElement">
-                                <img src="assets/img/roundplus.png" alt="">
+                                <img src="assets/img/roundarrow.png" alt="">
                             </div>
-                            <img src="assets/img/svai.png" alt="" class="productsList__img">
+                            <img src="assets/img/svai.png" alt="" class="productsList__img works__img">
                         </a>
-                        <div class="productsList__name">Изделия из ЖКХ</div>
+                        <div class="productsList__name works__name">Изделия из ЖКХ</div>
                     </div>
-                    <div class="col-xs-12 col-sm-4 col-md-3 productsList__item">
-                        <a href="catalog_section.html" class="productsList_link">
+                    <div class="col-xs-12 col-sm-4 col-md-3 productsList__item works__item">
+                        <a href="catalog_section.html" class="productsList__link works__link">
                             <div class="productList__hoverElement">
-                                <img src="assets/img/roundplus.png" alt="">
+                                <img src="assets/img/roundarrow.png" alt="">
                             </div>
-                            <img src="assets/img/svai.png" alt="" class="productsList__img">
+                            <img src="assets/img/svai.png" alt="" class="productsList__img works__img">
                         </a>
-                        <div class="productsList__name">Закладные детали</div>
+                        <div class="productsList__name works__name">Закладные детали</div>
                     </div>
-                    <div class="col-xs-12 col-sm-4 col-md-3 productsList__item">
-                        <a href="our_work_detail.html" class="productsList_link">
+                    <div class="col-xs-12 col-sm-4 col-md-3 productsList__item works__item">
+                        <a href="our_work_detail.html" class="productsList__link works__link">
                             <div class="productList__hoverElement">
-                                <img src="assets/img/roundplus.png" alt="">
+                                <img src="assets/img/roundarrow.png" alt="">
                             </div>
-                            <img src="assets/img/svai.png" alt="" class="productsList__img">
+                            <img src="assets/img/svai.png" alt="" class="productsList__img works__img">
                         </a>
-                        <div class="productsList__name">Винтовые сваи</div>
+                        <div class="productsList__name works__name">Винтовые сваи</div>
                     </div>
-                    <div class="col-xs-12 col-sm-4 col-md-3 productsList__item">
-                        <a href="catalog_section.html" class="productsList_link">
+                    <div class="col-xs-12 col-sm-4 col-md-3 productsList__item works__item">
+                        <a href="catalog_section.html" class="productsList__link works__link">
                             <div class="productList__hoverElement">
-                                <img src="assets/img/roundplus.png" alt="">
+                                <img src="assets/img/roundarrow.png" alt="">
                             </div>
-                            <img src="assets/img/svai.png" alt="" class="productsList__img">
+                            <img src="assets/img/svai.png" alt="" class="productsList__img works__img">
                         </a>
-                        <div class="productsList__name">Изделия из ЖКХ</div>
+                        <div class="productsList__name works__name">Изделия из ЖКХ</div>
                     </div>
-                    <div class="col-xs-12 col-sm-4 col-md-3 productsList__item">
-                        <a href="catalog_section.html" class="productsList_link">
+                    <div class="col-xs-12 col-sm-4 col-md-3 productsList__item works__item">
+                        <a href="catalog_section.html" class="productsList__link works__link">
                             <div class="productList__hoverElement">
-                                <img src="assets/img/roundplus.png" alt="">
+                                <img src="assets/img/roundarrow.png" alt="">
                             </div>
-                            <img src="assets/img/svai.png" alt="" class="productsList__img">
+                            <img src="assets/img/svai.png" alt="" class="productsList__img works__img">
                         </a>
-                        <div class="productsList__name">Закладные детали</div>
+                        <div class="productsList__name works__name">Закладные детали</div>
                     </div>
-                    <div class="col-xs-12 col-sm-4 col-md-3 productsList__item">
-                        <a href="our_work_detail.html" class="productsList_link">
+                    <div class="col-xs-12 col-sm-4 col-md-3 productsList__item works__item">
+                        <a href="our_work_detail.html" class="productsList__link works__link">
                             <div class="productList__hoverElement">
-                                <img src="assets/img/roundplus.png" alt="">
+                                <img src="assets/img/roundarrow.png" alt="">
                             </div>
-                            <img src="assets/img/svai.png" alt="" class="productsList__img">
+                            <img src="assets/img/svai.png" alt="" class="productsList__img works__img">
                         </a>
-                        <div class="productsList__name">Винтовые сваи</div>
+                        <div class="productsList__name works__name">Винтовые сваи</div>
                     </div>
-                    <div class="col-xs-12 col-sm-4 col-md-3 productsList__item">
-                        <a href="catalog_section.html" class="productsList_link">
+                    <div class="col-xs-12 col-sm-4 col-md-3 productsList__item works__item">
+                        <a href="catalog_section.html" class="productsList__link works__link">
                             <div class="productList__hoverElement">
-                                <img src="assets/img/roundplus.png" alt="">
+                                <img src="assets/img/roundarrow.png" alt="">
                             </div>
-                            <img src="assets/img/svai.png" alt="" class="productsList__img">
+                            <img src="assets/img/svai.png" alt="" class="productsList__img works__img">
                         </a>
-                        <div class="productsList__name">Изделия из ЖКХ</div>
+                        <div class="productsList__name works__name">Изделия из ЖКХ</div>
                     </div>
-                    <div class="col-xs-12 col-sm-4 col-md-3 productsList__item">
-                        <a href="catalog_section.html" class="productsList_link">
+                    <div class="col-xs-12 col-sm-4 col-md-3 productsList__item works__item">
+                        <a href="catalog_section.html" class="productsList__link works__link">
                             <div class="productList__hoverElement">
-                                <img src="assets/img/roundplus.png" alt="">
+                                <img src="assets/img/roundarrow.png" alt="">
                             </div>
-                            <img src="assets/img/svai.png" alt="" class="productsList__img">
+                            <img src="assets/img/svai.png" alt="" class="productsList__img works__img">
                         </a>
-                        <div class="productsList__name">Закладные детали</div>
+                        <div class="productsList__name works__name">Закладные детали</div>
                     </div>
                 </div>
             </div>
