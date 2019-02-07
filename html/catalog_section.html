@@ -33,7 +33,7 @@
                 <a href="index.html" class="col-xs-4 logoLink header__logoLink">
                     <img src="assets/img/logo.png" alt="Логотип" title="Hа главную" class="header__logoImg">
                 </a>
-                <div class="col-xs-4 header__callback" id="headerCallbackBtn">
+                <div class="col-xs-4 header__callback">
                     <svg xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#phone_svg"></use></svg>
                     <span class="hidden-xs hidden-md hidden-lg header__callback__lable">Заказать звонок</span>
                 </div>
@@ -53,7 +53,7 @@
                         <li class="topMenu__item"><a href="contacts.html" class="topMenu__link">Контакты</a></li>
                     </ul>
                 </nav>
-                <div class="header__callback header__item" id="headerCallbackBtn">
+                <div class="header__callback header__item">
                     <svg xmlns:xlink="http://www.w3.org/1999/xlink" class="header__callbackIcon"><use xlink:href="#phone_svg"></use></svg>
                     Заказать звонок
                 </div>
@@ -394,5 +394,31 @@
             </div>
         </div>
     </footer>
+    <div class="white-popup mfp-hide">
+        <div class="callback" id="popupForm">
+            <div class="callback__wraper" id="callbackWraper">
+                
+            </div>
+        </div>
+    </div>
+    <template id="popupFormTpl">
+        <form action="assets/scripts/form.js" name="callback" method="POST" enctype="multipart/form-data" class="callback__form">
+            <h3 class="callback__header">Заполните форму и получите бесплатную консультацию</h3>
+            <div class="callback__Input">
+                <input type="phone" name="phone" required maxlength="11" class="callback__phone" onblur="if(this.value !== '')this.classList.add('filledInput');else this.classList.remove('filledInput');">
+                <label for="phone" class="callback__phoneLabel">Ваш номер телефона</label>
+            </div>
+            <div class="callback__Input">
+                <button type="submit" value="" class="btn callback__btn btn_blue">Заказать звонок</button>
+            </div>
+            <div class="callback__note">Заполняя настоящую форму вы даете свое согласие на обработку своих <a href="assets/img/bluprintdev.png" class="callback__pndLink" target="_blank">персональных данных</a></div>
+        </form>
+    </template>
+    <div class="hide">
+        <div class="successMessage" id="successMessage">
+            <h3 class="callback__header">Спасибо за вашу заявку!</h3>
+            <div class="text successText">Наши менеджеры свяжутся с вами в ближайшее время для обсуждения деталей.</div>
+        </div>
+    </div>
 </body>
 </html>

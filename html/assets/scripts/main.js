@@ -137,4 +137,55 @@ $("document").ready(function()
             }
         });
     });
+
+    $('.header__callback').magnificPopup({
+        type:'inline',
+        midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+    });
+
+    /**
+     * ФОРМА
+     * 
+     */
+
+    
+    const popupFormTpl = document.querySelector('#popupFormTpl').content.querySelector('.callback__form');
+    const callbackWraper = document.querySelector("#callbackWraper");
+    const successMessage = document.querySelector("#successMessage");
+    const popupTogglers = document.querySelectorAll('.header__callback');
+
+    const formOnSubmit = function (e)
+	{
+		e.preventDefault();
+		const form = e.target;
+		const url = form.action;
+		const formData  = new FormData(form);
+        const targetParent = form.parentNode;
+        
+        // при интеграции следующую строку - удалить
+        targetParent.replaceChild(successMessage, form);
+        
+
+		fetch(url, {method: 'POST', body: formData}).then(function (response)
+		{
+			if(response.status === 200)
+			{
+				targetParent.replaceChild(successMessage, form);
+			}
+			console.log(response.text);
+		});
+	};
+    const openPopup = function () {
+		const formPopup = popupFormTpl.cloneNode(true);
+		callbackWraper.appendChild(formPopup);
+        formPopup.addEventListener('submit', formOnSubmit);
+        [].forEach.call(popupTogglers, function (it) {
+            it.removeEventListener('click', openPopup);
+        });
+        popupFormTpl.remove();
+    };
+    
+	[].forEach.call(popupTogglers, function (it) {
+		it.addEventListener('click', openPopup);
+	});
 });
