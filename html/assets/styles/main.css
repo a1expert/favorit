@@ -1043,6 +1043,7 @@ body {
     flex-direction: column;
 }
 * {transition: all 0.3s ease;}
+#bx-panel *{transition:none;}
 html{transition: none; overflow-x: hidden;}
 a{
 	text-decoration: none;
@@ -1782,8 +1783,8 @@ a{
 .detailImage {
     margin-left: 15px;
     margin-bottom: 30px;
-    max-width: 265px;
-    max-height: 210px;
+    max-width: 450px;
+    max-height: 350px;
     object-fit: cover;
 }
 .priceBlock {
