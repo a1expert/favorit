@@ -1,6 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Title");
+$APPLICATION->SetTitle("О компании");
 $elems = $fixer->GetElements(array(), array("IBLOCK_ID"=>"1", "ACTIVE" => "Y"), false, false, array("ID", "IBLOCK_ID"));
 $elId = $elems[0]["ID"];
 ?><?$APPLICATION->IncludeComponent("bitrix:news.detail", "about", Array(
