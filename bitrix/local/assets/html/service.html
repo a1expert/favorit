@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script src="assets/scripts/main.js"></script>
+    <title>Изготовление металлоконструкций</title>
+</head>
+<body>
+    <svg class="allSvgCont" xmlns="http://www.w3.org/2000/svg">
+        <symbol id="phone_svg" viewBox="0 0 49 49">
+            <path id="_phone_svg" data-name="_phone_svg" class="cls-1" d="M 39.03125 47 C 39.015625 47 39 47 38.984375 47 C 31.46875 46.753906 22.664063 39.46875 16.597656 33.398438 C 10.523438 27.328125 3.238281 18.519531 3.003906 11.039063 C 2.917969 8.414063 9.359375 3.746094 9.425781 3.699219 C 11.097656 2.535156 12.953125 2.949219 13.714844 4.003906 C 14.230469 4.71875 19.113281 12.117188 19.644531 12.957031 C 20.195313 13.828125 20.113281 15.125 19.425781 16.425781 C 19.046875 17.148438 17.789063 19.359375 17.199219 20.390625 C 17.835938 21.296875 19.519531 23.519531 22.996094 26.996094 C 26.476563 30.472656 28.695313 32.160156 29.605469 32.796875 C 30.636719 32.207031 32.847656 30.949219 33.570313 30.570313 C 34.851563 29.890625 36.140625 29.804688 37.019531 30.34375 C 37.917969 30.894531 45.296875 35.800781 45.976563 36.273438 C 46.546875 36.675781 46.914063 37.363281 46.988281 38.164063 C 47.058594 38.972656 46.808594 39.828125 46.289063 40.574219 C 46.246094 40.636719 41.632813 47 39.03125 47 Z "/>
+        </symbol>
+        <symbol id="mBtn_svg" viewBox="0 0 20 20">
+            <rect fill="#ffffff" height="3" width="20" x="0" y="1.5"/>
+            <rect fill="#ffffff" height="3" width="20" x="0" y="8.5"/>
+            <rect fill="#ffffff" height="3" width="20" x="0" y="15.5"/>
+        </symbol>
+    </svg>
+    <header class="header" id="header">
+        <div class="container hidden-lg">
+            <div class="row">
+                <div class="col-xs-4 header__mMenuOpenBtn" id="mMenuOpenBtn">
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#mBtn_svg"></use></svg>
+                    <span class="hidden-xs hidden-md hidden-lg menuBtn_lable">Меню</span>
+                </div>
+                <a href="index.html" class="col-xs-4 logoLink header__logoLink">
+                    <img src="assets/img/logo.png" alt="Логотип" title="Hа главную" class="header__logoImg">
+                </a>
+                <div class="col-xs-4 header__callback">
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#phone_svg"></use></svg>
+                    <span class="hidden-xs hidden-md hidden-lg header__callback__lable">Заказать звонок</span>
+                </div>
+            </div>
+        </div>
+        <div class="container hidden-sm hidden-xs hidden-md">
+            <div class="row header__row">
+                <a href="index.html" class="logoLink header__logoLink header__item">
+                    <img src="assets/img/logo.png" alt="Логотип" title="Hа главную" class="header__logoImg">
+                </a>
+                <nav class="coltopMenu header__item">
+                    <ul class="topMenu__list row">
+                        <li class="topMenu__item"><a href="about.html" class="topMenu__link">О нас</a></li>
+                        <li class="topMenu__item"><a href="services.html" class="topMenu__link">Услуги</a></li>
+                        <li class="topMenu__item"><a href="catalog.html" class="topMenu__link">Каталог продукции</a></li>
+                        <li class="topMenu__item"><a href="our_work.html" class="topMenu__link">Наши работы</a></li>
+                        <li class="topMenu__item"><a href="contacts.html" class="topMenu__link">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div class="header__callback header__item">
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" class="header__callbackIcon"><use xlink:href="#phone_svg"></use></svg>
+                    Заказать звонок
+                </div>
+            </div>
+        </div>  
+    </header>
+    <nav class="mobileMenu visualHide" id="mobileMenu">
+        <div href="index.html" class="col-xs-12 logoLink mobileMenu__logoLink">
+            <img src="assets/img/logo.png" alt="Логотип" title="Hа главную" class="header__logoImg">
+        </div>
+        <ul class="mobileMenu__list">
+            <li class="mobileMenu__item"><a href="about.html" class="mobileMenu__link">О нас</a></li>
+            <li class="mobileMenu__item"><a href="services.html" class="mobileMenu__link">Услуги</a></li>
+            <li class="mobileMenu__item"><a href="catalog.html" class="mobileMenu__link">Каталог продукции</a></li>
+            <li class="mobileMenu__item"><a href="our_work.html" class="mobileMenu__link">Наши работы</a></li>
+            <li class="mobileMenu__item"><a href="contacts.html" class="mobileMenu__link">Контакты</a></li>
+            <li class="mobileMenu__closeBtn" id="mobileMenuCloseBtn"><span class="closeBtn__arrow closeBtn__arrowRight"></span><span class="closeBtn__arrow closeBtn__arrowLeft"></span></li>
+        </ul>
+    </nav>
+    <div class="main detailPage service" id="main">
+        <div class="hidden-xs breadcrumbs">
+            <div class="container">
+                <div class="row">
+                    <ul class="breadcrums__list col-sm-12 col-md-12 col-lg-9 col-lg-offset-3"> <!-- здесь надо будет ставить классы (col-lg-9 col-lg-offset-3) только если есть боковое меню, компонент начинать с li-->
+                        <li class="breadcrumbs__item"><a href="index.html" class="breadcrumbs_link">Главная</a></li>
+                        <li class="breadcrumbs__item"><a href="services.html" class="breadcrumbs_link">Услуги</a></li>
+                        <li class="breadcrumbs__item"><a href="#" class="breadcrumbs_link">Изготовление металлоконструкций</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container container_aside">
+            <div class="row">
+                <nav class="col-xs-12 col-lg-3 aside">
+                    <ul class="hidden-xs hidden-sm hidden-md leftMenu">
+                        <li class="leftMenu__item leftMenu__item_current"><a href="service.html" class="leftMenu__link leftMenu__link_current">Изготовление металлоконструкций</a></li>
+                        <li class="leftMenu__item"><a href="service.html" class="leftMenu__link">Плазменная резка металла</a></li>
+                        <li class="leftMenu__item"><a href="service.html" class="leftMenu__link">Газовая резка металла</a></li>
+                        <li class="leftMenu__item"><a href="service.html" class="leftMenu__link">Рубка металла</a></li>
+                        <li class="leftMenu__item"><a href="service.html" class="leftMenu__link">Разработка чертежей КМД</a></li>
+                        <li class="leftMenu__item"><a href="service.html" class="leftMenu__link">Доставка металлоконструкций</a></li>
+                        <li class="leftMenu__item"><a href="service.html" class="leftMenu__link">Токарные работы</a></li>
+                    </ul>
+                    <div class="hidden-lg btn btn_white mobileLeftMenuCurrent" id="mobileLeftMenuBtn">
+                        <span class="mobileLeftMenuCurrent__name" id="mobileLeftMenuCurrentName">Изготовление металлоконструкций</span>
+                        <span class="btn__arrow btn__arrow_vertical"></span>
+                    </div>
+                    <ul class="mobileLeftMenu" id="mobileLeftMenu">
+                        <li class="leftMenu__item"><a href="service.html" class="leftMenu__link leftMenu__link_current">Изготовление металлоконструкций</a></li>
+                        <li class="leftMenu__item"><a href="service.html" class="leftMenu__link">Плазменная резка металла</a></li>
+                        <li class="leftMenu__item"><a href="service.html" class="leftMenu__link">Газовая резка металла</a></li>
+                        <li class="leftMenu__item"><a href="service.html" class="leftMenu__link">Рубка металла</a></li>
+                        <li class="leftMenu__item"><a href="service.html" class="leftMenu__link">Разработка чертежей КМД</a></li>
+                        <li class="leftMenu__item"><a href="service.html" class="leftMenu__link">Доставка металлоконструкций</a></li>
+                        <li class="leftMenu__item"><a href="service.html" class="leftMenu__link">Токарные работы</a></li>
+                    </ul>
+                </nav>
+                <div class="col-xs-12 col-lg-9 content content_aside">
+                    <h1 class="h1">Изготовление металлоконструкций</h1>
+                    <div class="text detailDesc">
+                        <img src="assets/img/stockimg.png" alt="" class="detailImage">
+                        <p><b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.</b></p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.</p>
+                        <p>Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget.</p>
+                    </div>
+                    <div class="priceBlock">
+                        <div class="col-xs-12 col-sm-4 priceBlock__item priceBlock__phone">
+                            <div class="priceBlock__text">По всем вопросам звоните:</div>
+                            <div class="priceBlock__value">+7 (3462) 45-92-01</div>
+                        </div>
+                        <div class="col-xs-12 col-sm-4 priceBlock__item priceBlock__price">
+                            <div class="priceBlock__text">Стоимость:</div>
+                            <div class="priceBlock__value">от 22 000 руб/т.</div>
+                        </div>
+                        <div class="col-xs-12 col-sm-4 priceBlock__item priceBlock__btn">
+                            <a href="catalog.html" class="btn priceBlock__btn btn_white">Узнать точную цену<span class="btn__arrow btn__arrow_blue btn__arrow_horizontal"></span></a>
+                        </div>
+                    </div>
+                    <h2 class="h2 serviceH2">Изготовление металлоконструкций</h2>
+                    <div class="text detailDesc">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.</p>
+                    </div>
+                    <p class="aboveUListheader">Несколько фактов:</p>
+                    <ul class="textList textList__service">
+                        <li class="textList__item">Около 870 рейсов ежегодно</li>
+                        <li class="textList__item">Возводим 10 крупных объектов под ключ ежегодно</li>
+                        <li class="textList__item">Какой-то факт еще</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div> <!--end main-->
+    <div class="intro">
+        <section class="companyNumbers">
+            <div class="container">
+                <div class="row companyNumbers__inner center-xs middle-xs">
+                    <div class="col-xs-12 col-sm-6 col-md-3 companyNumbers__item">
+                        <div class="companyNumbers__number">1125</div>
+                        <div class="companyNumbers__text">тонн металлоконструкций производится в месяц</div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 companyNumbers__item">
+                        <div class="companyNumbers__number">6000</div>
+                        <div class="companyNumbers__text">м<sup>2</sup> производственных площадей на территории</div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 companyNumbers__item">
+                        <div class="companyNumbers__number">10</div>
+                        <div class="companyNumbers__text">летний опыт изготовления металлоконструкций</div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 companyNumbers__item">
+                        <div class="companyNumbers__number">3000</div>
+                        <div class="companyNumbers__text">рейсов выполнено за время нашей работы</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="gallery">
+            <div class="container">
+                <h2 class="h2 gallery__h2">Производство</h2>
+                <div class="row gallery__list">
+                    <div class="col-xs-12 col-sm-4 gallery__item">
+                        <a href="assets/img/photo_003.png" class="gallery__link">
+                            <div class="productList__hoverElement">
+                                <img src="assets/img/roundplus.png" alt="">
+                            </div>
+                            <img src="assets/img/photo_003.png" class="gallery__prewImg" alt="">
+                        </a>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 gallery__item">
+                        <a href="assets/img/metmake.png" class="gallery__link">
+                            <div class="productList__hoverElement">
+                                <img src="assets/img/roundplus.png" alt="">
+                            </div>
+                            <img src="assets/img/metmake.png" class="gallery__prewImg" alt="">
+                        </a>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 gallery__item">
+                        <a href="assets/img/photo_003.png" class="gallery__link">
+                            <div class="productList__hoverElement">
+                                <img src="assets/img/roundplus.png" alt="">
+                            </div>
+                            <img src="assets/img/photo_003.png" class="gallery__prewImg" alt="">
+                        </a>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 gallery__item">
+                        <a href="assets/img/photo_003.png" class="gallery__link">
+                            <div class="productList__hoverElement">
+                                <img src="assets/img/roundplus.png" alt="">
+                            </div>
+                            <img src="assets/img/photo_003.png" class="gallery__prewImg" alt="">
+                        </a>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 gallery__item">
+                        <a href="assets/img/metmake.png" class="gallery__link">
+                            <div class="productList__hoverElement">
+                                <img src="assets/img/roundplus.png" alt="">
+                            </div>
+                            <img src="assets/img/metmake.png" class="gallery__prewImg" alt="">
+                        </a>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 gallery__item">
+                        <a href="assets/img/photo_003.png" class="gallery__link">
+                            <div class="productList__hoverElement">
+                                <img src="assets/img/roundplus.png" alt="">
+                            </div>
+                            <img src="assets/img/photo_003.png" class="gallery__prewImg" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer class="footer">
+        <nav class="footerMenu">
+            <ul class="row footerMenu__list_l1">
+                <div class="footerMenu__col footerMenu__col1 col-sm-3">
+                    <li class="footerMenu__item_l1 footerMenu__item_parent">
+                        <a href="about.html" class="footerMenu__link">О компании</a>
+                        <ul class="hidden-xs footerMenu__list_l2">
+                            <li class="footerMenu__item_l2"><a href="reviews.html" class="footerMenu__link">Отзывы</a></li>
+                            <li class="footerMenu__item_l2"><a href="clients.html" class="footerMenu__link">Заказчики</a></li>
+                            <li class="footerMenu__item_l2"><a href="documents.html" class="footerMenu__link">Документы</a></li>
+                            <li class="footerMenu__item_l2"><a href="vacancy.html" class="footerMenu__link">Вакансии</a></li>
+                        </ul>
+                    </li>
+                </div>
+                <div class="footerMenu__col footerMenu__col2 col-sm-6">
+                    <li class="footerMenu__item_l1 footerMenu__item_parent">
+                        <a href="services.html" class="footerMenu__link">Услуги</a>
+                        <ul class="hidden-xs footerMenu__list_l2">
+                            <li class="footerMenu__item_l2"><a href="service_detail.html" class="footerMenu__link">Газовая резка металла</a></li>
+                            <li class="footerMenu__item_l2"><a href="service_detail.html" class="footerMenu__link">Плазменная резка металла</a></li>
+                            <li class="footerMenu__item_l2"><a href="service_detail.html" class="footerMenu__link">Рубка металла</a></li>
+                            <li class="footerMenu__item_l2"><a href="service_detail.html" class="footerMenu__link">Гибка металла</a></li>
+                            <li class="footerMenu__item_l2"><a href="service_detail.html" class="footerMenu__link">Разработка чертежей КМД</a></li>
+                            <li class="footerMenu__item_l2"><a href="service_detail.html" class="footerMenu__link">Доставка металлоконструкций</a></li>
+                            <li class="footerMenu__item_l2"><a href="service_detail.html" class="footerMenu__link">Токарные работы</a></li>
+                        </ul>
+                    </li>
+                </div>
+                <div class="footerMenu__col footerMenu__col3 col-sm-3">
+                    <li class="footerMenu__item_l1"><a href="catalog.html" class="footerMenu__link">Каталог продукции</a></li>
+                    <li class="footerMenu__item_l1"><a href="our_work.html" class="footerMenu__link">Наши работы</a></li>
+                    <li class="footerMenu__item_l1"><a href="delivery.html" class="footerMenu__link">География поставок</a></li>
+                    <li class="footerMenu__item_l1"><a href="contacts.html" class="footerMenu__link">Контакты</a></li>
+                </div>
+            </ul>
+        </nav>
+        <div class="addInfo">
+            <div class="addInfo__item addInfo__item1">
+                <div class="footerContacts">
+                    <div class="footerContacts__phone">+7 (3462) 45-92-01</div>
+                    <div class="footerContacts__text">Сургут, ул.Глухова 2/1, офис 590</div>
+                    <div class="footerContacts__text">Пн-пт 08:30 - 17:00</div>
+                </div>
+                <div class="footerDevSign hidden-sm hidden-md hidden-lg">
+                    <div class="footerDevSign__text">Разработка и продвижение:</div>
+                    <a href="//a1-reklama.ru" class="footerDevSign__logo">
+                        <img src="assets/img/dev_logo.png" alt="">
+                    </a>
+                </div>
+                <div class="copyNpolicy">
+                    <div class="copyright">© ООО «Фаворит-С», 2018</div>
+                    <a href="#" class="footerPrivatePolicy"><span>Политика в отношении обработки</span><span>персональных данных</span></a>
+                </div>
+            </div>
+            <div class="addInfo__item addInfo__item2 hidden-xs">
+                <div class="footerDevSign">
+                    <div class="footerDevSign__text">Разработка и продвижение:</div>
+                    <a href="//a1-reklama.ru" class="footerDevSign__logo">
+                        <img src="assets/img/dev_logo.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="white-popup mfp-hide">
+        <div class="callback" id="popupForm">
+            <div class="callback__wraper" id="callbackWraper">
+                
+            </div>
+        </div>
+    </div>
+    <template id="popupFormTpl">
+        <form action="assets/scripts/form.js" name="callback" method="POST" enctype="multipart/form-data" class="callback__form">
+            <h3 class="callback__header">Заполните форму и получите бесплатную консультацию</h3>
+            <div class="callback__Input">
+                <input type="phone" name="phone" required maxlength="11" class="callback__phone" onblur="if(this.value !== '')this.classList.add('filledInput');else this.classList.remove('filledInput');">
+                <label for="phone" class="callback__phoneLabel">Ваш номер телефона</label>
+            </div>
+            <div class="callback__Input">
+                <button type="submit" value="" class="btn callback__btn btn_blue">Заказать звонок</button>
+            </div>
+            <div class="callback__note">Заполняя настоящую форму вы даете свое согласие на обработку своих <a href="assets/img/bluprintdev.png" class="callback__pndLink" target="_blank">персональных данных</a></div>
+        </form>
+    </template>
+    <div class="hide">
+        <div class="successMessage" id="successMessage">
+            <h3 class="callback__header">Спасибо за вашу заявку!</h3>
+            <div class="text successText">Наши менеджеры свяжутся с вами в ближайшее время для обсуждения деталей.</div>
+        </div>
+    </div>
+</body>
+</html>
