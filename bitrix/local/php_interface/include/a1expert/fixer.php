@@ -193,5 +193,66 @@ namespace A1expert
             }
             return $returnResult;
         }
+
+        public function GetMenu($iblockId, $withSections = true)
+        {
+            $arSelect = array("ID", "IBLOCK_ID", "DETAIL_PAGE_URL", "NAME");
+            $arFilter = array("ACTIVE" => "Y", "IBLOCK_ID" => $iblockId);
+            $elements = $this->GetElements(array(), $arFilter, false, false, $arSelect);
+            $secs = $this->GetSections(array(), $arFilter, true, array("ID", "IBLOCK_ID", "SECTION_PAGE_URL", "NAME", "DEPTH_LEVEL"), false);
+
+            foreach ($secs as $sec)
+            {
+                if($withSections)
+                {
+                    $isParent = ($sec["ELEMENT_CNT"] > 0) ? true : false;
+                    $arResult[] = array(
+                        $sec["NAME"],
+                        $sec["SECTION_PAGE_URL"],
+                        "",
+                        array(
+                            "FROM_IBLOCK" => true,
+                            "IS_PARENT" => $isParent,
+                            "DEPTH_LEVEL" => $sec["DEPTH_LEVEL"],
+                        ),
+                    );
+                }
+                foreach ($elements as $key=>$element)
+                {
+                    if ($element["IBLOCK_SECTION_ID"] == $sec["ID"])
+                    {
+                        $depthLevel = ($withSections) ? intval($sec["DEPTH_LEVEL"]) + 1 : 1;
+                        $arResult[] = array(
+                            $element["NAME"],
+                            $element["DETAIL_PAGE_URL"],
+                            "",
+                            array(
+                                "FROM_IBLOCK" => true,
+                                "IS_PARENT" => false,
+                                "DEPTH_LEVEL" => $depthLevel,
+                            ),
+                        );
+                        unset($elements[$key]);
+                    }
+                }
+            }
+            foreach ($elements as $element)
+            {
+                if($element["IBLOCK_SECTION_ID"] == NULL)
+                {
+                    $arResult[] = array(
+                        $element["NAME"],
+                        $element["DETAIL_PAGE_URL"],
+                        "",
+                        array(
+                            "FROM_IBLOCK" => true,
+                            "IS_PARENT" => false,
+                            "DEPTH_LEVEL" => 1,
+                        ),
+                    );
+                }
+            }
+            return $arResult;
+        }
     }
 }

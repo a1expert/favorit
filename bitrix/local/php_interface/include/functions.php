@@ -41,7 +41,7 @@ function isSectionMenu($strSectionMenuType = 'left', $useExtFiles = true)
         $currentPath .= $crumb . '/';
         $menuFile = $rootPath . $currentPath . '.' . $strSectionMenuType . '.' . 'menu.php';
         $extMenuFile = $rootPath . $currentPath . '.' . $strSectionMenuType . '.' . 'menu_ext.php';
-        return file_exists($extMenuFile);
+        
         if(file_exists($menuFile))
         {
             $lastPath = $currentPath;
@@ -57,7 +57,7 @@ function isSectionMenu($strSectionMenuType = 'left', $useExtFiles = true)
             $arLastMenu = $aMenuLinks;
         }
     }
-    
+
     return (count($arLastMenu) > 0) ? true : false;
 
  };

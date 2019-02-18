@@ -2626,3 +2626,6 @@ a{
 		width: 68%;
 	}
 }
+.bx-core-adm-dialog {
+    top: 0!important;
+}

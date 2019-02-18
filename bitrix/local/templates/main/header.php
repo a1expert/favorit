@@ -147,12 +147,12 @@ $adminIndaHouse = $USER->isAdmin();
                             );?>
                         </nav>
                         <div class="col-xs-12 col-lg-9 content content_aside">
-                            <h1 class="h1"><?$APPLICATION->ShowTitle();?></h1><?
+                            <h1 class="h1"><?$APPLICATION->ShowTitle(true);?></h1><?
             }
             else
             {?>
                 <div class="container">
-                    <h1 class="h1"><?$APPLICATION->ShowTitle();?></h1>
+                    <h1 class="h1"><?$APPLICATION->ShowTitle(true);?></h1>
                 </div><?
             }
         }?>
