@@ -14,7 +14,7 @@ use Bitrix\Main\Loader;
 use Bitrix\Main\ModuleManager;
 
 $this->setFrameMode(true);				
-
+$APPLICATION->SetPageProperty("showIntro", "Y");
 $intSectionID = $APPLICATION->IncludeComponent(
 	"favorit:catalog.section",
 	"",
@@ -140,7 +140,8 @@ $intSectionID = $APPLICATION->IncludeComponent(
 		'USE_COMPARE_LIST' => $arParams["USE_COMPARE"],
 		'BACKGROUND_IMAGE' => (isset($arParams['SECTION_BACKGROUND_IMAGE']) ? $arParams['SECTION_BACKGROUND_IMAGE'] : ''),
 		'COMPATIBLE_MODE' => (isset($arParams['COMPATIBLE_MODE']) ? $arParams['COMPATIBLE_MODE'] : ''),
-		'DISABLE_INIT_JS_IN_COMPONENT' => (isset($arParams['DISABLE_INIT_JS_IN_COMPONENT']) ? $arParams['DISABLE_INIT_JS_IN_COMPONENT'] : '')
+		'DISABLE_INIT_JS_IN_COMPONENT' => (isset($arParams['DISABLE_INIT_JS_IN_COMPONENT']) ? $arParams['DISABLE_INIT_JS_IN_COMPONENT'] : ''),
+		"GET_COMMON_CONTENT" => "Y"
 	),
 	$component
 );

@@ -35,8 +35,6 @@ if($this->StartResultCache())
 		$this->EndResultCache();
 	}
 }
-// ShowRes($_SERVER["REQUEST_URI"]);
-
 foreach ($arResult as $key => $arItem)
 {
 	$aMenuLinksNew[$key] = array(

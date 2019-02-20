@@ -770,3 +770,15 @@ if (isset($arCurrentValues['DISPLAY_COMPARE']) && $arCurrentValues['DISPLAY_COMP
 		'DEFAULT' => ''
 	);
 }
+$arComponentParameters['PARAMETERS']['GET_COMMON_CONTENT'] = array(
+	'PARENT' => 'ADDITIONAL_SETTINGS',
+	'NAME' => 'Получать общий контент',
+	'TYPE' => 'CHECKBOX',
+	'DEFAULT' => 'N'
+);
+$arComponentParameters['PARAMETERS']['GET_ELEMENTS'] = array(
+	'PARENT' => 'ADDITIONAL_SETTINGS',
+	'NAME' => 'Получать элементы (со свойствами, типа компонента section.top, свойства пишем руками в вызове компонента)',
+	'TYPE' => 'CHECKBOX',
+	'DEFAULT' => 'N'
+);

@@ -1,70 +1,159 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();?>
-    <?if ($boolSectionMenu){?>
+    <?if ($boolSectionMenu)
+    {?>
                 </div>
             </div>
-        </div><?}?>
+        </div><?
+    }?>
     </div> <!--end main-->
-    <footer class="footer">
-        <nav class="footerMenu">
-            <ul class="row footerMenu__list_l1">
-                <div class="footerMenu__col footerMenu__col1 col-sm-3 col-lg-3">
-                    <li class="footerMenu__item_l1 footerMenu__item_parent">
-                        <a href="about.html" class="footerMenu__link">О компании</a>
-                        <ul class="hidden-xs footerMenu__list_l2">
-                            <li class="footerMenu__item_l2"><a href="reviews.html" class="footerMenu__link">Отзывы</a></li>
-                            <li class="footerMenu__item_l2"><a href="clients.html" class="footerMenu__link">Заказчики</a></li>
-                            <li class="footerMenu__item_l2"><a href="documents.html" class="footerMenu__link">Документы</a></li>
-                            <li class="footerMenu__item_l2"><a href="vacancy.html" class="footerMenu__link">Вакансии</a></li>
-                        </ul>
-                    </li>
-                </div>
-                <div class="footerMenu__col footerMenu__col2 col-sm-6 col-lg-6">
-                    <li class="footerMenu__item_l1 footerMenu__item_parent">
-                        <a href="services.html" class="footerMenu__link">Услуги</a>
-                        <ul class="hidden-xs footerMenu__list_l2">
-                            <li class="footerMenu__item_l2"><a href="service_detail.html" class="footerMenu__link">Газовая резка металла</a></li>
-                            <li class="footerMenu__item_l2"><a href="service_detail.html" class="footerMenu__link">Плазменная резка металла</a></li>
-                            <li class="footerMenu__item_l2"><a href="service_detail.html" class="footerMenu__link">Рубка металла</a></li>
-                            <li class="footerMenu__item_l2"><a href="service_detail.html" class="footerMenu__link">Гибка металла</a></li>
-                            <li class="footerMenu__item_l2"><a href="service_detail.html" class="footerMenu__link">Разработка чертежей КМД</a></li>
-                            <li class="footerMenu__item_l2"><a href="service_detail.html" class="footerMenu__link">Доставка металлоконструкций</a></li>
-                            <li class="footerMenu__item_l2"><a href="service_detail.html" class="footerMenu__link">Токарные работы</a></li>
-                        </ul>
-                    </li>
-                </div>
-                <div class="footerMenu__col footerMenu__col3 col-sm-3 col-lg-3">
-                    <li class="footerMenu__item_l1"><a href="catalog.html" class="footerMenu__link">Каталог продукции</a></li>
-                    <li class="footerMenu__item_l1"><a href="our_work.html" class="footerMenu__link">Наши работы</a></li>
-                    <li class="footerMenu__item_l1"><a href="delivery.html" class="footerMenu__link">География поставок</a></li>
-                    <li class="footerMenu__item_l1"><a href="contacts.html" class="footerMenu__link">Контакты</a></li>
-                </div>
-            </ul>
-        </nav>
-        <div class="addInfo">
-            <div class="addInfo__item addInfo__item1">
-                <div class="footerContacts">
-                    <div class="footerContacts__phone">+7 (3462) 45-92-01</div>
-                    <div class="footerContacts__text">Сургут, ул.Глухова 2/1, офис 590</div>
-                    <div class="footerContacts__text">Пн-пт 08:30 - 17:00</div>
-                </div>
-                <div class="footerDevSign hidden-sm hidden-md hidden-lg">
-                    <div class="footerDevSign__text">Разработка и продвижение:</div>
-                    <a href="//a1-reklama.ru" class="footerDevSign__logo">
-                        <img src="assets/img/dev_logo.png" alt="">
-                    </a>
-                </div>
-                <div class="copyNpolicy">
-                    <div class="copyright">© ООО «Фаворит-С», 2018</div>
-                    <a href="#" class="footerPrivatePolicy"><span>Политика в отношении обработки</span><span>персональных данных</span></a>
-                </div>
+    <?if ($APPLICATION->GetPageProperty("showIntro") == "Y")
+    {?>
+    <div class="intro">
+        <section class="companyNumbers">
+            <div class="container">
+            <?$APPLICATION->IncludeComponent("bitrix:news.list", "numbers", Array(
+                "ACTIVE_DATE_FORMAT" => "d.m.Y",
+                "ADD_SECTIONS_CHAIN" => "N",
+                "AJAX_MODE" => "N",
+                "AJAX_OPTION_ADDITIONAL" => "",
+                "AJAX_OPTION_HISTORY" => "N",
+                "AJAX_OPTION_JUMP" => "N",
+                "AJAX_OPTION_STYLE" => "N",
+                "CACHE_FILTER" => "N",
+                "CACHE_GROUPS" => "Y",
+                "CACHE_TIME" => "36000000",
+                "CACHE_TYPE" => "A",
+                "CHECK_DATES" => "Y",
+                "DETAIL_URL" => "",
+                "DISPLAY_BOTTOM_PAGER" => "N",
+                "DISPLAY_DATE" => "N",
+                "DISPLAY_NAME" => "Y",
+                "DISPLAY_PICTURE" => "N",
+                "DISPLAY_PREVIEW_TEXT" => "N",
+                "DISPLAY_TOP_PAGER" => "N",
+                "FIELD_CODE" => array(),
+                "FILTER_NAME" => "",
+                "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+                "IBLOCK_ID" => "5",
+                "IBLOCK_TYPE" => "common_info",
+                "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+                "INCLUDE_SUBSECTIONS" => "N",
+                "MESSAGE_404" => "",
+                "NEWS_COUNT" => "",
+                "PAGER_BASE_LINK_ENABLE" => "N",
+                "PAGER_DESC_NUMBERING" => "N",
+                "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+                "PAGER_SHOW_ALL" => "N",
+                "PAGER_SHOW_ALWAYS" => "N",
+                "PAGER_TEMPLATE" => ".default",
+                "PAGER_TITLE" => "Новости",
+                "PARENT_SECTION" => "",
+                "PARENT_SECTION_CODE" => "",
+                "PREVIEW_TRUNCATE_LEN" => "",
+                "PROPERTY_CODE" => array(0 => "NUMBER", 1 => "TEXT"),
+                "SET_BROWSER_TITLE" => "N",
+                "SET_LAST_MODIFIED" => "N",
+                "SET_META_DESCRIPTION" => "N",
+                "SET_META_KEYWORDS" => "N",
+                "SET_STATUS_404" => "N",
+                "SET_TITLE" => "N",
+                "SHOW_404" => "N",
+                "SORT_BY1" => "SORT",
+                "SORT_BY2" => "",
+                "SORT_ORDER1" => "ASC",
+                "SORT_ORDER2" => "",
+                "STRICT_SECTION_CHECK" => "N",
+            ), false);?>
             </div>
-            <div class="addInfo__item addInfo__item2 hidden-xs">
-                <div class="footerDevSign">
-                    <div class="footerDevSign__text">Разработка и продвижение:</div>
-                    <a href="//a1-reklama.ru" class="footerDevSign__logo">
-                        <img src="assets/img/dev_logo.png" alt="">
+        </section>
+        <section class="gallery">
+            <div class="container">
+                <h2 class="h2 gallery__h2">Производство</h2>
+                <?$APPLICATION->IncludeComponent("bitrix:news.detail", "gallery", Array(
+                    "ACTIVE_DATE_FORMAT" => "d.m.Y",
+                    "ADD_ELEMENT_CHAIN" => "N",
+                    "ADD_SECTIONS_CHAIN" => "N",
+                    "AJAX_MODE" => "N",
+                    "AJAX_OPTION_ADDITIONAL" => "",
+                    "AJAX_OPTION_HISTORY" => "N",
+                    "AJAX_OPTION_JUMP" => "N",
+                    "AJAX_OPTION_STYLE" => "N",
+                    "BROWSER_TITLE" => "-",
+                    "CACHE_GROUPS" => "Y",
+                    "CACHE_TIME" => "36000000",
+                    "CACHE_TYPE" => "A",
+                    "CHECK_DATES" => "Y",
+                    "DETAIL_URL" => "",
+                    "DISPLAY_BOTTOM_PAGER" => "N",
+                    "DISPLAY_DATE" => "N",
+                    "DISPLAY_NAME" => "N",
+                    "DISPLAY_PICTURE" => "N",
+                    "DISPLAY_PREVIEW_TEXT" => "N",
+                    "DISPLAY_TOP_PAGER" => "N",
+                    "ELEMENT_CODE" => "",
+                    "ELEMENT_ID" => $galleryID, // из файла /local/inc_files/ commoninfo.php
+                    "FIELD_CODE" => array(),
+                    "IBLOCK_ID" => "6",
+                    "IBLOCK_TYPE" => "common_info",
+                    "IBLOCK_URL" => "",
+                    "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+                    "MESSAGE_404" => "",
+                    "META_DESCRIPTION" => "-",
+                    "META_KEYWORDS" => "-",
+                    "PAGER_BASE_LINK_ENABLE" => "N",
+                    "PAGER_SHOW_ALL" => "N",
+                    "PAGER_TEMPLATE" => ".default",
+                    "PAGER_TITLE" => "Страница",
+                    "PROPERTY_CODE" => array(0 => "IMAGES"),
+                    "SET_BROWSER_TITLE" => "N",
+                    "SET_CANONICAL_URL" => "N",
+                    "SET_LAST_MODIFIED" => "N",
+                    "SET_META_DESCRIPTION" => "N",
+                    "SET_META_KEYWORDS" => "N",
+                    "SET_STATUS_404" => "N",
+                    "SET_TITLE" => "N",
+                    "SHOW_404" => "N",
+                    "STRICT_SECTION_CHECK" => "N",
+                    "USE_PERMISSIONS" => "N",
+                    "USE_SHARE" => "N",
+                ), false);?>
+            </div>
+        </section>
+    </div><?
+    }?>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__layout">
+                <?$APPLICATION->IncludeComponent("bitrix:menu", "bottom", Array(
+                    "ALLOW_MULTI_SELECT" => "N",
+                    "CHILD_MENU_TYPE" => "",
+                    "DELAY" => "N",
+                    "MAX_LEVEL" => "0",
+                    "MENU_CACHE_GET_VARS" => array(""),
+                    "MENU_CACHE_TIME" => "360000",
+                    "MENU_CACHE_TYPE" => "A",
+                    "MENU_CACHE_USE_GROUPS" => "Y",
+                    "ROOT_MENU_TYPE" => "bottom",
+                    "USE_EXT" => "Y"
+                ), false /*array("HIDE_ICONS"=>"Y")*/);?>
+                              
+                <address class="footer__contacts">
+                    <p class="footer__phone"><?=$commonInfo["footerPhone"];?></p>
+                    <p class="footer__address"><?=$commonInfo["footerAddress"];?></p>
+                    <p class="footer__time"><?=$commonInfo["footerTime"];?></p>
+                </address>
+                <p class="footer__develop">
+                    <a href="//a1-reklama.ru" target="_blank">
+                        <small>Разработка и продвижение</small>
+                        <img src="<?=$commonInfo["devLogo"];?>" alt="a1 huyspert">
                     </a>
-                </div>
+                </p>
+                <p class="footer__policy">
+                    <a href="<?=$commonInfo["PDPP"];?>" target="_blank">Политика в отношении обработки персональных данных</a>
+                </p>
+                <p class="footer__copyrights">
+                    <small>© <?=$commonInfo["footerCopyright"];?></small>
+                </p>
             </div>
         </div>
     </footer>
@@ -85,7 +174,7 @@
             <div class="callback__Input">
                 <button type="submit" value="" class="btn callback__btn btn_blue">Заказать звонок</button>
             </div>
-            <div class="callback__note">Заполняя настоящую форму вы даете свое согласие на обработку своих <a href="assets/img/bluprintdev.png" class="callback__pndLink" target="_blank">персональных данных</a></div>
+            <div class="callback__note">Заполняя настоящую форму вы даете свое согласие на обработку своих <a href="/local/assets/img/bluprintdev.png" class="callback__pndLink" target="_blank">персональных данных</a></div>
         </form>
     </template>
     <div class="hide">

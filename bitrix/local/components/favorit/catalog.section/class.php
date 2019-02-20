@@ -52,6 +52,7 @@ class CatalogSectionComponent extends ElementList
 		$params['SHOW_ALL_WO_SECTION'] = isset($params['SHOW_ALL_WO_SECTION']) && $params['SHOW_ALL_WO_SECTION'] === 'Y';
 		$params['USE_MAIN_ELEMENT_SECTION'] = isset($params['USE_MAIN_ELEMENT_SECTION']) && $params['USE_MAIN_ELEMENT_SECTION'] === 'Y';
 		$params['SECTIONS_CHAIN_START_FROM'] = isset($params['SECTIONS_CHAIN_START_FROM']) ? (int)$params['SECTIONS_CHAIN_START_FROM'] : 0;
+		
 
 		$params['BACKGROUND_IMAGE'] = isset($params['BACKGROUND_IMAGE']) ? trim($params['BACKGROUND_IMAGE']) : '';
 		if ($params['BACKGROUND_IMAGE'] === '-')
@@ -218,19 +219,30 @@ class CatalogSectionComponent extends ElementList
 			/**
 			 * Изменения в компонентне
 			 */
+			$getCommonContent = ($this->arParams["GET_COMMON_CONTENT"] == "Y") ? true : false;
+			$getElements = ($this->arParams["GET_ELEMENTS"] == "Y") ? true : false;
 			$fixer = new Fixer();
-			$this->arResult["commonContent"] = $fixer->GetElements(
-				array(),
-				array(
-					"IBLOCK_TYPE" => "common_content",
-					"IBLOCK_ID" => 14,
-					"ACTIVE" => "Y",
-					"PROPERTY_CATALOG_SECTION" => "2",
-				),
-				false,
-				false,
-				array("IBLOCK_ID", "ID", "PROPERTY_COST", "PROPERTY_HEADER_ADD_TEXT", "PROPERTY_ADD_TEXT", "PROPERTY_TEXT_LIST", "PROPERTY_CATALOG_SECTION", "PROPERTY_ITEMS_HEADER")
-			);
+			if($getCommonContent)
+			{
+				$this->arResult["commonContent"] = $fixer->GetElements(
+					array(),
+					array(
+						"IBLOCK_TYPE" => "common_content",
+						"IBLOCK_ID" => 14,
+						"ACTIVE" => "Y",
+						"PROPERTY_CATALOG_SECTION" => "2",
+					),
+					false,
+					false,
+					array("IBLOCK_ID", "ID", "PROPERTY_COST", "PROPERTY_HEADER_ADD_TEXT", "PROPERTY_ADD_TEXT", "PROPERTY_TEXT_LIST", "PROPERTY_CATALOG_SECTION", "PROPERTY_ITEMS_HEADER")
+				);
+			}
+			if($getElements)
+			{
+				$arSelect = array("IBLOCK_ID", "ID", "NAME", "PREVIEW_PICTURE", "PROPERTY_CLIENT", "PROPERTY_CONTSRACTION_PERIOD", "PROPERTY_GALLERY", "PROPERTY_GALLERY_TEXT");
+				$this->arResult["MY_ITEMS"] = $fixer->GetElements(array(), array("IBLOCK_ID"=>$this->arResult['IBLOCK_ID'], "IBLOCK_SECTION_ID"=>$this->arResult['ID'], "ACTIVE"=>"Y"), false, false, $arSelect);
+			}
+
 			/**end изменения в компоненте */
 		}
 		return $success;

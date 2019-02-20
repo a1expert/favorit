@@ -16,7 +16,7 @@ use Bitrix\Main\Loader;
 use Bitrix\Main\ModuleManager;
 
 $this->setFrameMode(true);
-
+$APPLICATION->SetPageProperty("showIntro", "Y");
 
 $componentElementParams = array(
 	'IBLOCK_TYPE' => $arParams['IBLOCK_TYPE'],

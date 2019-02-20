@@ -114,7 +114,7 @@ $adminIndaHouse = $USER->isAdmin();
                 <li class="mobileMenu__closeBtn" id="mobileMenuCloseBtn"><span class="closeBtn__arrow closeBtn__arrowRight"></span><span class="closeBtn__arrow closeBtn__arrowLeft"></span></li>
             </ul>
         </nav>
-        <div class="main" id="main">
+        <div class="main<?=($mainPage) ? "__mainPage" : "";?>" id="main">
         <?if ($mainPage === false)
         {?>
             <div class="hidden-xs breadcrumbs">

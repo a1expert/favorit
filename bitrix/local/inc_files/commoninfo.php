@@ -28,3 +28,15 @@ else
     $cache->set("commoninfo", $cachedVars);
     $commonInfo = $cachedVars;
 }
+
+if ($cache->read(36000000, "galleryID"))
+{
+    $galleryID = $cache->get("galleryID");
+}
+else
+{
+    $elems = $fixer->GetElements(array(), array("IBLOCK_ID"=>"6", "ACTIVE" => "Y"), false, false, array("ID", "IBLOCK_ID"));
+    $cachedID = $elems[0]["ID"];
+    $cache->set("galleryID", $cachedID);
+    $galleryID = $cachedID;
+}

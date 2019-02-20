@@ -2,180 +2,304 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Главная страница");
 ?>
-<section class="firstBlock">
-    <div class="firstBlock__content container">
-        <h1 class="firstBlock__mainPageHeader">Производство металлоконстуркций</h1>
-        <div class="firstBlock__text">ООО «Фаворит-С» более 10 лет успешно работает в области производства металлоконструкций различного назначения в ХМАО и ЯНАО.</div>
-        <a href="catalog.html" class="btn firstBlock__btn btn_blue">Перейти в каталог<span class="btn__arrow btn__arrow_white btn__arrow_horizontal"></span></a>
-    </div>
-</section>
-<section class="about">
-    <div class="container">
-        <div class="row about__row">
-            <div class="col-xs-12 col-lg-6 aboutContent">
-                <h2 class="h2 aboutContent__header">ООО «Фаворит-С» — крупнейшая компания по производству металлоконструкций в ХМАО и ЯНАО</h2>
-                <p class="aboutContent__subHeader">Ключевые компетенции нашей компании:</p>
-                <ul class="textList textList__about">
-                    <li class="textList__item">Изготовление металлоконструкций</li>
-                    <li class="textList__item">Обработка металлоконструкций <span class="textList__little">(газовая резка, плазменная резка, рубка, гибка металла)</span></li>
-                    <li class="textList__item">Разработка четежей КМД</li>
-                    <li class="textList__item">Доставка металлоконструкций по ХМАО и ЯНАО</li>
-                </ul>
-                <a href="about.html" class="btn aboutContent__btn btn_blue">Узнать больше<span class="btn__arrow btn__arrow_white btn__arrow_horizontal"></span></a>
-            </div>
-            <div class="col-xs-12 col-lg-6 about__slider">
-                <img src="/local/assets/img/photo_003.png" alt="" style="width: 100%;">
-                <img src="/local/assets/img/photo_003.png" alt="" style="width: 100%;">
-                <img src="/local/assets/img/photo_003.png" alt="" style="width: 100%;">
-            </div>
-        </div>
-    </div>
-</section>
+<?$APPLICATION->IncludeComponent("bitrix:news.detail", "mainPage", Array(
+	"ACTIVE_DATE_FORMAT" => "d.m.Y",
+	"ADD_ELEMENT_CHAIN" => "N",
+	"ADD_SECTIONS_CHAIN" => "N",
+	"AJAX_MODE" => "N",
+	"AJAX_OPTION_ADDITIONAL" => "",
+	"AJAX_OPTION_HISTORY" => "N",
+	"AJAX_OPTION_JUMP" => "N",
+	"AJAX_OPTION_STYLE" => "N",
+	"BROWSER_TITLE" => "-",
+	"CACHE_GROUPS" => "Y",
+	"CACHE_TIME" => "36000000",
+	"CACHE_TYPE" => "A",
+	"CHECK_DATES" => "Y",
+	"DETAIL_URL" => "",
+	"DISPLAY_BOTTOM_PAGER" => "N",
+	"DISPLAY_DATE" => "N",
+	"DISPLAY_NAME" => "N",
+	"DISPLAY_PICTURE" => "N",
+	"DISPLAY_PREVIEW_TEXT" => "N",
+	"DISPLAY_TOP_PAGER" => "N",
+	"ELEMENT_CODE" => "",
+	"ELEMENT_ID" => "34",
+	"FIELD_CODE" => array(),
+	"IBLOCK_ID" => "16",
+	"IBLOCK_TYPE" => "pages",
+	"IBLOCK_URL" => "",
+	"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+	"MESSAGE_404" => "",
+	"META_DESCRIPTION" => "-",
+	"META_KEYWORDS" => "-",
+	"PAGER_BASE_LINK_ENABLE" => "N",
+	"PAGER_SHOW_ALL" => "N",
+	"PAGER_TEMPLATE" => ".default",
+	"PAGER_TITLE" => "Страница",
+	"PROPERTY_CODE" => array(
+		0 => "FIRST_BG",
+		1 => "FIRST_BG_WEBP",
+		2 => "FIRST_BLOCK_HEADER",
+		3 => "FIRST_BLOCK_SUBHEADER",
+        4 => "ABOUT_HEADER",
+        5 => "ABOUT_SUBHEADER",
+        6 => "ABOUT_LIST",
+        7 => "SLIDER"
+	),
+	"SET_BROWSER_TITLE" => "Y",
+	"SET_CANONICAL_URL" => "N",
+	"SET_LAST_MODIFIED" => "N",
+	"SET_META_DESCRIPTION" => "N",
+	"SET_META_KEYWORDS" => "N",
+	"SET_STATUS_404" => "N",
+	"SET_TITLE" => "N",
+	"SHOW_404" => "N",
+	"STRICT_SECTION_CHECK" => "N",
+	"USE_PERMISSIONS" => "N",
+	"USE_SHARE" => "N",
+), false);?>
 <div class="intro intro_mainPage">
     <section class="companyNumbers">
         <div class="container">
-            <div class="row companyNumbers__inner center-xs middle-xs">
-                <div class="col-xs-12 col-sm-6 col-lg-3 companyNumbers__item">
-                    <div class="companyNumbers__number">1125</div>
-                    <div class="companyNumbers__text">тонн металлоконструкций производится в месяц</div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-lg-3 companyNumbers__item">
-                    <div class="companyNumbers__number">6000</div>
-                    <div class="companyNumbers__text">м<sup>2</sup> производственных площадей на территории</div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-lg-3 companyNumbers__item">
-                    <div class="companyNumbers__number">10</div>
-                    <div class="companyNumbers__text">летний опыт изготовления металлоконструкций</div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-lg-3 companyNumbers__item">
-                    <div class="companyNumbers__number">3000</div>
-                    <div class="companyNumbers__text">рейсов выполнено за время нашей работы</div>
-                </div>
-            </div>
+        <?$APPLICATION->IncludeComponent("bitrix:news.list", "numbers", Array(
+                "ACTIVE_DATE_FORMAT" => "d.m.Y",
+                "ADD_SECTIONS_CHAIN" => "N",
+                "AJAX_MODE" => "N",
+                "AJAX_OPTION_ADDITIONAL" => "",
+                "AJAX_OPTION_HISTORY" => "N",
+                "AJAX_OPTION_JUMP" => "N",
+                "AJAX_OPTION_STYLE" => "N",
+                "CACHE_FILTER" => "N",
+                "CACHE_GROUPS" => "Y",
+                "CACHE_TIME" => "36000000",
+                "CACHE_TYPE" => "A",
+                "CHECK_DATES" => "Y",
+                "DETAIL_URL" => "",
+                "DISPLAY_BOTTOM_PAGER" => "N",
+                "DISPLAY_DATE" => "N",
+                "DISPLAY_NAME" => "Y",
+                "DISPLAY_PICTURE" => "N",
+                "DISPLAY_PREVIEW_TEXT" => "N",
+                "DISPLAY_TOP_PAGER" => "N",
+                "FIELD_CODE" => array(),
+                "FILTER_NAME" => "",
+                "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+                "IBLOCK_ID" => "5",
+                "IBLOCK_TYPE" => "common_info",
+                "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+                "INCLUDE_SUBSECTIONS" => "N",
+                "MESSAGE_404" => "",
+                "NEWS_COUNT" => "",
+                "PAGER_BASE_LINK_ENABLE" => "N",
+                "PAGER_DESC_NUMBERING" => "N",
+                "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+                "PAGER_SHOW_ALL" => "N",
+                "PAGER_SHOW_ALWAYS" => "N",
+                "PAGER_TEMPLATE" => ".default",
+                "PAGER_TITLE" => "Новости",
+                "PARENT_SECTION" => "",
+                "PARENT_SECTION_CODE" => "",
+                "PREVIEW_TRUNCATE_LEN" => "",
+                "PROPERTY_CODE" => array(0 => "NUMBER", 1 => "TEXT"),
+                "SET_BROWSER_TITLE" => "N",
+                "SET_LAST_MODIFIED" => "N",
+                "SET_META_DESCRIPTION" => "N",
+                "SET_META_KEYWORDS" => "N",
+                "SET_STATUS_404" => "N",
+                "SET_TITLE" => "N",
+                "SHOW_404" => "N",
+                "SORT_BY1" => "SORT",
+                "SORT_BY2" => "",
+                "SORT_ORDER1" => "ASC",
+                "SORT_ORDER2" => "",
+                "STRICT_SECTION_CHECK" => "N",
+            ), false);?>
         </div>
     </section>
     <section class="products">
         <div class="container">
             <h2 class="h2 products__header">Наша продукция</h2>
-            <div class="row productsList">
-                <div class="col-xs-12 col-sm-6 col-md-4 productsList__item">
-                    <a href="catalog_section.html" class="productsList__link">
-                        <div class="productList__hoverElement">
-                            <img src="/local/assets/img/roundarrow.png" alt="">
-                        </div>
-                        <img src="/local/assets/img/svai.png" alt="" class="productsList__img">
-                    </a>
-                    <div class="productsList__name">Винтовые сваи</div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 productsList__item">
-                    <a href="catalog_section.html" class="productsList__link">
-                        <div class="productList__hoverElement">
-                            <img src="/local/assets/img/roundarrow.png" alt="">
-                        </div>
-                        <img src="/local/assets/img/svai.png" alt="" class="productsList__img">
-                    </a>
-                    <div class="productsList__name">Винтовые сваи</div>
-                </div>
-                <div class="hidden-xs hidden-sm col-md-4 productsList__item">
-                    <a href="catalog_section.html" class="productsList__link">
-                        <div class="productList__hoverElement">
-                            <img src="/local/assets/img/roundarrow.png" alt="">
-                        </div>
-                        <img src="/local/assets/img/svai.png" alt="" class="productsList__img">
-                    </a>
-                    <div class="productsList__name">Винтовые сваи</div>
-                </div>
-            </div>
-            <a href="catalog.html" class="btn products__btn btn_white">Перейти в каталог продукции<span class="btn__arrow btn__arrow_blue btn__arrow_horizontal"></span></a>
+            <?
+            global $catalogFilter;
+            $catalogFilter = array("IBLOCK_ID"=>"13", "ACTIVE" => "Y", "PROPERTY_SHOW_MAIN_VALUE"=>"Y");
+            ?>
+            <?$APPLICATION->IncludeComponent("bitrix:news.list", "catalogMain", Array(
+                "ACTIVE_DATE_FORMAT" => "d.m.Y",
+                "ADD_SECTIONS_CHAIN" => "N",
+                "AJAX_MODE" => "N",
+                "AJAX_OPTION_ADDITIONAL" => "",
+                "AJAX_OPTION_HISTORY" => "N",
+                "AJAX_OPTION_JUMP" => "N",
+                "AJAX_OPTION_STYLE" => "N",
+                "CACHE_FILTER" => "N",
+                "CACHE_GROUPS" => "Y",
+                "CACHE_TIME" => "36000000",
+                "CACHE_TYPE" => "A",
+                "CHECK_DATES" => "Y",
+                "DETAIL_URL" => "",
+                "DISPLAY_BOTTOM_PAGER" => "N",
+                "DISPLAY_DATE" => "N",
+                "DISPLAY_NAME" => "Y",
+                "DISPLAY_PICTURE" => "Y",
+                "DISPLAY_PREVIEW_TEXT" => "N",
+                "DISPLAY_TOP_PAGER" => "N",
+                "FIELD_CODE" => array(),
+                "FILTER_NAME" => "catalogFilter",
+                "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+                "IBLOCK_ID" => "13",
+                "IBLOCK_TYPE" => "content",
+                "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+                "INCLUDE_SUBSECTIONS" => "N",
+                "MESSAGE_404" => "",
+                "NEWS_COUNT" => "3",
+                "PAGER_BASE_LINK_ENABLE" => "N",
+                "PAGER_DESC_NUMBERING" => "N",
+                "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+                "PAGER_SHOW_ALL" => "N",
+                "PAGER_SHOW_ALWAYS" => "N",
+                "PAGER_TEMPLATE" => ".default",
+                "PAGER_TITLE" => "Новости",
+                "PARENT_SECTION" => "",
+                "PARENT_SECTION_CODE" => "",
+                "PREVIEW_TRUNCATE_LEN" => "",
+                "PROPERTY_CODE" => array(),
+                "SET_BROWSER_TITLE" => "N",
+                "SET_LAST_MODIFIED" => "N",
+                "SET_META_DESCRIPTION" => "N",
+                "SET_META_KEYWORDS" => "N",
+                "SET_STATUS_404" => "N",
+                "SET_TITLE" => "N",
+                "SHOW_404" => "N",
+                "SORT_BY1" => "SORT",
+                "SORT_BY2" => "",
+                "SORT_ORDER1" => "ASC",
+                "SORT_ORDER2" => "",
+                "STRICT_SECTION_CHECK" => "N",
+            ), false);?>
+            <a href="/catalog/" class="btn products__btn btn_white">Перейти в каталог продукции<span class="btn__arrow btn__arrow_blue btn__arrow_horizontal"></span></a>
         </div>
     </section>
 </div>
 <section class="servicesList">
     <div class="container">
         <h2 class="h2 servicesList__header">Популярные услуги</h2>
-        <div class="row darkenedTile">
-            <a href="service.html" class="col-xs-12 col-sm-6 col-md-6 darkenedTile__item">
-                <div class="darkenedTile__wraper">
-                    <div class="darkenedTile__hoverElement"></div>
-                    <img src="/local/assets/img/metmake.png" class="darkenedTile__img" alt="">
-                    <div class="darkenedTile__name">Изготовление металлоконструкций</div>
-                </div>
-            </a>
-            <a href="service.html" class="col-xs-12 col-sm-6 col-md-6 darkenedTile__item">
-                <div class="darkenedTile__wraper">
-                    <div class="darkenedTile__hoverElement"></div>
-                    <img src="/local/assets/img/plazmacut.png" class="darkenedTile__img" alt="">
-                    <div class="darkenedTile__name">Плазменная резка металла</div>
-                </div>
-            </a>
-            <a href="service.html" class="col-xs-12 col-sm-6 col-md-6 darkenedTile__item">
-                <div class="darkenedTile__wraper">
-                    <div class="darkenedTile__hoverElement"></div>
-                    <img src="/local/assets/img/gascut.png" class="darkenedTile__img" alt="">
-                    <div class="darkenedTile__name">Газовая резка металла</div>
-                </div>
-            </a>
-            <a href="service.html" class="col-xs-12 col-sm-6 col-md-6 darkenedTile__item">
-                <div class="darkenedTile__wraper">
-                    <div class="darkenedTile__hoverElement"></div>
-                    <img src="/local/assets/img/bluprintdev.png" class="darkenedTile__img" alt="">
-                    <div class="darkenedTile__name">Разработка чертежей КМД</div>
-                </div>
-            </a>
-        </div>
-        <a href="about.html" class="btn servicesList__btn btn_white">Смотреть все услуги<span class="btn__arrow btn__arrow_blue btn__arrow_horizontal"></span></a>
+        <?global $servicesFilter;
+            $servicesFilter = array("IBLOCK_ID"=>"12", "ACTIVE" => "Y", "PROPERTY_SHOW_MAIN_VALUE"=>"Y");?>
+        <?$APPLICATION->IncludeComponent("bitrix:news.list", "servicesMain", Array(
+                "ACTIVE_DATE_FORMAT" => "d.m.Y",
+                "ADD_SECTIONS_CHAIN" => "N",
+                "AJAX_MODE" => "N",
+                "AJAX_OPTION_ADDITIONAL" => "",
+                "AJAX_OPTION_HISTORY" => "N",
+                "AJAX_OPTION_JUMP" => "N",
+                "AJAX_OPTION_STYLE" => "N",
+                "CACHE_FILTER" => "N",
+                "CACHE_GROUPS" => "Y",
+                "CACHE_TIME" => "36000000",
+                "CACHE_TYPE" => "A",
+                "CHECK_DATES" => "Y",
+                "DETAIL_URL" => "",
+                "DISPLAY_BOTTOM_PAGER" => "N",
+                "DISPLAY_DATE" => "N",
+                "DISPLAY_NAME" => "Y",
+                "DISPLAY_PICTURE" => "Y",
+                "DISPLAY_PREVIEW_TEXT" => "N",
+                "DISPLAY_TOP_PAGER" => "N",
+                "FIELD_CODE" => array(),
+                "FILTER_NAME" => "servicesFilter",
+                "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+                "IBLOCK_ID" => "13",
+                "IBLOCK_TYPE" => "content",
+                "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+                "INCLUDE_SUBSECTIONS" => "N",
+                "MESSAGE_404" => "",
+                "NEWS_COUNT" => "4",
+                "PAGER_BASE_LINK_ENABLE" => "N",
+                "PAGER_DESC_NUMBERING" => "N",
+                "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+                "PAGER_SHOW_ALL" => "N",
+                "PAGER_SHOW_ALWAYS" => "N",
+                "PAGER_TEMPLATE" => ".default",
+                "PAGER_TITLE" => "Новости",
+                "PARENT_SECTION" => "",
+                "PARENT_SECTION_CODE" => "",
+                "PREVIEW_TRUNCATE_LEN" => "",
+                "PROPERTY_CODE" => array(),
+                "SET_BROWSER_TITLE" => "N",
+                "SET_LAST_MODIFIED" => "N",
+                "SET_META_DESCRIPTION" => "N",
+                "SET_META_KEYWORDS" => "N",
+                "SET_STATUS_404" => "N",
+                "SET_TITLE" => "N",
+                "SHOW_404" => "N",
+                "SORT_BY1" => "SORT",
+                "SORT_BY2" => "",
+                "SORT_ORDER1" => "ASC",
+                "SORT_ORDER2" => "",
+                "STRICT_SECTION_CHECK" => "N",
+            ), false);?>
+        <a href="/services/" class="btn servicesList__btn btn_white">Смотреть все услуги<span class="btn__arrow btn__arrow_blue btn__arrow_horizontal"></span></a>
     </div>
 </section>
 <section class="ourWork">
     <div class="container">
         <h2 class="h2 ourWork__header">Последние работы</h2>
-        <div class="row ourWork__list">
-            <div class="col-xs-12 col-sm-6 col-md-4 ourWork__item">
-                <a href="/local/assets/img/workdetail1.png" class="ourWork__link">
-                    <div class="productList__hoverElement">
-                        <img src="/local/assets/img/roundplus.png" alt="">
-                    </div>
-                    <img src="/local/assets/img/workdetail1.png" alt="" class="ourWork__img">
-                </a>
-                <div class="ourWork__name">Сваи из труб</div>
-                <div class="ourWork__clientName">Заказчик ПАО «Сургутнефтегаз»</div>
-                <div class="ourWork__clientName">Период стоительства: октябрь 2018</div>
-                <a href="/local/assets/img/workdetail1.png" class="hide"></a>
-                <a href="/local/assets/img/workdetail2.png" class="hide"></a>
-                <a href="/local/assets/img/workdetail2.png" class="hide"></a>
-                <div class="ourWork__desc hide">742 сваи из труб диаметром 159мм, 168мм и 219мм изготовлено ООО "Фаворит-С" для объекта "Пробная эксплуатация Западно-Чатылькинского месторождения".</div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 ourWork__item">
-                <a href="/local/assets/img/workdetail2.png" class="ourWork__link">
-                    <div class="productList__hoverElement">
-                        <img src="/local/assets/img/roundplus.png" alt="">
-                    </div>
-                    <img src="/local/assets/img/workdetail2.png" alt="" class="ourWork__img">
-                </a>
-                <div class="ourWork__name">Сваи из труб</div>
-                <div class="ourWork__clientName">Заказчик ПАО «Сургутнефтегаз»</div>
-                <div class="ourWork__clientName">Период стоительства: октябрь 2018</div>
-                <a href="/local/assets/img/workdetail2.png" class="hide"></a>
-                <a href="/local/assets/img/workdetail3.png" class="hide"></a>
-                <a href="/local/assets/img/workdetail3.png" class="hide"></a>
-                <div class="ourWork__desc hide">ООО «Фаворит-С» более 10 лет успешно работает в области производства металлоконструкций различного назначения в ХМАО и ЯНАО.</div>
-            </div>
-            <div class="hidden-xs hidden-sm col-md-4 ourWork__item">
-                <a href="/local/assets/img/workdetail3.png" class="ourWork__link">
-                    <div class="productList__hoverElement">
-                        <img src="/local/assets/img/roundplus.png" alt="">
-                    </div>
-                    <img src="/local/assets/img/workdetail3.png" alt="" class="ourWork__img">
-                </a>
-                <div class="ourWork__name">Сваи из труб</div>
-                <div class="ourWork__clientName">Заказчик ПАО «Сургутнефтегаз»</div>
-                <div class="ourWork__clientName">Период стоительства: октябрь 2018</div>
-                <a href="/local/assets/img/workdetail3.png" class="hide"></a>
-                <a href="/local/assets/img/workdetail4.png" class="hide"></a>
-                <a href="/local/assets/img/workdetail4.png" class="hide"></a>
-                <div class="ourWork__desc hide">742 сваи из труб диаметром 159мм, 168мм и 219мм изготовлено ООО "Фаворит-С" для объекта "Пробная эксплуатация Западно-Чатылькинского месторождения".</div>
-            </div>
-        </div>
+        <?global $ourWorkFilter;
+        $ourWorkFilter = array("IBLOCK_ID"=>"15", "ACTIVE" => "Y", "PROPERTY_SHOW_MAIN_VALUE"=>"Y");?>
+        <?$APPLICATION->IncludeComponent("bitrix:news.list", "ourWorkMain", Array(
+            "ACTIVE_DATE_FORMAT" => "d.m.Y",
+            "ADD_SECTIONS_CHAIN" => "N",
+            "AJAX_MODE" => "N",
+            "AJAX_OPTION_ADDITIONAL" => "",
+            "AJAX_OPTION_HISTORY" => "N",
+            "AJAX_OPTION_JUMP" => "N",
+            "AJAX_OPTION_STYLE" => "N",
+            "CACHE_FILTER" => "N",
+            "CACHE_GROUPS" => "Y",
+            "CACHE_TIME" => "36000000",
+            "CACHE_TYPE" => "A",
+            "CHECK_DATES" => "Y",
+            "DETAIL_URL" => "",
+            "DISPLAY_BOTTOM_PAGER" => "N",
+            "DISPLAY_DATE" => "N",
+            "DISPLAY_NAME" => "Y",
+            "DISPLAY_PICTURE" => "Y",
+            "DISPLAY_PREVIEW_TEXT" => "N",
+            "DISPLAY_TOP_PAGER" => "N",
+            "FIELD_CODE" => array(),
+            "FILTER_NAME" => "ourWorkFilter",
+            "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+            "IBLOCK_ID" => "15",
+            "IBLOCK_TYPE" => "content",
+            "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+            "INCLUDE_SUBSECTIONS" => "N",
+            "MESSAGE_404" => "",
+            "NEWS_COUNT" => "3",
+            "PAGER_BASE_LINK_ENABLE" => "N",
+            "PAGER_DESC_NUMBERING" => "N",
+            "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+            "PAGER_SHOW_ALL" => "N",
+            "PAGER_SHOW_ALWAYS" => "N",
+            "PAGER_TEMPLATE" => ".default",
+            "PAGER_TITLE" => "Новости",
+            "PARENT_SECTION" => "",
+            "PARENT_SECTION_CODE" => "",
+            "PREVIEW_TRUNCATE_LEN" => "",
+            "PROPERTY_CODE" => array("CLIENT", "CONTSRACTION_PERIOD", "GALLERY", "GALLERY_TEXT"),
+            "SET_BROWSER_TITLE" => "N",
+            "SET_LAST_MODIFIED" => "N",
+            "SET_META_DESCRIPTION" => "N",
+            "SET_META_KEYWORDS" => "N",
+            "SET_STATUS_404" => "N",
+            "SET_TITLE" => "N",
+            "SHOW_404" => "N",
+            "SORT_BY1" => "SORT",
+            "SORT_BY2" => "",
+            "SORT_ORDER1" => "ASC",
+            "SORT_ORDER2" => "",
+            "STRICT_SECTION_CHECK" => "N",
+        ), false);?>
     </div>
 </section>
 

@@ -41,36 +41,23 @@ namespace A1expert
         }
         public function GetProps(&$arResult)
         {
-            
-            foreach ($arResult as $k=>$v)
+            $arProps = $arResult["props"];
+            foreach ($arProps as $k => $v)
             {
-                if(preg_match("/^PROPERTY_(.*)_VALUE_ID$/", $k))
-                    $propsIds[] = $v;
-            }
-            if(isset($propsIds))
-            {
-                foreach ($propsIds as $k => $v)
+                switch ($v["PROPERTY_TYPE"])
                 {
-                    $local = explode(":", $v);
-                    $ids[] = intval($local[1]);
-                }
-                Loader::includeModule("iblock");
-                foreach($ids as $id)
-                {
-                    $res = \CIBlockProperty::GetByID($id);
-                    if($ar_res = $res->GetNext())
-                        $arProps[] = $ar_res;
-                }
-                foreach ($arProps as $k => $v)
-                {
-                    switch ($v["PROPERTY_TYPE"])
-                    {
-                        case "F":
+                    case "F":
+                        if(is_array($v["VALUE"]))
+                        {
+                            foreach ($v["VALUE"] as $i=>$id) {
+                                $arResult["PROPERTY_". $v["CODE"] . "_VALUE"][$i] = \CFile::GetPath($id);
+                            }
+                        }
+                        else
                             $arResult["PROPERTY_". $v["CODE"] . "_VALUE"] = \CFile::GetFileArray($arResult["PROPERTY_". $v["CODE"] . "_VALUE"]);
-                            break;
-                        default:
-                            break;
-                    }
+                        break;
+                    default:
+                        break;
                 }
             }
         }
@@ -174,6 +161,8 @@ namespace A1expert
             while($obElement = $rsElement->GetNextElement())
             {
                 $arResult = $obElement->fields;
+                $arResult["props"] = $obElement->GetProperties();
+                $arResult["arSelect"] = $arSelect;
                 $this->GetProps($arResult);
                 $this->GetPictures($arResult, $arSelect);
                 $returnResult[] = $arResult;

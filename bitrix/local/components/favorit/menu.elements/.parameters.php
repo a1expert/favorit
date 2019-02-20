@@ -81,6 +81,12 @@ $arComponentParameters = array(
 			"DEFAULT" => "1",
 		),
 		"CACHE_TIME"  =>  Array("DEFAULT"=>36000000),
+		"FOR_BOTTOM_MENU" => Array(
+			"PARENT" => "BASE",
+			"NAME" => "Для меню в футере",
+			"TYPE" => "CHECKBOX",
+			"DEFAULT" => "N",
+		)
 	),
 );
 if($arCurrentValues["IS_SEF"] === "Y")
