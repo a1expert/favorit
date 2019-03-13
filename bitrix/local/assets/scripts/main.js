@@ -2,9 +2,6 @@
 
 $("document").ready(function()
 {
-    // document.addEventListener("click", function(e){
-    //     console.log(e.target);
-    // });
     const mMenuOpenBtn = document.querySelector("#mMenuOpenBtn");
     const mobileMenu = document.querySelector("#mobileMenu");
     const mMenuCloseBtn = document.querySelector("#mobileMenuCloseBtn");
@@ -13,6 +10,7 @@ $("document").ready(function()
     const mobileLeftMenuBtn = document.querySelector("#mobileLeftMenuBtn");
     const mobileLeftMenu = document.querySelector("#mobileLeftMenu");
     const magnificPopup = $.magnificPopup.instance;
+    const leftMenuTogglers = document.querySelectorAll(".itemToggler");
 
     mMenuOpenBtn.addEventListener("click", MobileMenuToggler);
     mMenuCloseBtn.addEventListener("click", MobileMenuToggler);
@@ -43,6 +41,19 @@ $("document").ready(function()
             });
         });
     }
+
+    function leftMenuHandlers(e)
+    {
+        if(!e.target.classList.contains("itemToggler"))
+            return;
+        [].forEach.call(document.querySelectorAll(".leftMenu__item_current"), function(item){item.classList.remove("leftMenu__item_current");});
+        e.target.classList.add("leftMenu__item_current");
+        
+    }
+
+    [].forEach.call(leftMenuTogglers, function (it) {
+		it.addEventListener('click', leftMenuHandlers);
+    });
     
     $(".about__slider").owlCarousel(
     {
@@ -50,6 +61,7 @@ $("document").ready(function()
         loop: true,
         nav: false,
         dots: true,
+        autoplay: true,
     });
 
     $.extend(true, $.magnificPopup.defaults, {
@@ -72,6 +84,7 @@ $("document").ready(function()
             delegate: 'a', // the selector for gallery item
             type: 'image',
             gallery: { enabled:true},
+            mainClass: "gallery__popup",
             callbacks: {
                 buildControls: function() {
                   this.contentContainer.append(this.arrowLeft.add(this.arrowRight));
@@ -83,6 +96,7 @@ $("document").ready(function()
         $(this).magnificPopup({
             delegate: 'a', // the selector for gallery item
             type: 'image',
+            mainClass: "reviews__popup",
             gallery: { enabled:true},
             callbacks: {
                 buildControls: function() {
@@ -115,6 +129,7 @@ $("document").ready(function()
         {
             delegate: 'a',
             type: 'image',
+            mainClass: "ourWork__popup",
             gallery: 
             {
                 enabled:true,
@@ -138,21 +153,18 @@ $("document").ready(function()
         });
     });
 
-    $('.header__callback').magnificPopup({
+    $('.jsPopupFormTogglers').magnificPopup({
         type:'inline',
         midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
     });
-
     /**
      * ФОРМА
      * 
-     */
-
-    
+     */    
     const popupFormTpl = document.querySelector('#popupFormTpl').content.querySelector('.callback__form');
     const callbackWraper = document.querySelector("#callbackWraper");
     const successMessage = document.querySelector("#successMessage");
-    const popupTogglers = document.querySelectorAll('.header__callback');
+    const popupTogglers = document.querySelectorAll('.jsPopupFormTogglers');
 
     const formOnSubmit = function (e)
 	{
@@ -162,19 +174,22 @@ $("document").ready(function()
 		const formData  = new FormData(form);
         const targetParent = form.parentNode;
         
-        // при интеграции следующую строку - удалить
-        targetParent.replaceChild(successMessage, form);
-        
-
 		fetch(url, {method: 'POST', body: formData}).then(function (response)
 		{
 			if(response.status === 200)
 			{
 				targetParent.replaceChild(successMessage, form);
 			}
-			console.log(response.text);
 		});
-	};
+    };
+    const inputFloating = function (e)
+    {
+        let input = e.target;
+        if(input.value !== '')
+            input.classList.add('filledInput');
+        else
+            input.classList.remove('filledInput');
+    }
     const openPopup = function () {
 		const formPopup = popupFormTpl.cloneNode(true);
 		callbackWraper.appendChild(formPopup);
@@ -183,9 +198,38 @@ $("document").ready(function()
             it.removeEventListener('click', openPopup);
         });
         popupFormTpl.remove();
+        let floatInput = formPopup.querySelector(".jsFloatInput");
+        floatInput.addEventListener("blur", inputFloating);
     };
     
 	[].forEach.call(popupTogglers, function (it) {
 		it.addEventListener('click', openPopup);
-	});
+    });
+    let countersList = document.querySelectorAll(".jsCountValue");
+    let targetYOffset;
+    document.addEventListener("scroll", function ()
+    {
+        targetYOffset = countersList[3].offsetTop - document.documentElement.clientHeight + countersList[3].clientHeight;
+        if(window.pageYOffset < targetYOffset)
+            return;
+        $(countersList).each(function()
+        {
+            var $this = $(this),
+                countTo = $this.attr('data-countValue');
+            $({ countNum: $this.text()}).animate({
+                countNum: countTo
+            },
+            {
+                duration: 2000,
+                easing:'linear',
+                step: function() {
+                    $this.text(Math.floor(this.countNum));
+                },
+                complete: function() {
+                    $this.text(this.countNum);
+                    //alert('finished');
+                }
+            });
+        });
+    });
 });

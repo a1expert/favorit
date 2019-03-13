@@ -46,67 +46,14 @@ $this->setFrameMode(true);
 		</div>
 	</div>
 </section>
-<img src="/local/assets/img/ymap.png" class="ymap">
-<script>
-	ymaps.ready(function () {
-		var myMap = new ymaps.Map('map', {
-				center: [55.751574, 37.573856],
-				zoom: 9
-			}, {
-				searchControlProvider: 'yandex#search'
-			}),
 
-			// Создаём макет содержимого.
-			MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-				'<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-			),
-
-			myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-				hintContent: 'Собственный значок метки',
-				balloonContent: 'Это красивая метка'
-			}, {
-				// Опции.
-				// Необходимо указать данный тип макета.
-				iconLayout: 'default#image',
-				// Своё изображение иконки метки.
-				iconImageHref: 'assets/img/balloon.png',
-				// Размеры метки.
-				iconImageSize: [60, 80],
-				// Смещение левого верхнего угла иконки относительно
-				// её "ножки" (точки привязки).
-				iconImageOffset: [-5, -38]
-			}),
-
-			myPlacemarkWithContent = new ymaps.Placemark([55.661574, 37.573856], {
-				hintContent: 'Собственный значок метки с контентом',
-				balloonContent: 'А эта — новогодняя',
-				iconContent: '12'
-			}, {
-				// Опции.
-				// Необходимо указать данный тип макета.
-				iconLayout: 'default#imageWithContent',
-				// Своё изображение иконки метки.
-				iconImageHref: 'images/ball.png',
-				// Размеры метки.
-				iconImageSize: [48, 48],
-				// Смещение левого верхнего угла иконки относительно
-				// её "ножки" (точки привязки).
-				iconImageOffset: [-24, -24],
-				// Смещение слоя с содержимым относительно слоя с картинкой.
-				iconContentOffset: [15, 15],
-				// Макет содержимого.
-				iconContentLayout: MyIconContentLayout
-			});
-
-		myMap.geoObjects
-			.add(myPlacemark)
-			.add(myPlacemarkWithContent);
-	});
-</script>
-<div class="map" id="map"></div>
+<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A33c17fcf2e804b2c4e5bf66ef6f81bf84d66a9566c72529397811b1e78de2270&amp;width=100%25&amp;height=440&amp;lang=ru_RU&amp;scroll=false"></script>
+<?if(!empty($arResult["DETAIL_TEXT"]))
+{?>
 <div class="text">
 	<?=$arResult["DETAIL_TEXT"];?>
-</div>
+</div><?
+}?>
 <?if($arResult["DISPLAY_PROPERTIES"]["HEADER_LIST"]["DISPLAY_VALUE"] && $arResult["DISPLAY_PROPERTIES"]["TEXT_LIST"]["DISPLAY_VALUE"])
 {?>
 	<p class="aboutContent__subHeader"><?=$arResult["DISPLAY_PROPERTIES"]["HEADER_LIST"]["DISPLAY_VALUE"];?></p>

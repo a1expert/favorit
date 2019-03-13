@@ -1,8 +1,10 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetTitle("");
 
-?>
-<?$APPLICATION->IncludeComponent("bitrix:news", "services",
+?><?$APPLICATION->IncludeComponent(
+	"bitrix:news",
+	"services",
 	Array(
 		"ADD_ELEMENT_CHAIN" => "Y",
 		"ADD_SECTIONS_CHAIN" => "N",
@@ -20,11 +22,11 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 		"DETAIL_ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"DETAIL_DISPLAY_BOTTOM_PAGER" => "N",
 		"DETAIL_DISPLAY_TOP_PAGER" => "N",
-		"DETAIL_FIELD_CODE" => array("DETAIL_TEXT","DETAIL_PICTURE"),
+		"DETAIL_FIELD_CODE" => array("DETAIL_TEXT","DETAIL_PICTURE",""),
 		"DETAIL_PAGER_SHOW_ALL" => "Y",
 		"DETAIL_PAGER_TEMPLATE" => "",
 		"DETAIL_PAGER_TITLE" => "Страница",
-		"DETAIL_PROPERTY_CODE" => array("COST","HEADER_ADD_TEXT","ADD_TEXT","TEXT_LIST"),
+		"DETAIL_PROPERTY_CODE" => array("ADD_TEXT","HEADER_ADD_TEXT","TEXT_LIST","COST","TEXT_LIST_HEADER"),
 		"DETAIL_SET_CANONICAL_URL" => "N",
 		"DISPLAY_BOTTOM_PAGER" => "N",
 		"DISPLAY_DATE" => "N",
@@ -32,13 +34,15 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 		"DISPLAY_PICTURE" => "Y",
 		"DISPLAY_PREVIEW_TEXT" => "N",
 		"DISPLAY_TOP_PAGER" => "N",
+		"FILE_404" => "",
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
 		"IBLOCK_ID" => "12",
 		"IBLOCK_TYPE" => "content",
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+		"JOBS_PAGE_ELEM_ID" => "12",
 		"LIST_ACTIVE_DATE_FORMAT" => "d.m.Y",
-		"LIST_FIELD_CODE" => array("NAME","PREVIEW_PICTURE"),
-		"LIST_PROPERTY_CODE" => array(),
+		"LIST_FIELD_CODE" => array("NAME","PREVIEW_PICTURE",""),
+		"LIST_PROPERTY_CODE" => array("",""),
 		"MESSAGE_404" => "",
 		"META_DESCRIPTION" => "-",
 		"META_KEYWORDS" => "-",
@@ -55,9 +59,9 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 		"SEF_MODE" => "Y",
 		"SEF_URL_TEMPLATES" => Array("detail"=>"#ELEMENT_CODE#/","news"=>"/services/","section"=>""),
 		"SET_LAST_MODIFIED" => "N",
-		"SET_STATUS_404" => "N",
+		"SET_STATUS_404" => "Y",
 		"SET_TITLE" => "Y",
-		"SHOW_404" => "N",
+		"SHOW_404" => "Y",
 		"SORT_BY1" => "SORT",
 		"SORT_BY2" => "",
 		"SORT_ORDER1" => "ASC",
@@ -71,5 +75,4 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 		"USE_SEARCH" => "N",
 		"USE_SHARE" => "N"
 	)
-);?>
-<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

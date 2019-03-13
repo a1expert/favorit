@@ -60,4 +60,4 @@ function isSectionMenu($strSectionMenuType = 'left', $useExtFiles = true)
 
     return (count($arLastMenu) > 0) ? true : false;
 
- };
+ }

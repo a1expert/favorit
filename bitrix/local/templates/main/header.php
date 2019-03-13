@@ -2,7 +2,7 @@
 use Bitrix\Main\Application,
     Bitrix\Main\Page\Asset,
     Bitrix\Main\Loader,
-    Bitrix\Main\Localization\Loc;    
+    Bitrix\Main\Localization\Loc;
 Loc::loadMessages(__FILE__);
 $dir = $APPLICATION->GetCurDir();
 $page = $APPLICATION->GetCurPage(true);
@@ -27,7 +27,9 @@ $adminIndaHouse = $USER->isAdmin();
 		//SCRIPTS
 		$assets->addJS('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js');
 		$assets->addJS('https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js');
-		$assets->addJS('https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js');
+        $assets->addJS('https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js');
+        $assets->addJS('https://api-maps.yandex.ru/2.1/?apikey=92d30c9e-b3ff-4ede-b617-f35ac27f02c1&lang=ru_RU');
+        // $assets->addJS('/local/assets/scripts/countUp.min.js');
         $assets->addJS('/local/assets/scripts/main.js');
         ?>
         <?//<link href="/local/assets/images/icon.png" rel="icon" type="image/png">?>
@@ -56,7 +58,7 @@ $adminIndaHouse = $USER->isAdmin();
                     <a href="/" class="col-xs-4 logoLink header__logoLink">
                         <img src="<?=$commonInfo["headerLogo"];?>" alt="Логотип" title="Hа главную" class="header__logoImg">
                     </a>
-                    <a href="#popupForm" class="col-xs-4 header__callback">
+                    <a href="#popupForm" class="col-xs-4 header__callback jsPopupFormTogglers">
                         <svg xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#phone_svg"></use></svg>
                         <span class="hidden-xs hidden-md hidden-lg header__callback__lable">Заказать звонок</span>
                     </a>
@@ -85,7 +87,7 @@ $adminIndaHouse = $USER->isAdmin();
                             );?>
                         </ul>
                     </nav>
-                    <a href="#popupForm" class="header__callback header__item">
+                    <a href="#popupForm" class="header__callback header__item jsPopupFormTogglers">
                         <svg xmlns:xlink="http://www.w3.org/1999/xlink" class="header__callbackIcon"><use xlink:href="#phone_svg"></use></svg>
                         Заказать звонок
                     </a>
@@ -114,7 +116,7 @@ $adminIndaHouse = $USER->isAdmin();
                 <li class="mobileMenu__closeBtn" id="mobileMenuCloseBtn"><span class="closeBtn__arrow closeBtn__arrowRight"></span><span class="closeBtn__arrow closeBtn__arrowLeft"></span></li>
             </ul>
         </nav>
-        <div class="main<?=($mainPage) ? "__mainPage" : "";?>" id="main">
+        <div class="main<?if($mainPage)echo "__mainPage";if(preg_match("/contacts/", $page))echo " main_contacts";?>" id="main">
         <?if ($mainPage === false)
         {?>
             <div class="hidden-xs breadcrumbs">

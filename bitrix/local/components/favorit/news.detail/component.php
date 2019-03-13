@@ -352,8 +352,15 @@ if($arParams["SHOW_WORKFLOW"] || $this->startResultCache(false, array(($arParams
 	 * Изменения в компоненте
 	 */
 	$arResult["GENERAL_INFO"];
-	$geninfo = $fixer->GetElements(array(), array("IBLOCK_ID"=>"11", "ACTIVE"=>"Y"), $arGroupBy = false, $arNavStartParams = false, $arSelect = array("IBLOCK_ID", "ID", "PROPERTY_GENERAL_REQ_DETAIL", "PROPERTY_HOW_GET", "PROPERTY_EMAIL"));
+	$geninfo = $fixer->GetElements(array(), array("IBLOCK_ID"=>"11", "ACTIVE"=>"Y"), false, false, array("IBLOCK_ID", "ID", "PROPERTY_GENERAL_REQ_DETAIL", "PROPERTY_HOW_GET", "PROPERTY_EMAIL"));
 	$arResult["GENERAL_INFO"] = $geninfo[0];
+	
+	if ($arParams["YMAP"] == "Y")
+	{
+		$ymapCoords = $fixer->GetElements(array(), array("IBLOCK_ID"=>"18", "ACTIVE"=>"Y"), false, false, array("IBLOCK_ID", "ID", "PROPERTY_POINT", "PROPERTY_ICONCONTENT", "PROPERTY_DESC"));
+	}
+	unset($ymapCoords["arSelect"]);
+	$arResult["YMAP_COORDS"] = $ymapCoords;
 	/**end изменения в компоненте */
 
 		$resultCacheKeys = array(
@@ -369,8 +376,10 @@ if($arParams["SHOW_WORKFLOW"] || $this->startResultCache(false, array(($arParams
 			"SECTION",
 			"IPROPERTY_VALUES",
 			"TIMESTAMP_X",
-			"GENERAL_INFO"
+			"GENERAL_INFO",
 		);
+		if ($arParams["YMAP"] == "Y")
+			$resultCacheKeys[] = "YMAP_COORDS";
 
 		if (
 			$arParams["SET_TITLE"]

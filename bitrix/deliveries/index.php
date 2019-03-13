@@ -3,8 +3,9 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("География поставок");
 $elems = $fixer->GetElements(array(), array("IBLOCK_ID"=>"2", "ACTIVE" => "Y"), false, false, array("ID", "IBLOCK_ID"));
 $elId = $elems[0]["ID"];
+
 ?>
-<?$APPLICATION->IncludeComponent("bitrix:news.detail", "deliveries", Array(
+<?$APPLICATION->IncludeComponent("favorit:news.detail", "deliveries", Array(
 	"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_ELEMENT_CHAIN" => "N",
 		"ADD_SECTIONS_CHAIN" => "N",
@@ -59,6 +60,7 @@ $elId = $elems[0]["ID"];
 		"STRICT_SECTION_CHECK" => "N",
 		"USE_PERMISSIONS" => "N",
 		"USE_SHARE" => "N",
+		"YMAP" => "Y",
 	),
 	false
 );?>

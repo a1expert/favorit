@@ -200,6 +200,12 @@ $arComponentParameters = array(
 			"TYPE" => "CHECKBOX",
 			"DEFAULT" => "Y",
 		),
+		"YMAP" => array(
+			"PARENT" => "ADDITIONAL_SETTINGS",
+			"NAME" => "Выводить яндекс карту",
+			"TYPE" => "CHECKBOX",
+			"DEFAULT" => "N",
+		),
 	),
 );
 

@@ -165,17 +165,39 @@
         </div>
     </div>
     <template id="popupFormTpl">
-        <form action="assets/scripts/form.js" name="callback" method="POST" enctype="multipart/form-data" class="callback__form">
-            <h3 class="callback__header">Заполните форму и получите бесплатную консультацию</h3>
-            <div class="callback__Input">
-                <input type="phone" name="phone" value="" required pattern="\+{0,1}\d{5,11}" class="callback__phone" onblur="if(this.value !== '')this.classList.add('filledInput');else this.classList.remove('filledInput');">
-                <label for="phone" class="callback__phoneLabel">Ваш номер телефона</label>
-            </div>
-            <div class="callback__Input">
-                <button type="submit" value="" class="btn callback__btn btn_blue">Заказать звонок</button>
-            </div>
-            <div class="callback__note">Заполняя настоящую форму вы даете свое согласие на обработку своих <a href="/local/assets/img/bluprintdev.png" class="callback__pndLink" target="_blank">персональных данных</a></div>
-        </form>
+    <?$APPLICATION->IncludeComponent("bitrix:iblock.element.add.form", "callback", Array(
+		"CUSTOM_TITLE_DATE_ACTIVE_FROM" => "",
+		"CUSTOM_TITLE_DATE_ACTIVE_TO" => "",
+		"CUSTOM_TITLE_DETAIL_PICTURE" => "",
+		"CUSTOM_TITLE_DETAIL_TEXT" => "",
+		"CUSTOM_TITLE_IBLOCK_SECTION" => "",
+		"CUSTOM_TITLE_NAME" => "",
+		"CUSTOM_TITLE_PREVIEW_PICTURE" => "",
+		"CUSTOM_TITLE_PREVIEW_TEXT" => "",
+		"CUSTOM_TITLE_TAGS" => "",
+		"DEFAULT_INPUT_SIZE" => "30",
+		"DETAIL_TEXT_USE_HTML_EDITOR" => "N",
+		"ELEMENT_ASSOC" => "CREATED_BY",
+		"GROUPS" => array("2"),
+		"IBLOCK_ID" => "17",
+		"IBLOCK_TYPE" => "forms",
+		"LEVEL_LAST" => "Y",
+		"LIST_URL" => "",
+		"MAX_FILE_SIZE" => "0",
+		"MAX_LEVELS" => "100000",
+		"MAX_USER_ENTRIES" => "100000",
+		"PREVIEW_TEXT_USE_HTML_EDITOR" => "N",
+		"PROPERTY_CODES" => array(0=>"NAME"),
+		"PROPERTY_CODES_REQUIRED" => array(0=>"NAME"),
+		"RESIZE_IMAGES" => "N",
+		"SEF_MODE" => "N",
+		"STATUS" => "ANY",
+		"STATUS_NEW" => "N",
+		"USER_MESSAGE_ADD" => "",
+		"USER_MESSAGE_EDIT" => "",
+		"USE_CAPTCHA" => "N"
+	));?>
+        
     </template>
     <div class="hide">
         <div class="successMessage" id="successMessage">

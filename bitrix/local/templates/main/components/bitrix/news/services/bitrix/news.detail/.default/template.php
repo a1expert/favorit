@@ -11,12 +11,13 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
+// ShowRes($arResult);
 ?>
 
 <div class="text detailDesc">
 	<?if (is_array($arResult["DETAIL_PICTURE"]))
 	{?>
-		<img src="<?=$arResult["DETAIL_PICTURE"]["SRC"]?>" alt="<?=$arResult["DETAIL_PICTURE"]["ALT"]?>" class="detailImage"><?
+		<img src="<?=$arResult["DETAIL_PICTURE"]["SRC"]?>" alt="<?=$arResult["IPROPERTY_VALUES"]["ELEMENT_DETAIL_PICTURE_FILE_ALT"]?>" class="detailImage"><?
 	}?>
 	<?=$arResult["DETAIL_TEXT"]?>
 </div>
@@ -26,18 +27,27 @@ $this->setFrameMode(true);
 		<div class="priceBlock__value">+7 (3462) 45-92-01</div>
 	</div>
 	<div class="col-xs-12 col-sm-4 priceBlock__item priceBlock__price">
+	<?if(!empty($arResult["DISPLAY_PROPERTIES"]["COST"]["DISPLAY_VALUE"]))
+	{?>
 		<div class="priceBlock__text">Стоимость:</div>
-		<div class="priceBlock__value"><?=$arResult["DISPLAY_PROPERTIES"]["COST"]["DISPLAY_VALUE"];?></div>
+		<div class="priceBlock__value"><?=$arResult["DISPLAY_PROPERTIES"]["COST"]["DISPLAY_VALUE"];?></div><?
+	}?>
 	</div>
 	<div class="col-xs-12 col-sm-4 priceBlock__item priceBlock__btn">
-		<a href="#popupForm" class="btn priceBlock__btn btn_white">Узнать точную цену<span class="btn__arrow btn__arrow_blue btn__arrow_horizontal"></span></a>
+		<a href="#popupForm" class="btn priceBlock__btn btn_white jsPopupFormTogglers">Узнать точную цену<span class="btn__arrow btn__arrow_blue btn__arrow_horizontal"></span></a>
 	</div>
 </div>
-<h2 class="h2 serviceH2"><?=$arResult["DISPLAY_PROPERTIES"]["HEADER_ADD_TEXT"]["DISPLAY_VALUE"];?></h2>
+<?if (!empty($arResult["DISPLAY_PROPERTIES"]["HEADER_ADD_TEXT"]["DISPLAY_VALUE"]))
+{?>
+<h2 class="h2 serviceH2"><?=$arResult["DISPLAY_PROPERTIES"]["HEADER_ADD_TEXT"]["DISPLAY_VALUE"];?></h2><?
+}?>
 <div class="text detailDesc">
 	<?=$arResult["DISPLAY_PROPERTIES"]["ADD_TEXT"]["DISPLAY_VALUE"];?>
 </div>
-<p class="aboveUListheader">Несколько фактов:</p>
+<?if (!empty($arResult["DISPLAY_PROPERTIES"]["TEXT_LIST_HEADER"]["DISPLAY_VALUE"]))
+{?>
+<p class="aboveUListheader"><?=$arResult["DISPLAY_PROPERTIES"]["TEXT_LIST_HEADER"]["DISPLAY_VALUE"];?></p><?
+}?>
 <ul class="textList textList__service">
 	<?foreach ($arResult["DISPLAY_PROPERTIES"]["TEXT_LIST"]["DISPLAY_VALUE"] as $key => $value)
 	{?>

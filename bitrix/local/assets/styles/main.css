@@ -39,7 +39,7 @@
 }
 img{
 	max-width: 100%;
-	
+
 }
 *::before,
 *::after {
@@ -88,6 +88,7 @@ body {
 	line-height: 1;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
+	color: #333333;
 }
 a {
 	background: transparent;
@@ -1315,24 +1316,26 @@ a{
 	font-weight: bold;
 	padding: 0 30px 25px;
 }
-.textList {
+.textList, .text ul {
     font-size: 16px;
 	font-weight: bold;
 	padding-left: 30px;
 }
 .textList__about{margin-bottom: 40px;}
-.textList__item::before {
+.textList__item::before, .text li::before {
     content: "";
     display: inline-block;
     position: absolute;
     width: 15px;
     height: 15px;
+	top: 3px;
     left: -30px;
     background-color: #185cd7;
 }
 .textList__item {
     position: relative;
     margin-bottom: 20px;
+	line-height: 1.4;
 }
 
 .textList__little {
@@ -1475,8 +1478,12 @@ a{
 	object-fit: cover;
 }
 .ourWork__clientName {
+	font-family: 'CirceLight', Arial, sans-serif;
 	color: #9ca3af;
 	margin-bottom: 10px;
+}
+.ourWork__clientName:not(:last-child) {
+	margin-bottom: 5px;
 }
 .ourWork__name {
 	font-size: 22px;
@@ -1529,7 +1536,6 @@ a{
 	box-shadow: 0 10px 15px 0 #e0e0e0;
 	background-color: #f4f4f4;
 }
-.mobileLeftMenu_open{display: block;}
 .leftMenu__link {
     color: #000;
     font-size: 18px;
@@ -1543,6 +1549,7 @@ a{
 .leftMenu__link:hover,
 .leftSubMenu__link:hover{
     color: #185cd7;
+	text-decoration: none;
 }
 .mobileLeftMenuCurrent__name {
 	font-size: 16px;
@@ -1595,6 +1602,13 @@ a{
 
 .footer__address {
 	margin-bottom: 5px;
+	font-size: 15px;
+	font-weight: 400;
+}
+
+.footer__time {
+	font-size: 15px;
+	font-weight: 400;
 }
 
 .footer__develop {
@@ -1632,10 +1646,12 @@ a{
 .text p {
     font-size: 14px;
     line-height: 1.4;
-    margin-bottom: 10px
+	margin: 20px 0;
 }
-.gallery__list {
-    justify-content: center;
+.text h2 {
+    font-size: 1.12em;
+	font-weight: 700;
+	margin-bottom: 20px;
 }
 .gallery__h2 {
     margin-bottom: 30px;
@@ -1665,8 +1681,10 @@ a{
 	display: block;
 	position: relative;
 	width: 100%;
-    height: 320px;
+    height: 345px;
+	padding-top: 5px;
     margin-bottom: 25px;
+	border-top: 6px solid;
     cursor: zoom-in;
 }
 .review__prewImg {
@@ -1726,7 +1744,8 @@ a{
 .vacanciesItem {
     height: 180px;
     margin-bottom: 15px;
-    max-width: 380px;
+	max-width: 380px;
+	width: 33.33333333%;
 }
 .vacanciesList__element {
     background-color: #185cd7;
@@ -1853,7 +1872,7 @@ a{
 }
 .leftMenu__item_current .mobileLeftSubMenu,
 .leftMenu__item_current .leftSubMenu {
-    display: block;    
+    display: block;
 }
 .mobileLeftSubMenu{
 	padding-left: 40px;
@@ -1889,6 +1908,7 @@ a{
     align-items:center;
     justify-content: center;
     position: absolute;
+	top: 0;
     opacity: 0;
 }
 .gallery__link{
@@ -1904,8 +1924,11 @@ a{
     box-shadow: 0px 10px 51px 0px rgba(24, 92, 215, 0.57);
     opacity:0.8;
 }
-.productList__hoverElement img{
-    opacity: 1;
+.productList__hoverElement svg{
+	opacity: 1;
+	width: 40px;
+    height: 40px;
+
 }
 .productsList__link {
     position: relative;
@@ -1990,6 +2013,7 @@ a{
 .callback__phone {
     width: 100%;
     height: 60px;
+	padding: 0 9px;
     border: 2px solid #e8e8e8;
 }
 .callback__phone:focus + .callback__phoneLabel,
@@ -2022,6 +2046,13 @@ a{
 .successText {
     text-align: center;
     line-height: 1.5;
+}
+.gallery__list{
+	justify-content: center;
+}
+.docs__item{
+	max-width: 245px;
+    height: auto;
 }
 @media (min-width: 768px)
 {
@@ -2229,7 +2260,7 @@ a{
 	}
 
 	.footer__submenu-item {
-		margin-bottom: 10px;
+		margin-bottom: 15px;
 	}
 
 	.footer__submenu-link {
@@ -2386,6 +2417,13 @@ a{
 	.productsList__name{
 		padding-top: 15px;
 	}
+	.gallery__list{
+		justify-content: flex-start;
+	}
+	.docs__item{
+		max-width: 245px;
+		height: auto;
+	}
 }
 @media screen and (min-width: 1024px) {
 	.footer {
@@ -2441,6 +2479,7 @@ a{
 	}
 	.topMenu__link:hover{
 		color: #185dc7;
+		text-decoration: none;
 	}
 	.topMenu__item {
 		padding: 10px;
@@ -2483,7 +2522,6 @@ a{
 	}
 	.h2 {
 		font-size: 36px;
-		text-align: center;
 	}
 	.darkenedTile__item {
 		height: 270px;
@@ -2513,7 +2551,7 @@ a{
 	.ourWork__item{
 		margin-bottom: 40px;
 	}
-	
+
 	.h1 {
 		font-size: 36px;
 	}
@@ -2545,7 +2583,7 @@ a{
 		margin-bottom: 50px;
 	}
 	.text p{
-		line-height: 1.556;
+		line-height: 1.4;
 	}
 	.vacancyEmailWrapper {
 		margin-left: 30px;
@@ -2563,7 +2601,7 @@ a{
 	.vacancyBottom__emailIconImg {
 		width: 100%;
 	}
-	
+
 	.vacancyEmailText {
 		font-size: 14px;
 	}
@@ -2665,7 +2703,49 @@ a{
 		flex-direction: column;
 		align-items: center;
 	}
+	.docs__item {
+		height: 100%;
+	}
 }
 .bx-core-adm-dialog {
     top: 0!important;
+}
+.main_contacts{
+	padding: 0;
+}
+.menu404{
+	list-style: none;
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+    align-content: flex-start;
+    margin: 0 -15px 50px;
+}
+.menu404__link{
+	padding:0 20px;
+}
+.about h2 {
+	text-align: left;
+	line-height: 1.3;
+}
+.owl-item img {
+    height: 400px !important;
+    object-fit: cover;
+}
+.itemToggler{
+	cursor: cell;
+}
+.itemToggler .leftMenu__link {
+	pointer-events: none;
+}
+.itemToggler.leftMenu__item_current .leftMenu__link{
+    pointer-events: auto;
+}
+.mfp-image-holder .mfp-content{
+	max-width: 75%;
+}
+@media (max-width: 1199px){
+	.mobileLeftMenu_open{display: block;}
 }
