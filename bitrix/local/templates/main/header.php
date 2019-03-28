@@ -30,6 +30,7 @@ $adminIndaHouse = $USER->isAdmin();
         $assets->addJS('https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js');
         $assets->addJS('https://api-maps.yandex.ru/2.1/?apikey=92d30c9e-b3ff-4ede-b617-f35ac27f02c1&lang=ru_RU');
         // $assets->addJS('/local/assets/scripts/countUp.min.js');
+        $assets->addJS('/local/assets/scripts/typed.min.js');
         $assets->addJS('/local/assets/scripts/main.js');
         ?>
         <?//<link href="/local/assets/images/icon.png" rel="icon" type="image/png">?>

@@ -1152,6 +1152,11 @@ a{
 .header__callback{
 	cursor: pointer;
 }
+.header__callback:hover > svg {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}
 .header__callback svg {
 	width: 22px;
 	height: 22px;
@@ -1200,6 +1205,7 @@ a{
 .firstBlock__text {
     color: #dee6ec;
     line-height: 1.5;
+    font-size: 19px;
 }
 .btn {
     display: flex;
@@ -1398,7 +1404,7 @@ a{
     padding: 10px 0 30px;
 }
 .productsList__item {
-    margin-bottom: 30px;
+    margin-bottom: 55px;
 }
 .productsList__name {
     color: #000;
@@ -1479,8 +1485,9 @@ a{
 }
 .ourWork__clientName {
 	font-family: 'CirceLight', Arial, sans-serif;
-	color: #9ca3af;
+	color: #999;
 	margin-bottom: 10px;
+  font-size: 14px;
 }
 .ourWork__clientName:not(:last-child) {
 	margin-bottom: 5px;
@@ -1583,12 +1590,14 @@ a{
 }
 
 .footer__menu-link {
-	font-size: 1.077rem;
+	font-size: 16px;
 	font-weight: bold;
 	text-decoration: none;
 	color: inherit;
 }
-
+.footer__submenu-link{
+	font-size: 14px;
+}
 .footer__contacts {
 	margin-bottom: 40px;
 	font-style: normal;
@@ -1626,6 +1635,7 @@ a{
 .footer__develop a {
 	text-decoration: none;
 	color: inherit;
+	font-size: 14px;
 }
 
 .footer__policy {
@@ -1697,7 +1707,7 @@ a{
     margin-bottom: 14px;
 }
 .reviewerPosition {
-    margin-bottom: 9px;
+    margin-bottom: 4px;
 }
 .reviewerCompany,
 .reviewerPosition{
@@ -2175,7 +2185,7 @@ a{
 	}
 
 	.footer__submenu {
-		margin-top: 20px;
+		margin-top: 30px;
 	}
 
 	.footer__submenu_services {
@@ -2436,7 +2446,8 @@ a{
 		padding-top: 19px;
 	}
 	.footer__develop {
-		padding: 20px 0 4px 20px;
+		padding: 20px 0 4px 40px;
+		height: 90px;
 	}
 }
 @media (min-width: 1200px){
@@ -2470,7 +2481,7 @@ a{
 		justify-content: space-between;
 		padding: 0 100px;
 	}
-	a, p, div{
+	.page{
 		font-size: 18px;
 	}
 	.topMenu__link {
@@ -2706,6 +2717,22 @@ a{
 	.docs__item {
 		height: 100%;
 	}
+	.footer__copyrights {
+		font-size: 16px;
+	}
+	.footerPolicy__link {
+		color: inherit;
+		font-size: 16px;
+	}
+	.contacts__tile{
+		margin-bottom: 60px;
+	}
+	.contacts__h3{
+		font-size: 18px;
+	}
+	.contacts__content{
+		font-size: 20px;
+	}
 }
 .bx-core-adm-dialog {
     top: 0!important;
@@ -2748,4 +2775,21 @@ a{
 }
 @media (max-width: 1199px){
 	.mobileLeftMenu_open{display: block;}
+}
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-3px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(3px, 0, 0);
+  }
 }

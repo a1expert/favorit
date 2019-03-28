@@ -33,8 +33,22 @@ else
 }?>
 <section class="firstBlock">
     <div class="firstBlock__content container">
-        <h1 class="firstBlock__mainPageHeader"><?=htmlspecialchars_decode($arResult["DISPLAY_PROPERTIES"]["FIRST_BLOCK_HEADER"]["DISPLAY_VALUE"])?></h1>
-        <div class="firstBlock__text"><?=htmlspecialchars_decode($arResult["DISPLAY_PROPERTIES"]["FIRST_BLOCK_SUBHEADER"]["DISPLAY_VALUE"])?></div>
+				<div id="forMachineH1">
+					<h1 class="firstBlock__mainPageHeader"><?=htmlspecialchars_decode($arResult["DISPLAY_PROPERTIES"]["FIRST_BLOCK_HEADER"]["DISPLAY_VALUE"]);?></h1>
+				</div>
+        <h1 id="machineH1" class="firstBlock__mainPageHeader"></h1>
+				<script>
+					let typed = new Typed('#machineH1', {
+						stringsElement: '#forMachineH1',
+						typeSpeed: 30,
+						showCursor: false,
+						contentType: 'html',
+						onStringTyped: function(){
+							$('#afterMachineText').slideDown();
+						}
+					});
+				</script>
+        <div id="afterMachineText" class="firstBlock__text" style="display: none"><?=htmlspecialchars_decode($arResult["DISPLAY_PROPERTIES"]["FIRST_BLOCK_SUBHEADER"]["DISPLAY_VALUE"])?></div>
         <a href="/catalog/" class="btn firstBlock__btn btn_blue">Перейти в каталог<span class="btn__arrow btn__arrow_white btn__arrow_horizontal"></span></a>
     </div>
 </section>
@@ -48,7 +62,7 @@ else
 				<?foreach($arResult["DISPLAY_PROPERTIES"]["ABOUT_LIST"]["DISPLAY_VALUE"] as $value)
 				{?>
 					<li class="textList__item"><?=htmlspecialchars_decode($value);?></li><?
-				}?>                    
+				}?>
                 </ul>
                 <a href="/about/" class="btn aboutContent__btn btn_blue">Узнать больше<span class="btn__arrow btn__arrow_white btn__arrow_horizontal"></span></a>
             </div>
@@ -56,7 +70,7 @@ else
 			<?foreach($arResult["DISPLAY_PROPERTIES"]["SLIDER"]["FILE_VALUE"] as $value)
 			{?>
                 <img src="<?=$value["SRC"];?>" alt="" style="width: 100%; height:100%;"><?
-			}?>                
+			}?>
             </div>
         </div>
     </div>

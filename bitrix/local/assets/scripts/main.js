@@ -36,7 +36,7 @@ $("document").ready(function()
                         mobileLeftMenu.classList.remove("mobileLeftMenu_open");
                         mobileLeftMenuBtn.classList.remove("mobileLeftMenuBtn_open");
                     }
-                    
+
                 }
             });
         });
@@ -48,13 +48,13 @@ $("document").ready(function()
             return;
         [].forEach.call(document.querySelectorAll(".leftMenu__item_current"), function(item){item.classList.remove("leftMenu__item_current");});
         e.target.classList.add("leftMenu__item_current");
-        
+
     }
 
     [].forEach.call(leftMenuTogglers, function (it) {
 		it.addEventListener('click', leftMenuHandlers);
     });
-    
+
     $(".about__slider").owlCarousel(
     {
         items: 1,
@@ -83,7 +83,12 @@ $("document").ready(function()
         $(this).magnificPopup({
             delegate: 'a', // the selector for gallery item
             type: 'image',
-            gallery: { enabled:true},
+            gallery:
+            {
+              enabled:true,
+              arrowMarkup: '<div title="%title%" class="mfpBtn mfpBtn_%dir% mfp-arrow-%dir%"><div class="mfpBtn__arrow mfpBtn__arrow_%dir%"><span class="mfpBtn__inner mfpBtn__inner_%dir%"></span></div></div>',
+              tCounter: '%curr% из %total%'
+            },
             mainClass: "gallery__popup",
             callbacks: {
                 buildControls: function() {
@@ -97,7 +102,12 @@ $("document").ready(function()
             delegate: 'a', // the selector for gallery item
             type: 'image',
             mainClass: "reviews__popup",
-            gallery: { enabled:true},
+            gallery:
+            {
+              enabled:true,
+              arrowMarkup: '<div title="%title%" class="mfpBtn mfpBtn_%dir% mfp-arrow-%dir%"><div class="mfpBtn__arrow mfpBtn__arrow_%dir%"><span class="mfpBtn__inner mfpBtn__inner_%dir%"></span></div></div>',
+              tCounter: '%curr% из %total%'
+            },
             callbacks: {
                 buildControls: function() {
                   this.contentContainer.append(this.arrowLeft.add(this.arrowRight));
@@ -130,10 +140,11 @@ $("document").ready(function()
             delegate: 'a',
             type: 'image',
             mainClass: "ourWork__popup",
-            gallery: 
+            gallery:
             {
                 enabled:true,
-                arrowMarkup: '<div title="%title%" class="mfpBtn mfpBtn_%dir% mfp-arrow-%dir%"><div class="mfpBtn__arrow mfpBtn__arrow_%dir%"><span class="mfpBtn__inner mfpBtn__inner_%dir%"></span></div></div>'
+                arrowMarkup: '<div title="%title%" class="mfpBtn mfpBtn_%dir% mfp-arrow-%dir%"><div class="mfpBtn__arrow mfpBtn__arrow_%dir%"><span class="mfpBtn__inner mfpBtn__inner_%dir%"></span></div></div>',
+                tCounter: '%curr% из %total%'
             },
             callbacks:
             {
@@ -159,8 +170,8 @@ $("document").ready(function()
     });
     /**
      * ФОРМА
-     * 
-     */    
+     *
+     */
     const popupFormTpl = document.querySelector('#popupFormTpl').content.querySelector('.callback__form');
     const callbackWraper = document.querySelector("#callbackWraper");
     const successMessage = document.querySelector("#successMessage");
@@ -173,7 +184,7 @@ $("document").ready(function()
 		const url = form.action;
 		const formData  = new FormData(form);
         const targetParent = form.parentNode;
-        
+
 		fetch(url, {method: 'POST', body: formData}).then(function (response)
 		{
 			if(response.status === 200)
@@ -201,35 +212,38 @@ $("document").ready(function()
         let floatInput = formPopup.querySelector(".jsFloatInput");
         floatInput.addEventListener("blur", inputFloating);
     };
-    
+
 	[].forEach.call(popupTogglers, function (it) {
 		it.addEventListener('click', openPopup);
     });
     let countersList = document.querySelectorAll(".jsCountValue");
     let targetYOffset;
-    document.addEventListener("scroll", function ()
+    if(countersList[0] !== undefined)
     {
-        targetYOffset = countersList[3].offsetTop - document.documentElement.clientHeight + countersList[3].clientHeight;
-        if(window.pageYOffset < targetYOffset)
-            return;
-        $(countersList).each(function()
+        document.addEventListener("scroll", function ()
         {
-            var $this = $(this),
-                countTo = $this.attr('data-countValue');
-            $({ countNum: $this.text()}).animate({
-                countNum: countTo
-            },
+            targetYOffset = countersList[3].offsetTop - document.documentElement.clientHeight + countersList[3].clientHeight;
+            if(window.pageYOffset < targetYOffset)
+                return;
+            $(countersList).each(function()
             {
-                duration: 2000,
-                easing:'linear',
-                step: function() {
-                    $this.text(Math.floor(this.countNum));
+                var $this = $(this),
+                    countTo = $this.attr('data-countValue');
+                $({ countNum: $this.text()}).animate({
+                    countNum: countTo
                 },
-                complete: function() {
-                    $this.text(this.countNum);
-                    //alert('finished');
-                }
+                {
+                    duration: 2000,
+                    easing:'linear',
+                    step: function() {
+                        $this.text(Math.floor(this.countNum));
+                    },
+                    complete: function() {
+                        $this.text(this.countNum);
+                        //alert('finished');
+                    }
+                });
             });
         });
-    });
+    }
 });

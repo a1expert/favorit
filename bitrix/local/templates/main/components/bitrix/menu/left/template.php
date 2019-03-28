@@ -2,7 +2,7 @@
 if (empty($arResult))throw new Exception("\$arResult пустой");
 // ShowRes($arResult);?>
 
-<ul class="hidden-xs hidden-sm hidden-md leftMenu"><?
+<ul class="hidden-xs hidden-sm hidden-md leftMenu leftMenu-width"><?
 $previousLevel = 0;
 foreach($arResult as $arItem)
 {
@@ -22,7 +22,7 @@ foreach($arResult as $arItem)
 		</li>", ($previousLevel - $arItem["DEPTH_LEVEL"]));
 	if ($arItem["IS_PARENT"])
 	{?>
-		
+
 		<li class="leftMenu__item itemToggler <?=$curItemClass?>">
 			<a href="<?=$arItem["LINK"]?>" class="leftMenu__link <?=$curLinkClass;?>"><?=$arItem["TEXT"]?></a>
 				<ul class="leftSubMenu"><?
@@ -35,7 +35,7 @@ foreach($arResult as $arItem)
 		}
 		else
 		{?>
-			<li class="leftSubMenu__item"><a href="<?=$arItem["LINK"]?>" class="leftSubMenu__link <?=$curSubLinkClass?>"><?=$arItem["TEXT"]?></a></li><?			
+			<li class="leftSubMenu__item"><a href="<?=$arItem["LINK"]?>" class="leftSubMenu__link <?=$curSubLinkClass?>"><?=$arItem["TEXT"]?></a></li><?
 		}
 	}
 	$previousLevel = $arItem["DEPTH_LEVEL"];
@@ -67,7 +67,7 @@ foreach($arResult as $arItem)
 		</li>", ($previousLevel - $arItem["DEPTH_LEVEL"]));
 	if ($arItem["IS_PARENT"])
 	{?>
-		
+
 		<li class="leftMenu__item itemToggler <?=$curItemClass?>">
 			<a href="<?=$arItem["LINK"]?>" class="leftMenu__link <?=$curLinkClass;?>"><?=$arItem["TEXT"]?></a>
 				<ul class="mobileLeftSubMenu"><?
@@ -80,7 +80,7 @@ foreach($arResult as $arItem)
 		}
 		else
 		{?>
-			<li class="leftSubMenu__item"><a href="<?=$arItem["LINK"]?>" class="leftSubMenu__link <?=$curSubLinkClass?>"><?=$arItem["TEXT"]?></a></li><?			
+			<li class="leftSubMenu__item"><a href="<?=$arItem["LINK"]?>" class="leftSubMenu__link <?=$curSubLinkClass?>"><?=$arItem["TEXT"]?></a></li><?
 		}
 	}
 	$previousLevel = $arItem["DEPTH_LEVEL"];

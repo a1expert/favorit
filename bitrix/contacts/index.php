@@ -1,6 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Контакты");
+$assets->addString('<meta name="robots" content="noindex, nofollow">');
 $elems = $fixer->GetElements(array(), array("IBLOCK_ID"=>"4", "ACTIVE" => "Y"), false, false, array("ID", "IBLOCK_ID"));
 $elId = $elems[0]["ID"];
 ?>

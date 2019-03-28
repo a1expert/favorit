@@ -144,15 +144,15 @@
                 </address>
                 <p class="footer__develop">
                     <a href="//a1-reklama.ru" target="_blank">
-                        <small>Разработка и продвижение</small>
-                        <img src="<?=$commonInfo["devLogo"];?>" alt="a1 huyspert">
+                        Разработка и продвижение
+                        <img src="<?=$commonInfo["devLogo"];?>" alt="">
                     </a>
                 </p>
                 <p class="footer__policy">
-                    <a href="<?=$commonInfo["PDPP"];?>" target="_blank">Политика в отношении обработки персональных данных</a>
+                    <a href="<?=$commonInfo["PDPP"];?>" target="_blank" class="footerPolicy__link">Политика в отношении обработки персональных данных</a>
                 </p>
                 <p class="footer__copyrights">
-                    <small>© <?=$commonInfo["footerCopyright"];?></small>
+                    © <?=$commonInfo["footerCopyright"];?>
                 </p>
             </div>
         </div>

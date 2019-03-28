@@ -1,6 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Котолог");
+$APPLICATION->SetTitle("Каталог");
 
 ?><?$APPLICATION->IncludeComponent("bitrix:catalog", "catalog", Array(
 	"ACTION_VARIABLE" => "",	// Название переменной, в которой передается действие

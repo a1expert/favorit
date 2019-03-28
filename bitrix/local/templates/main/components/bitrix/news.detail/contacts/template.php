@@ -20,7 +20,7 @@ $this->setFrameMode(true);
 				<?=$arResult["DISPLAY_PROPERTIES"]["ADDRESS"]["DISPLAY_VALUE"];?>
 			</div>
 		</div>
-		<div class="col-xs-12 col-sm-6 contacts__tile contactsPhones">
+		<div class="col-xs-12 col-sm-5 col-sm-offset-1 contacts__tile contactsPhones">
 			<h3 class="contacts__h3">Каналы связи:</h3>
 			<div class="contacts__content">
 				<?=$arResult["DISPLAY_PROPERTIES"]["PHONE_1"]["DISPLAY_VALUE"];?><br>
@@ -33,7 +33,7 @@ $this->setFrameMode(true);
 				<?=$arResult["DISPLAY_PROPERTIES"]["WORK_TIME"]["DISPLAY_VALUE"];?>
 			</div>
 		</div>
-		<div class="col-xs-12 col-sm-6 contacts__tile contactsRequis">
+		<div class="col-xs-12 col-sm-5 col-sm-offset-1 contacts__tile contactsRequis">
 			<h3 class="contacts__h3">Реквизиты компании:</h3>
 			<div class="contacts__content">
 				<a href="<?=$arResult["DISPLAY_PROPERTIES"]["REQUISITE"]["FILE_VALUE"]["SRC"];?>" class="contactsRequis__link" download="Реквизиты компании">
