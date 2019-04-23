@@ -36,7 +36,7 @@ $elementDeleteParams = array('CONFIRM' => GetMessage('CT_BCS_TPL_ELEMENT_DELETE_
 		<div class="priceBlock__value"><?=$arResult["commonContent"][0]["PROPERTY_COST_VALUE"];?></div>
 	</div>
 	<div class="col-xs-12 priceBlock__item priceBlock__btn">
-		<a href="catalog.html" class="btn priceBlock__btn btn_white">Узнать точную цену<span class="btn__arrow btn__arrow_blue btn__arrow_horizontal"></span></a>
+		<a href="#popupForm" data-action="/local/inc_files/selectForm.php" class="btn priceBlock__btn btn_white jsPopupFormTogglers selectableFormTogglers">Узнать точную цену<span class="btn__arrow btn__arrow_blue btn__arrow_horizontal"></span></a>
 	</div>
 </div>
 <?if (!empty($arResult["ITEMS"]))
@@ -48,7 +48,7 @@ $elementDeleteParams = array('CONFIRM' => GetMessage('CT_BCS_TPL_ELEMENT_DELETE_
 		$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], $elementEdit);
 		$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], $elementDelete, $elementDeleteParams);?>
 		
-		<div class="col-xs-12 col-sm-4 productsList__item catalogProductList__item" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
+		<div class="col-xs-12 col-sm-4 productsList__item catalogProductList__item selectFormOptions" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
 			<a href="<?=$arItem["DETAIL_PAGE_URL"];?>" class="productsList__link">
 				<div class="productList__hoverElement">
 				<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="459px" height="459px" viewBox="0 0 459 459" style="enable-background:new 0 0 459 459;" xml:space="preserve">
@@ -57,7 +57,7 @@ $elementDeleteParams = array('CONFIRM' => GetMessage('CT_BCS_TPL_ELEMENT_DELETE_
 				</div>
 				<img src="<?=$arItem["PREVIEW_PICTURE"]["SRC"];?>" alt="<?=$arItem["PREVIEW_PICTURE"]["ALT"];?>" class="productsList__img">
 			</a>
-			<div class="productsList__name"><?=$arItem["NAME"];?></div>
+			<div class="productsList__name jsOption"><?=$arItem["NAME"];?></div>
 		</div><?
 	}?>
 	</div><?

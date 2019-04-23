@@ -151,7 +151,7 @@ namespace A1expert
          * @var bool $arNavStartParams
          * @var array $arSelect
          */
-        public function GetElements($arOrder = array(), $arFilter = array(), $arGroupBy = false, $arNavStartParams = false, $arSelect = array())
+        public function GetElements($arOrder = array(), $arFilter = array(), $arGroupBy = false, $arNavStartParams = false, $arSelect = array(), $props = true)
         {
             Loader::includeModule("iblock");
             if(empty($arOrder))
@@ -161,9 +161,11 @@ namespace A1expert
             while($obElement = $rsElement->GetNextElement())
             {
                 $arResult = $obElement->fields;
-                $arResult["props"] = $obElement->GetProperties();
+                if($props)
+                    $arResult["props"] = $obElement->GetProperties();
                 $arResult["arSelect"] = $arSelect;
-                $this->GetProps($arResult);
+                if($props)
+                    $this->GetProps($arResult);
                 $this->GetPictures($arResult, $arSelect);
                 $returnResult[] = $arResult;
             }

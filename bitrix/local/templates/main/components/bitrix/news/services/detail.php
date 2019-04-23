@@ -14,8 +14,8 @@ $this->setFrameMode(true);
 $APPLICATION->SetPageProperty("showIntro", "Y");
 ?>
 <?$ElementID = $APPLICATION->IncludeComponent(
-	"bitrix:news.detail",
-	"",
+	"favorit:news.detail",
+	"services",
 	Array(
 		"DISPLAY_DATE" => $arParams["DISPLAY_DATE"],
 		"DISPLAY_NAME" => $arParams["DISPLAY_NAME"],
@@ -66,6 +66,7 @@ $APPLICATION->SetPageProperty("showIntro", "Y");
 		"SHARE_SHORTEN_URL_KEY" => $arParams["SHARE_SHORTEN_URL_KEY"],
 		"ADD_ELEMENT_CHAIN" => (isset($arParams["ADD_ELEMENT_CHAIN"]) ? $arParams["ADD_ELEMENT_CHAIN"] : ''),
 		'STRICT_SECTION_CHECK' => (isset($arParams['STRICT_SECTION_CHECK']) ? $arParams['STRICT_SECTION_CHECK'] : ''),
+		"SELECT_FORM" => $arParams["SELECT_FORM"]
 	),
 	$component
 );?>

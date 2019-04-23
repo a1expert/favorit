@@ -73,6 +73,7 @@ $APPLICATION->SetTitle("");
 		"USE_RATING" => "N",
 		"USE_RSS" => "N",
 		"USE_SEARCH" => "N",
-		"USE_SHARE" => "N"
+		"USE_SHARE" => "N",
+		"SELECT_FORM" => "Y"
 	)
 );?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

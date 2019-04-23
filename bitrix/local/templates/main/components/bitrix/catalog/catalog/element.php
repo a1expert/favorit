@@ -168,7 +168,7 @@ $componentElementParams = array(
 
 
 $elementId = $APPLICATION->IncludeComponent(
-	'bitrix:catalog.element',
+	'favorit:catalog.element',
 	'',
 	$componentElementParams,
 	$component

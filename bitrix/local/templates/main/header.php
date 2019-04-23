@@ -59,7 +59,7 @@ $adminIndaHouse = $USER->isAdmin();
                     <a href="/" class="col-xs-4 logoLink header__logoLink">
                         <img src="<?=$commonInfo["headerLogo"];?>" alt="Логотип" title="Hа главную" class="header__logoImg">
                     </a>
-                    <a href="#popupForm" class="col-xs-4 header__callback jsPopupFormTogglers">
+                    <a href="#popupForm" data-action="/local/inc_files/callbackForm.php" class="col-xs-4 header__callback jsPopupFormTogglers">
                         <svg xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#phone_svg"></use></svg>
                         <span class="hidden-xs hidden-md hidden-lg header__callback__lable">Заказать звонок</span>
                     </a>
@@ -88,7 +88,7 @@ $adminIndaHouse = $USER->isAdmin();
                             );?>
                         </ul>
                     </nav>
-                    <a href="#popupForm" class="header__callback header__item jsPopupFormTogglers">
+                    <a href="#popupForm" data-action="/local/inc_files/callbackForm.php" class="header__callback header__item jsPopupFormTogglers">
                         <svg xmlns:xlink="http://www.w3.org/1999/xlink" class="header__callbackIcon"><use xlink:href="#phone_svg"></use></svg>
                         Заказать звонок
                     </a>

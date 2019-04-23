@@ -30,6 +30,11 @@ $arTemplateParameters = array(
 		"TYPE" => "STRING",
 		"DEFAULT" => "12",
 	),
+	"SELECT_FORM" => Array(
+		"NAME" => "Загружать данные для формы с селектом",
+		"TYPE" => "CHECKBOX",
+		"DEFAULT" => "N",
+	),
 );
 
 ?>

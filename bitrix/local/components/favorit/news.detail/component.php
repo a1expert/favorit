@@ -16,6 +16,9 @@ use Bitrix\Main\Context,
 	Bitrix\Iblock,
 	A1expert\Fixer;
 $fixer = new Fixer();
+$this->initComponentTemplate();
+$templateFolder = $this->__template->GetFolder();
+$templateFolder = $_SERVER["DOCUMENT_ROOT"] . $templateFolder;
 CPageOption::SetOptionString("main", "nav_page_in_session", "N");
 
 if(!isset($arParams["CACHE_TIME"]))
@@ -84,6 +87,7 @@ $arParams["PAGER_TITLE"] = trim($arParams["PAGER_TITLE"]);
 $arParams["PAGER_SHOW_ALWAYS"] = $arParams["PAGER_SHOW_ALWAYS"]!="N";
 $arParams["PAGER_TEMPLATE"] = trim($arParams["PAGER_TEMPLATE"]);
 $arParams["PAGER_SHOW_ALL"] = $arParams["PAGER_SHOW_ALL"]!=="N";
+$arParams["SELECT_FORM"] = ($arParams["SELECT_FORM"] == "Y") ? true : false;
 
 if($arParams["DISPLAY_TOP_PAGER"] || $arParams["DISPLAY_BOTTOM_PAGER"])
 {
@@ -361,6 +365,13 @@ if($arParams["SHOW_WORKFLOW"] || $this->startResultCache(false, array(($arParams
 	}
 	unset($ymapCoords["arSelect"]);
 	$arResult["YMAP_COORDS"] = $ymapCoords;
+
+	if($arParams["SELECT_FORM"])
+	{
+		$rsElements = $fixer->GetElements(array(), array("IBLOCK_ID"=>$arParams["IBLOCK_ID"], "ACTIVE"=>"Y"), false, false, array("IBLOCK_ID", "ID", "NAME"), false);
+		foreach ($rsElements as $arElement)
+			$arResult["SELECT_FORM_OPTIONS"][] = $arElement['NAME'];
+	}
 	/**end изменения в компоненте */
 
 		$resultCacheKeys = array(
@@ -377,6 +388,7 @@ if($arParams["SHOW_WORKFLOW"] || $this->startResultCache(false, array(($arParams
 			"IPROPERTY_VALUES",
 			"TIMESTAMP_X",
 			"GENERAL_INFO",
+			"SELECT_FORM_OPTIONS"
 		);
 		if ($arParams["YMAP"] == "Y")
 			$resultCacheKeys[] = "YMAP_COORDS";

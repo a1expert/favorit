@@ -34,9 +34,8 @@ $this->setFrameMode(true);
 	}?>
 	</div>
 	<div class="col-xs-12 col-sm-4 priceBlock__item priceBlock__btn">
-		<a href="#popupForm" class="btn priceBlock__btn btn_white jsPopupFormTogglers selectableFormTogglers">Узнать точную цену<span class="btn__arrow btn__arrow_blue btn__arrow_horizontal"></span></a>
+		<a href="#popupForm" data-action="/local/inc_files/selectForm.php" class="btn priceBlock__btn btn_white jsPopupFormTogglers selectableFormTogglers">Узнать точную цену<span class="btn__arrow btn__arrow_blue btn__arrow_horizontal"></span></a>
 	</div>
-
 </div>
 <?if (!empty($arResult["DISPLAY_PROPERTIES"]["HEADER_ADD_TEXT"]["DISPLAY_VALUE"]))
 {?>
@@ -55,3 +54,10 @@ $this->setFrameMode(true);
 		<li class="textList__item"><?=$value;?></li><?
 	}?>
 </ul>
+<div class="selectFormOptions hide">
+	<?foreach ($arResult['SELECT_FORM_OPTIONS'] as $option)
+	{?>
+		<li class="jsOption"><?=$option;?></li>
+		<?
+	}?>
+</div>

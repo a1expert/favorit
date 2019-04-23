@@ -11,6 +11,7 @@ $("document").ready(function()
     const mobileLeftMenu = document.querySelector("#mobileLeftMenu");
     const magnificPopup = $.magnificPopup.instance;
     const leftMenuTogglers = document.querySelectorAll(".itemToggler");
+    
 
     mMenuOpenBtn.addEventListener("click", MobileMenuToggler);
     mMenuCloseBtn.addEventListener("click", MobileMenuToggler);
@@ -164,19 +165,20 @@ $("document").ready(function()
         });
     });
 
+    /**
+     * ФОРМЫ
+     *
+     */
     $('.jsPopupFormTogglers').magnificPopup({
         type:'inline',
         midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
     });
-    /**
-     * ФОРМА
-     *
-     */
-    const popupFormTpl = document.querySelector('#popupFormTpl').content.querySelector('.callback__form');
+
+    let popupFormTpl = {};
     const callbackWraper = document.querySelector("#callbackWraper");
     const successMessage = document.querySelector("#successMessage");
     const popupTogglers = document.querySelectorAll('.jsPopupFormTogglers');
-
+    
     const formOnSubmit = function (e)
 	{
 		e.preventDefault();
@@ -193,6 +195,7 @@ $("document").ready(function()
 			}
 		});
     };
+
     const inputFloating = function (e)
     {
         let input = e.target;
@@ -201,21 +204,64 @@ $("document").ready(function()
         else
             input.classList.remove('filledInput');
     }
-    const openPopup = function () {
-		const formPopup = popupFormTpl.cloneNode(true);
-		callbackWraper.appendChild(formPopup);
-        formPopup.addEventListener('submit', formOnSubmit);
-        [].forEach.call(popupTogglers, function (it) {
-            it.removeEventListener('click', openPopup);
+
+    const selectBtnHandler = function  (e)
+    {
+        let select = document.querySelector(".jsSelect");
+        const selectArrow = document.querySelector(".selectBtn__arrow");
+        let elementName = document.querySelector("#elementName");
+        let selectBtn = document.querySelector(".jsSelectBtn");
+        select.classList.toggle("select_open");
+        if(e.target.classList.contains("jsOption"))
+        {
+            selectBtn.innerHTML = e.target.innerHTML + selectArrow.outerHTML;
+            elementName.value = e.target.innerHTML;
+        }
+    }
+
+    const SetSelectData = function ()
+    {
+        const options = document.querySelectorAll('.selectFormOptions .jsOption');
+        const select = document.querySelector('.jsSelect');
+        [].forEach.call(options, function (it)
+        {
+            let append = it.cloneNode(true);
+            append.className = 'leftMenu__item leftMenu__item_current option jsOption';
+            select.appendChild(append);
+            append.addEventListener("click", selectBtnHandler);
         });
-        popupFormTpl.remove();
-        let floatInput = formPopup.querySelector(".jsFloatInput");
-        floatInput.addEventListener("blur", inputFloating);
+        
+    }
+
+    const openPopup = function (e) {
+        callbackWraper.innerHTML = "";
+        
+        fetch(e.target.dataset.action).then(function(response) {
+            return response.text();
+          })
+          .then(function(text) {
+            callbackWraper.innerHTML = text;
+            formPopup = document.querySelector(".callback__form");
+            console.log(formPopup);
+            formPopup.addEventListener('submit', formOnSubmit);
+            let floatInput = formPopup.querySelector(".jsFloatInput");
+            floatInput.addEventListener("blur", inputFloating);
+            let selectBtn = formPopup.querySelector(".jsSelectBtn");
+            if(selectBtn !== undefined && selectBtn !== null)
+            {
+                selectBtn.addEventListener("click", selectBtnHandler);
+                SetSelectData();
+            }
+            
+        });
     };
 
 	[].forEach.call(popupTogglers, function (it) {
 		it.addEventListener('click', openPopup);
     });
+    /**
+     * numeric counter
+     */
     let countersList = document.querySelectorAll(".jsCountValue");
     let targetYOffset;
     if(countersList[0] !== undefined)
